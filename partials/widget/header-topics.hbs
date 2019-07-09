@@ -1,0 +1,12 @@
+{{!-- Tag Cloud --}}
+{{#get "tags" limit="10" include="count.posts" order="count.posts desc" as |topics|}}
+    {{#if topics}}
+        <ul class="menu menu-topics">
+            {{#foreach topics}}
+                <li class="menu-item">
+                    <a href="{{url absolute="true"}}" title="{{name}}">{{name}}</a>
+                </li>
+            {{/foreach}}
+        </ul>
+    {{/if}}
+{{/get}}

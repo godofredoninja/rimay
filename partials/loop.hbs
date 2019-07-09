@@ -1,0 +1,18 @@
+<div class="content-wrap">
+    <div class="content">
+        {{!-- Title For Home Page --}}
+        {{#is "home"}}
+            <h2 class="rimary-home--title">{{t "The Latest"}}</h2>
+        {{/is}}
+
+        <div class="story-feed">
+            <div class="story-feed-content">
+                {{!-- story - partials/story/story.hbs --}}
+                {{#foreach posts}} {{> "story/story"}} {{/foreach}}
+            </div>
+        </div>
+    </div>
+
+    {{!-- sidebar - partials/sidebar/sidebar.hbs --}}
+    {{> "sidebar/sidebar"}}
+</div>

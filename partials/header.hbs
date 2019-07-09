@@ -1,0 +1,30 @@
+<header class="site-navigation">
+    <div class="desktop-nav">
+        <div class="desktop-nav__header">
+            {{!-- logo --}}
+            <div class="logo">
+                <a href="/">
+                    {{#if @site.logo}}
+                        <img src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}"/>
+                    {{else}}
+                        <span>{{@site.title}}</span>
+                    {{/if}}
+                </a>
+            </div>
+        </div>
+
+        <div class="desktop-nav__body">
+            {{!-- menu --}}
+            {{navigation}}
+
+            {{!-- Search --}}
+            <a href="#" class="search" aria-label="Toggle Search">
+                Search
+            </a>
+
+            {{!-- Topics --}}
+            {{> "widget/header-topics"}}
+
+        </div>
+    </div>
+</header>
