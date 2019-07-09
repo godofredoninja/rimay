@@ -59,3 +59,17 @@ typings/
 
 # next.js build output
 .next
+
+### VisualStudio Patch ###
+./build
+
+.sass-lint.yml
+.cache-loader
+yarn-error.log
+
+*.swp
+
+.eslintrc.js
+.stylelintrc.js
+.yarn.lock
+./src

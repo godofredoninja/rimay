@@ -1,0 +1,62 @@
+{
+  "name": "rimay",
+  "description": "Rimay awesome theme for Ghost",
+  "demo": "https://godofredo.ninja",
+  "version": "0.0.1",
+  "engies": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "license": "GPLv3",
+  "author": {
+    "name": "GodoFredo",
+    "email": "hello@godofredo.ninja",
+    "url": "https://godofredo.ninja"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Blog",
+      "Magazine",
+      "photographer",
+      "travel"
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "photographer",
+    "godofredo",
+    "ghost-theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/godofredoninja/rimay.git"
+  },
+  "bugs": "https://github.com/godofredoninja/rimay/issues",
+  "contributors": "https://github.com/godofredoninja/rimay/network/dependencies",
+  "config": {
+    "posts_per_page": 12,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
+  }
+}
