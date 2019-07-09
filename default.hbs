@@ -10,6 +10,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    {{!-- Styles --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "styles/main.css"}}"/>
+
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 </head>
@@ -26,6 +29,9 @@
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
+
+    {{!-- The main JavaScript --}}
+    <script src="{{asset "scripts/main.js"}}" defer></script>
 
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
