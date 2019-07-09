@@ -1,10 +1,10 @@
 <footer class="footer">
     <div class="footer-wrap">
         <div class="social-media">
-            {{#if @site.facebook}}<a title="Facebook {{@site.facebook}}" href="{{facebook_url}}" target="_blank" rel="noopener noreferrer">Facebook</a>{{/if}}
-            {{#if @site.twitter}}<a title="Twitter {{@site.twitter}}" href="{{twitter_url}}" target="_blank" rel="noopener noreferrer">Twitter</a>{{/if}}
-            <a title="Instagram" href="https://instagram.com/godofredoninja" target="_blank" rel="noopener noreferrer">Twitter</a>
-            <a title="YouTube" href="https://instagram.com/godofredoninja" target="_blank" rel="noopener noreferrer">YouTube</a>
+            {{#if @site.facebook}}<a title="Facebook {{@site.facebook}}" href="{{facebook_url}}" target="_blank" rel="noopener noreferrer">{{> "icons/facebook"}} Facebook</a>{{/if}}
+            {{#if @site.twitter}}<a title="Twitter {{@site.twitter}}" href="{{twitter_url}}" target="_blank" rel="noopener noreferrer">{{> "icons/twitter"}} Twitter</a>{{/if}}
+            <a title="Instagram" href="https://instagram.com/godofredoninja" target="_blank" rel="noopener noreferrer">{{> "icons/instagram"}} Instagram</a>
+            <a title="YouTube" href="https://instagram.com/godofredoninja" target="_blank" rel="noopener noreferrer">{{> "icons/youtube"}} YouTube</a>
             <a title="GitHub" href="https://instagram.com/godofredoninja" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
         {{!-- copy --}}

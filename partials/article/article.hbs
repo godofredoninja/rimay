@@ -1,0 +1,45 @@
+<article class="article">
+    {{!-- Article Header --}}
+    <header class="article-header">
+        <h1 class="article-title">{{title}}</h1>
+        <div class="article-meta">
+            <div class="article-byline">
+                {{#primary_author}}<a aria-label="{{t "Post by"}} {{name}}" href="{{url}}">{{name}}</a>{{/primary_author}}
+                <span class="article-divider">/</span>
+                <time class="datetime u-meta-time " datetime="{{date format=" YYYY-MM-DD "}}">{{date published_at timeago="true"}}</time>
+            </div>
+            <div class="article-comments">Comments</div>
+        </div>
+    </header>
+    {{!-- Article Body --}}
+    <div class="article-body">
+        {{#if feature_image}}
+            <figure class="article-image u-block u-marginAuto u-maxWidth1200">
+                <img class="u-block u-marginAuto"
+                    srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1000w,
+                            {{img_url feature_image size="xl"}} 2000w"
+                    sizes="(max-width: 400px) 300px,(max-width: 730px) 600px, (max-width: 1600px) 100vw"
+                    src="{{img_url feature_image size="xl"}}"
+                    alt="{{title}}"
+                />
+            </figure>
+        {{/if}}
+
+        {{!-- Article Inner --}}
+        <div class="article-inner">{{content}}</div>
+
+        {{!-- Article Comments --}}
+        <div class="block--comment"> <button class="button button-green button-secondary">{{t "View Comments"}} (2)</button> </div>
+    </div>
+
+    {{!-- Newsletter - partials/widget/newsletter.hbs --}}
+    {{> "widget/newsletter"}}
+
+    {{!-- Article Footer - parials/article/footer.hbs --}}
+    {{> "article/footer"}}
+
+    {{!-- Article topics - parials/article/topics.hbs --}}
+    {{> "article/topics"}}
+</article>

@@ -1,0 +1,14 @@
+{{#if tags}}
+
+<div class="article-tags">
+    <h3>{{t "Tags"}}</h3>
+    <ul class="menu article-tags-item">
+        {{#foreach tags}}
+            <li class="menu-item">
+                <a href="{{url absolute="true"}}" title="{{name}}">{{name}}</a>
+            </li>
+        {{/foreach}}
+    </ul>
+</div>
+
+{{/if}}
