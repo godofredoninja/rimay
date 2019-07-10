@@ -1,0 +1,51 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  // font-size: $font-size-root;
+  font-size: 16px;
+}
+
+body {
+  @extend %primary-font;
+  // font-family: $primary-font;
+  // color: $primary-text-color;
+  // font-size: $font-size-base;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+li a, p a {
+  color: $primary-color;
+  border-bottom: 1px solid transparent;
+  transition: color,border-color .2s linear;
+}
+a, li a, p a {
+  text-decoration: none;
+}
+
+svg {
+  fill: currentColor;
+
+  &:not(:root) { overflow: hidden }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+
+  // svg { fill: #000 }
+}
+
+.icon--gray {
+  color: #ddd;
+}

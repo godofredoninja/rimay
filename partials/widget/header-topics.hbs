@@ -1,9 +1,9 @@
 {{!-- Tag Cloud --}}
 {{#get "tags" limit="10" include="count.posts" order="count.posts desc" as |topics|}}
     {{#if topics}}
-        <ul class="menu menu-topics">
+        <ul class="menu menu-topics u-fontSizeSmall u-unstyled">
             {{#foreach topics}}
-                <li class="menu-item">
+                <li class="menu-item u-textCapitalize u-fontWeightSemibold">
                     <a href="{{url absolute="true"}}" title="{{name}}">{{name}}</a>
                 </li>
             {{/foreach}}

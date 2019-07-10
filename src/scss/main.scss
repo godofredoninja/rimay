@@ -11,23 +11,29 @@
 @import 'abstracts/mixins';
 @import 'abstracts/placeholders';
 
+// lib
+// --------------------------------------------------
+
+@import "node_modules/normalize.css/normalize";
+
 // base
 // --------------------------------------------------
 
+@import 'base/global';
+@import 'base/utilities';
 // @import 'base/fonts';
 // @import 'base/typography';
 // @import 'base/code';
 // @import 'base/helpers';
-@import 'base/global';
 
 // layout
 // --------------------------------------------------
 
 // @import 'layout/grid';
 // @import 'layout/forms';
-// @import 'layout/wrapper';
-// @import 'layout/header';
-// @import 'layout/navigation';
+@import 'layout/wrapper';
+@import 'layout/header';
+@import 'layout/navigation';
 // @import 'layout/main';
 // @import 'layout/sidebar';
 // @import 'layout/footer';

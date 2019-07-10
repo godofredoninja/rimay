@@ -1,0 +1,39 @@
+.content-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  //
+  margin-left: 0;
+  margin-right: auto;
+
+  @media #{$md-and-up} {
+    flex-direction: row
+  }
+}
+
+// content
+.content {
+  width: 90%;
+  margin-left: 5%;
+  min-height: 80%;
+  position: relative;
+
+  @media #{$md-and-up} {
+    flex: 0 1 auto;
+    margin-left: 30px;
+    max-width: calc(100vw - 380px);
+  }
+
+  @media #{$lg-and-up} {
+    margin-left: 210px;
+    width: calc(100vw - 210px - 360px);
+    margin-top: 0;
+  }
+
+  @media #{$xl-and-up} {
+    margin-left: 250px;
+    width: calc(100vw - 250px - 360px);
+    max-width: 1390px;
+  }
+
+}

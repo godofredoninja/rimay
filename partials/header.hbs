@@ -1,13 +1,13 @@
-<header class="site-navigation">
-    <div class="desktop-nav">
+<header class="header">
+    <div class="desktop-nav u-flexColumnTop">
         <div class="desktop-nav__header">
             {{!-- logo --}}
-            <div class="logo">
+            <div class="logo u-fontWeightBold">
                 <a href="/">
                     {{#if @site.logo}}
                         <img src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}"/>
                     {{else}}
-                        <span>{{@site.title}}</span>
+                        <span class="u-lineHeight1 u-fontSizeLarger">{{@site.title}}</span>
                     {{/if}}
                 </a>
             </div>
@@ -18,9 +18,13 @@
             {{navigation}}
 
             {{!-- Search --}}
-            <a href="#" class="search" aria-label="Toggle Search">
-                Search
-            </a>
+            <div class="search-field u-marginBottom20">
+                <div class="js-open-search u-pointer">
+                    Search
+                    <span class="icon icon--search icon--gray"> {{> "icons/search"}} </span>
+                </div>
+
+            </div>
 
             {{!-- Topics --}}
             {{> "widget/header-topics"}}
