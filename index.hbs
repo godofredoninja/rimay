@@ -8,17 +8,17 @@ into the {body} of the default.hbs template --}}
             {{!-- First Post Large in Home Page --}}
             <div class="rimay-paway-left">
                 {{#foreach posts limit="1"}}
-                    <article class="primary-post">
+                    <article class="primary-post u-relative">
                         <h1 class="primary-post-title"><a href="{{url}}">{{title}}</a></h1>
-                        {{!-- Primary Tag --}}
+                        {{!-- Meta {primary tag} --}}
                         <div class="u-meta">
                             <div class="u-meta-byline">
-                                {{#if primary_tag}}{{#primary_tag}}<span class="u-meta-tag"><a class="u-colorHoverPrimary u-colorInherit" href="{{url}}" aria-label="{{name}}">{{name}}</a></span>{{/primary_tag}}{{/if}}
+                                {{#if primary_tag}}{{#primary_tag}}<span class="u-meta-tag"><a class="u-colorHoverPrimary u-colorInherit u-relative zindex3" href="{{url}}" aria-label="{{name}}">{{name}}</a></span>{{/primary_tag}}{{/if}}
                             </div>
                         </div>
 
                         {{!-- Image --}}
-                        <figure class="primary-post-figure">
+                        <figure class="primary-post-figure u-relative">
                             {{#if feature_image}}
                                 <img class="primary-post-img u-absolute0 u-image u-block lazyload"
                                     src="{{img_url feature_image size="m"}}"
@@ -31,6 +31,8 @@ into the {body} of the default.hbs template --}}
                                 <div class="u-absolute0 u-bgCover u-block" style="background-image:url({{asset "images/not-image.jpg"}})"></div>
                             {{/if}}
                         </figure>
+                        {{!-- link --}}
+                        <a href="{{url}}" aria-label="{{title}}" class="u-absolute0 zindex2"></a>
                     </article>
                 {{/foreach}}
             </div>
@@ -40,10 +42,10 @@ into the {body} of the default.hbs template --}}
                 {{#foreach posts from="2" to="5"}}
                     <article class="mini-post">
                         <h3 class="mini-post-title"><a href="{{url}}">{{title}}</a></h3>
-                        {{!-- Primary Tag --}}
+                        {{!-- Meta {primary tag} --}}
                         <div class="u-meta">
                             <div class="u-meta-byline">
-                                {{#if primary_tag}}{{#primary_tag}}<span class="u-meta-tag"><a href="{{url}}" aria-label="{{name}}">{{name}}</a></span>{{/primary_tag}}{{/if}}
+                                {{#if primary_tag}}{{#primary_tag}}<span class="u-meta-tag"><a class="u-colorHoverPrimary u-colorInherit u-relative zindex3" href="{{url}}" aria-label="{{name}}">{{name}}</a></span>{{/primary_tag}}{{/if}}
                             </div>
                         </div>
                     </article>

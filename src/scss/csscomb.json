@@ -19,7 +19,7 @@
   "space-before-selector-delimiter": "",
   "space-before-closing-brace": "\n",
   "strip-spaces": true,
-  "tab-size": true,
+  "tab-size": false,
   "unitless-zero": true,
   "sort-order": [
     [

@@ -7,6 +7,14 @@ h6, .u-meta {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+.u-absolute0 {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 .u-flex, .u-flexCenter, .u-flexColumnCenter, .u-flexColumnTop, .content-wrap {
   display: flex;
 }
@@ -455,23 +463,23 @@ figure {
 }
 
 .u-fontSizeMicro {
-  font-size: .6875rem;
+  font-size: 0.6875rem;
 }
 
 .u-fontSizeSmallest {
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 .u-fontSize13 {
-  font-size: .8125rem;
+  font-size: 0.8125rem;
 }
 
 .u-fontSizeSmaller {
-  font-size: .875rem;
+  font-size: 0.875rem;
 }
 
 .u-fontSize15 {
-  font-size: .9375rem;
+  font-size: 0.9375rem;
 }
 
 .u-fontSizeSmall {
@@ -521,7 +529,13 @@ figure {
 .u-clear::after {
   display: table;
   clear: both;
-  content: '';
+  content: "";
+}
+
+.u-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .u-unstyled {
@@ -635,6 +649,14 @@ figure {
 
 .u-paddingBottom15 {
   padding-bottom: 15px;
+}
+
+.u-relative {
+  position: relative;
+}
+
+.u-absolute {
+  position: absolute;
 }
 
 .u-flex1 {
@@ -848,19 +870,6 @@ h6 {
   color: #00a562;
 }
 
-.primary-post-title {
-  font-size: 28px;
-  font-size: 1.75rem;
-  font-weight: 900;
-  line-height: 1;
-  margin: 0 0 10px;
-  letter-spacing: -.05em;
-}
-
-.primary-post-title a {
-  color: inherit;
-}
-
 .u-meta {
   font-size: 1.125rem;
   font-weight: 700;
@@ -868,10 +877,71 @@ h6 {
   color: #333;
 }
 
+.primary-post:hover {
+  opacity: .7;
+}
+
+.primary-post-title {
+  font-size: 28px;
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1;
+  margin: 0 0 10px;
+  letter-spacing: -0.05em;
+}
+
+.primary-post-title a {
+  color: inherit;
+}
+
+.primary-post-figure {
+  height: 350px;
+}
+
+.mini-post {
+  margin-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+  opacity: 1;
+  transition: opacity .15s linear;
+}
+
+.mini-post:hover {
+  opacity: .7;
+}
+
+.mini-post-title {
+  font-size: 1.125rem;
+  margin-top: 0;
+  margin-bottom: .25em;
+  font-weight: 800;
+  line-height: 1.11;
+  letter-spacing: -.7px;
+  color: #000;
+}
+
+.mini-post-title a {
+  color: #000;
+}
+
 @media only screen and (min-width: 700px) {
   .primary-post-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     line-height: 1.1;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .mini-post-title {
+    font-size: 1.25rem;
+    margin-bottom: .3em;
+    line-height: 1.05;
+    letter-spacing: -.5px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .mini-post-title {
+    font-size: 1.875rem;
   }
 }
 

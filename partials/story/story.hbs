@@ -1,4 +1,4 @@
-<article class="story">
+<article class="story u-relative">
     {{!-- Story Header --}}
     <header class="story-header">
         <h2 class="story-title"><a href="{{url}}">{{title}}</a></h2>
@@ -15,7 +15,7 @@
     <div class="story-body"><p>{{excerpt words="25"}}</p></div>
     {{!-- Story Image --}}
     {{#if feature_image}}
-        <footer class="story-footer">
+        <footer class="story-footer u-relative">
             <img class="story-img u-absolute0 u-image u-block lazyload"
                 src="{{img_url feature_image size="m"}}"
                 srcset="{{img_url feature_image size="xxs"}}"
@@ -25,4 +25,6 @@
             />
         </footer>
     {{/if}}
+    {{!-- link --}}
+    <a href="{{url}}" aria-label="{{title}}" class="u-absolute0 zindex2"></a>
 </article>
