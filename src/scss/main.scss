@@ -14,7 +14,7 @@
 // lib
 // --------------------------------------------------
 
-@import "node_modules/normalize.css/normalize";
+@import 'node_modules/normalize.css/normalize';
 
 // base
 // --------------------------------------------------
@@ -22,14 +22,14 @@
 @import 'base/global';
 @import 'base/utilities';
 // @import 'base/fonts';
-// @import 'base/typography';
+@import 'base/typography';
 // @import 'base/code';
 // @import 'base/helpers';
 
 // layout
 // --------------------------------------------------
 
-// @import 'layout/grid';
+@import 'layout/grid';
 // @import 'layout/forms';
 @import 'layout/wrapper';
 @import 'layout/header';
@@ -46,7 +46,7 @@
 // @import 'components/pagination';
 // @import 'components/subscribe';
 // @import 'components/koenig';
-// @import 'components/post';
+@import 'components/story';
 // @import 'components/tag-card';
 
 // pages

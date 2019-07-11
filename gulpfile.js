@@ -9,6 +9,13 @@ const mqpacker = require('css-mqpacker')
 const autoprefixer = require('autoprefixer')
 const gulpLoadPlugins = require('gulp-load-plugins')
 
+// Cosas por mi
+const browserify = require('browserify')
+// const babelify = require('babelify');
+const source = require('vinyl-source-stream')
+const buffer = require('vinyl-buffer')
+// end mi settingd
+
 const { name, version, homepage, author, license } = require('./package')
 
 // loade all gulp plugins
@@ -19,7 +26,7 @@ const isProduction = process.argv.includes('--production') || process.env.NODE_E
 
 // build comments
 const comments = `/*!
- * ${name} v${version}
+ * ${name} v${version} (${homepage})
  * Copyright ${new Date().getFullYear()} ${author.name} <${author.email}> (${author.url})
  * Licensed under ${license}
  */`
@@ -39,22 +46,42 @@ const style = () => {
     .pipe($.sass({ outputStyle: 'expanded' }).on('error', $.sass.logError))
     .pipe($.if(isProduction, $.postcss([ autoprefixer(), mqpacker(), cssnano() ])))
     .pipe($.if(isProduction, $.header(comments)))
-    .pipe($.if(!isProduction, $.sourcemaps.write()))
+    .pipe($.if(!isProduction, $.sourcemaps.write('./map')))
     .pipe(gulp.dest('assets/styles'))
     .pipe($.livereload())
 }
 
 const script = () => {
-  return gulp.src('src/js/*.js')
+  const browserifyBundle = browserify({
+    entries: ['./src/js/main.js'],
+    debug: true
+  })
+
+  return browserifyBundle
+    .transform('babelify', { presets: [ '@babel/env' ] })
+    .bundle()
+    .pipe(source('main.js'))
     .pipe($.plumber())
+    .pipe(buffer())
     .pipe($.if(!isProduction, $.sourcemaps.init()))
-    .pipe($.babel({ presets: [ '@babel/env' ] }))
     .pipe($.if(isProduction, $.uglify()))
     .pipe($.if(isProduction, $.header(comments)))
-    .pipe($.if(!isProduction, $.sourcemaps.write()))
+    .pipe($.if(!isProduction, $.sourcemaps.write('./map')))
     .pipe(gulp.dest('assets/scripts'))
     .pipe($.livereload())
 }
+
+// const script = () => {
+//   return gulp.src('src/js/*.js')
+//     .pipe($.plumber())
+//     .pipe($.if(!isProduction, $.sourcemaps.init()))
+//     .pipe($.babel({ presets: [ '@babel/preset-env' ] }))
+//     .pipe($.if(isProduction, $.uglify()))
+//     .pipe($.if(isProduction, $.header(comments)))
+//     .pipe($.if(!isProduction, $.sourcemaps.write()))
+//     .pipe(gulp.dest('assets/scripts'))
+//     .pipe($.livereload())
+// }
 
 const image = () => {
   return gulp.src('src/img/**/*.*')

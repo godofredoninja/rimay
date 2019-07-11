@@ -69,7 +69,9 @@ yarn-error.log
 
 *.swp
 
-.eslintrc.js
-.stylelintrc.js
+#.eslintrc.js
+#.stylelintrc.js
 .yarn.lock
-./src
+#./src
+*.zip
+*.map

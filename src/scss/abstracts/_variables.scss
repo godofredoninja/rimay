@@ -10,16 +10,16 @@ $primary-font: 'Source Sans Pro', sans-serif;
 
 // Media Query Ranges
 // ==========================================================================
-$sm:            640px;
-$md:            700px;
-$lg:            1100px;
-$xl:            1440px;
+$sm: 640px;
+$md: 700px;
+$lg: 1100px;
+$xl: 1440px;
 
-$sm-and-up:     "only screen and (min-width : #{$sm})";
-$md-and-up:     "only screen and (min-width : #{$md})";
-$lg-and-up:     "only screen and (min-width : #{$lg})";
-$xl-and-up:     "only screen and (min-width : #{$xl})";
+$sm-and-up: 'only screen and (min-width : #{$sm})';
+$md-and-up: 'only screen and (min-width : #{$md})';
+$lg-and-up: 'only screen and (min-width : #{$lg})';
+$xl-and-up: 'only screen and (min-width : #{$xl})';
 
-$sm-and-down:   "only screen and (max-width : #{$sm})";
-$md-and-down:   "only screen and (max-width : #{$md})";
-$lg-and-down:   "only screen and (max-width : #{$lg})";
+$sm-and-down: 'only screen and (max-width : #{$sm})';
+$md-and-down: 'only screen and (max-width : #{$md})';
+$lg-and-down: 'only screen and (max-width : #{$lg})';

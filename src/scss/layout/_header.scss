@@ -2,80 +2,104 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
-.header {
-  display: block;
-}
-
-.desktop-nav {
-  padding: 50px 20px 0;
-  // letter-spacing: -.02em;
-  width: 290px;
-  // height: calc(100% - 40px);
-  position: fixed;
-  z-index: 30;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  // justify-content: space-between;
-  background: #fff;
-  word-wrap: break-word;
-  hyphens: auto;
-  overflow: hidden;
-  overflow-y: auto;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .logo {
+.header
+{
     display: block;
-    line-height: 1;
-    font-size: 1.5rem
-  }
 }
 
-.desktop-nav {
-  .main-menu {
-    line-height: 1.1;
-    // font-weight: 300;
-    color: #777;
-    letter-spacing: -.02em;
+.desktop-nav
+{
+    // height: calc(100% - 40px);
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    overflow: hidden;
+    overflow-y: auto;
+    // letter-spacing: -.02em;
+
+    width: 290px;
+    padding: 50px 20px 0;
+
     word-wrap: break-word;
     hyphens: auto;
-    font-size: 1.125rem;
+    // justify-content: space-between;
 
-    .menu-item { padding: .2em 0; }
-  }
+    background: #fff;
 
-  a:hover {
-    color: $primary-color;
-    border-bottom-color: transparent;
-  }
+    a
+    {
+        text-decoration: none;
 
-  //  search
-  .search-field {
-    font-weight: 600;
-    font-size: 1.1rem;
-
-    .icon--search {
-      width: 1em;
+        color: inherit;
     }
-  }
 
+    .logo
+    {
+        font-size: 1.5rem;;
+        line-height: 1;
+
+        display: block;
+    }
 }
 
-@media #{$lg-and-up} {
-  .desktop-nav {
-    padding-left: 30px;
-    padding-top: 30px;
-    background: 0 0;
-    top: 0;
-    left: 0;
-    width: 210px;
+.desktop-nav
+{
+    .main-menu
+    {
+        font-size: 1.125rem;
+        line-height: 1.1;
 
-    .main-menu {
-      font-size: 2.57vh;
+        letter-spacing: -.02em;
+        word-wrap: break-word;
+        hyphens: auto;
+        // font-weight: 300;
+
+        color: #777;
+
+        .menu-item
+        {
+            padding: .2em 0;
+        }
     }
-  }
+
+    a:hover
+    {
+        color: $primary-color;
+        border-bottom-color: transparent;
+    }
+
+    //  search
+    .search-field
+    {
+        font-size: 1.1rem;
+        font-weight: 600;
+
+        .icon--search
+        {
+            width: 1em;
+        }
+    }
+}
+
+@media #{$lg-and-up}
+{
+    .desktop-nav
+    {
+        top: 0;
+        left: 0;
+
+        width: 210px;
+        padding-top: 30px;
+        padding-left: 30px;
+
+        background: 0 0;
+
+        .main-menu
+        {
+            font-size: 2.57vh;
+        }
+    }
 }
