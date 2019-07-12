@@ -3,7 +3,7 @@ h2,
 h3,
 h4,
 h5,
-h6, .u-meta {
+h6, .footer, .u-meta {
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -436,6 +436,10 @@ figure {
 
 .icon--gray {
   color: #ddd;
+}
+
+.icon--black {
+  color: #000;
 }
 
 .u-colorInherit {
@@ -890,6 +894,78 @@ h6 {
     padding-top: 10px;
     position: relative;
     z-index: 10;
+  }
+}
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin-top: 30px;
+  width: 100vw;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-copy {
+  font-size: 15px;
+  color: #777;
+  line-height: 2.8rem;
+}
+
+.social-media {
+  line-height: 44px;
+}
+
+.social-media a {
+  font-size: 0.9375rem;
+  flex: 0 0 auto;
+  text-decoration: none;
+  color: #777;
+  line-height: 18px;
+  margin-right: 20px;
+}
+
+.social-media a:hover .icon--facebook {
+  color: #3b5998;
+}
+
+.social-media a:hover .icon--twitter {
+  color: #00aced;
+}
+
+.social-media a:hover .icon--youtube {
+  color: #b00;
+}
+
+.social-media a:hover .icon--instagram {
+  color: #bc2a8d;
+}
+
+.social-media span:not(.icon) {
+  display: inline;
+  padding-left: 6px;
+}
+
+.social-media .icon {
+  height: 18px;
+  width: 18px;
+}
+
+@media only screen and (min-width: 1100px) {
+  .footer {
+    margin-left: 0;
+    margin-right: auto;
+    padding: 25px 0 18px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer-wrap {
+    max-width: 1200px;
+    margin-left: 250px;
   }
 }
 
