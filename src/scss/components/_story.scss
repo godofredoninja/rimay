@@ -6,9 +6,16 @@
   color: #333;
 
   @extend %primary-font;
+
+  &-time {
+    display: inline-block;
+    margin-right: .8em;
+    color: #777;
+  }
 }
 
-// Primary post Home
+// Primary story Home page Top Left large
+// ==========================================================================
 .primary-post {
   &:hover { opacity: .7; }
 
@@ -28,8 +35,8 @@
   }
 }
 
-// Mini Post Home
-
+// Featured Post Home page right
+// ==========================================================================
 .mini-post {
   margin-bottom: 1em;
   border-bottom: 1px solid #ddd;
@@ -51,12 +58,79 @@
   }
 }
 
+// Story Global
+// ==========================================================================
+.story {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1.425em;
+  padding-top: 1.425em;
+  border-top: 2px solid #f1f1f1;
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  transition: all .2s ease .1s;
+  opacity: 1;
+
+  &:hover {
+    opacity: .6;
+    cursor: pointer;
+  }
+
+  // header
+  &-header { flex-basis: 69% }
+
+  // body
+  &-body {
+    font-size: 14px;
+    font-size: .875rem;
+    flex-basis: 67.5%;
+    flex-shrink: 0;
+    display: block;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    line-height: 1.43;
+    color: #777;
+  }
+
+  // footer
+  &-footer {
+    flex-basis: 29%;
+    height: 180px;
+  }
+
+  // title
+  &-title {
+    font-size: 1.375rem;
+    cursor: pointer;
+    margin-top: 0;
+    margin-bottom: .25em;
+    font-weight: 800;
+    line-height: 1.09;
+    letter-spacing: -.7px;
+    color: #000;
+  }
+}
+
 @media #{$md-and-up} {
   .primary-post {
     &-title {
       font-size: 3rem;
       line-height: 1.1;
     }
+  }
+
+  // Story
+  .story {
+    &-header {
+      flex-basis: 28%;
+      min-width: 0;
+      flex-grow: 0;
+    }
+
+    &-body { flex-basis: 32% }
+    &-footer { flex-basis: 31% }
+    &-title { margin-bottom: 10px }
   }
 }
 
@@ -67,10 +141,13 @@
     line-height: 1.05;
     letter-spacing: -.5px;
   }
+
+  // story
+  .story-body { font-size: 20px }
+  .story-title { font-size: 26px }
 }
 
 @media #{$xl-and-up} {
-  .mini-post-title {
-    font-size: 1.875rem;
-  }
+  .mini-post-title { font-size: 1.875rem }
+  .story-title { font-size: 2.3rem }
 }

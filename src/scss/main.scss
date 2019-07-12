@@ -35,7 +35,7 @@
 @import 'layout/header';
 @import 'layout/navigation';
 // @import 'layout/main';
-// @import 'layout/sidebar';
+@import 'layout/sidebar';
 // @import 'layout/footer';
 
 // components
@@ -52,7 +52,7 @@
 // pages
 // --------------------------------------------------
 
-// @import 'pages/home';
+@import 'pages/home';
 // @import 'pages/index';
 // @import 'pages/tag';
 // @import 'pages/author';

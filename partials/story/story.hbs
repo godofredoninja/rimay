@@ -1,13 +1,13 @@
 <article class="story u-relative">
     {{!-- Story Header --}}
     <header class="story-header">
-        <h2 class="story-title"><a href="{{url}}">{{title}}</a></h2>
+        <h2 class="story-title"><a href="{{url}}" class="u-colorInherit">{{title}}</a></h2>
         <div class="u-meta">
             <div class="u-meta-byline">
                 {{!-- Datetime --}}
                 <time class="datetime u-meta-time " datetime="{{date format=" YYYY-MM-DD "}}">{{date published_at timeago="true"}}</time>
                 {{!-- Primary Tag --}}
-                {{#if primary_tag}}{{#primary_tag}}<span class="u-meta-tag"><a href="{{url}}" aria-label="{{name}}">{{name}}</a></span>{{/primary_tag}}{{/if}}
+                {{#if primary_tag}}{{#primary_tag}}<span class="u-meta-tag"><a href="{{url}}" class="u-colorHoverPrimary u-colorInherit u-relative u-textCapitalize zindex3" aria-label="{{name}}">{{name}}</a></span>{{/primary_tag}}{{/if}}
             </div>
         </div>
     </header>

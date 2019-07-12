@@ -1,95 +1,78 @@
 *,
 *::before,
-*::after
-{
-    box-sizing: border-box;
+*::after {
+  box-sizing: border-box;
 }
 
-html
-{
-    // font-size: $font-size-root;
-    font-size: 16px;
-
-    box-sizing: border-box;
-
-    text-rendering: optimizeLegibility;
+html {
+  // font-size: $font-size-root;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
 }
 
-body
-{
-    font-weight: 400;
-    // font-family: $primary-font;
-    // color: $primary-text-color;
-    // font-size: $font-size-base;
-    font-style: normal;
-    line-height: 1.4;
+body {
+  // font-weight: 400;
+  font-family: $secundary-font;
+  // color: $primary-text-color;
+  // font-size: $font-size-base;
+  // font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
 
-    overflow-x: hidden;
-
-    margin: 0 auto;
-
-    letter-spacing: 0;
-
-    @extend %primary-font;
+  overflow-x: hidden;
+  margin: 0 auto;
+  letter-spacing: 0;
 }
 
 li a,
-p a
-{
-    transition: color,border-color .2s linear;
+p a {
+  transition: color, border-color 0.2s linear;
 
-    color: $primary-color;
-    border-bottom: 1px solid transparent;
+  color: $primary-color;
+  border-bottom: 1px solid transparent;
 }
 a,
 li a,
-p a
-{
-    text-decoration: none;
+p a {
+  text-decoration: none;
 }
 
-svg
-{
-    fill: currentColor;
+svg {
+  fill: currentColor;
 
-    &:not(:root)
-    {
-        overflow: hidden;
-    }
+  &:not(:root) {
+    overflow: hidden;
+  }
 }
 
-img
-{
-    width: auto;
-    max-width: 100%;
-    height: auto;
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
 
-    vertical-align: middle;
+  vertical-align: middle;
 
-    &:not([src])
-    {
-        visibility: hidden;
-    }
+  &:not([src]) {
+    visibility: hidden;
+  }
 }
 
-figure
-{
-    margin: 0;
+figure {
+  margin: 0;
 }
 
-.icon
-{
-    display: inline-block;
+.icon {
+  display: inline-block;
 
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 
-    vertical-align: middle;
+  vertical-align: middle;
 
-    // svg { fill: #000 }
+  // svg { fill: #000 }
 }
 
-.icon--gray
-{
-    color: #ddd;
+.icon--gray {
+  color: #ddd;
 }
