@@ -1,0 +1,21 @@
+.load-more {
+  font-size: 28px;
+  color: $primary-color;
+  line-height: 1.09;
+  letter-spacing: -.7px;
+  font-family: $primary-font;
+  font-weight: 800;
+  text-align: center;
+  border: 0;
+  border-top: 2px solid #f1f1f1;
+  padding: 1em 0;
+  width: 100%;
+  transition: background-color .2s ease;
+  background-color: transparent;
+  display: block;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #f1f1f1;
+  }
+}

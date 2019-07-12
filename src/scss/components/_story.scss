@@ -56,6 +56,8 @@
 
     a { color: #000 }
   }
+
+  &:last-child { border-bottom: none }
 }
 
 // Story Global

@@ -893,6 +893,41 @@ h6 {
   }
 }
 
+.gradient-text--green {
+  background: #00d301;
+  background: linear-gradient(79deg, #00d301, #36c275 50%, #00a562);
+}
+
+.gradient-text {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.load-more {
+  font-size: 28px;
+  color: #00a562;
+  line-height: 1.09;
+  letter-spacing: -.7px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 800;
+  text-align: center;
+  border: 0;
+  border-top: 2px solid #f1f1f1;
+  padding: 1em 0;
+  width: 100%;
+  transition: background-color .2s ease;
+  background-color: transparent;
+  display: block;
+}
+
+.load-more:hover {
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+
 .u-meta {
   font-size: 1.125rem;
   font-weight: 700;
@@ -950,6 +985,10 @@ h6 {
 
 .mini-post-title a {
   color: #000;
+}
+
+.mini-post:last-child {
+  border-bottom: none;
 }
 
 .story {

@@ -1,0 +1,13 @@
+<div class="rimay-paway-right">
+    {{#foreach posts from="2" to="5"}}
+        <article class="mini-post">
+            <h3 class="mini-post-title"><a href="{{url}}">{{title}}</a></h3>
+            {{!-- Meta {primary tag} --}}
+            <div class="u-meta">
+                <div class="u-meta-byline">
+                    {{#if primary_tag}}{{#primary_tag}}<span class="u-meta-tag"><a class="u-colorHoverPrimary u-colorInherit u-relative zindex3" href="{{url}}" aria-label="{{name}}">{{name}}</a></span>{{/primary_tag}}{{/if}}
+                </div>
+            </div>
+        </article>
+    {{/foreach}}
+</div>
