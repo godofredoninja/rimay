@@ -1,0 +1,86 @@
+.article {
+  margin: 0 0 -20px;
+  padding: 0 5% 30px;
+  border-top: 2px solid #f1f1f1;
+  position: relative;
+
+  // title
+  &-title {
+    padding-top: 20px;
+
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+
+  // Meta
+  &-meta {
+    @extend %primary-font;
+
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+    color: #777;
+    font-weight: 600;
+  }
+
+  // Byline
+  &-byline {
+    a {
+      font-size: 13px;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #333;
+      line-height: 20px;
+    }
+  }
+
+  &-divider {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  // Image
+  &-image {
+    margin: auto;
+    display: block;
+    //
+    width: 125%;
+    max-width: 125%;
+    margin-left: -12.5%;
+  }
+}
+
+// Article Inner
+// ==========================================================================
+.article-inner {
+  font-weight: 400;
+  color: #333;
+  letter-spacing: -.1px;
+  margin: 20px 0;
+  font-size: 21px;
+  line-height: 1.6;
+
+  & > * { margin: 15px 0; }
+
+  a {
+    border-bottom: 1px solid #f1f1f1;
+    &:hover { border-bottom-color: $primary-color }
+  }
+
+
+}
+
+
+@media #{$md-and-up} {
+  .article {
+    padding: 0 10% 30px;
+
+    &-title {
+      font-size: 3rem;
+      margin-right: 0;
+    }
+  }
+}

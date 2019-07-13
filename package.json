@@ -98,12 +98,14 @@
     "gulp-sourcemaps": "2.6.5",
     "gulp-uglify": "3.0.2",
     "gulp-zip": "5.0.0",
+    "merge-stream": "^2.0.0",
     "standard": "12.0.1",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
     "lazysizes": "^5.1.0",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "prismjs": "^1.16.0"
   }
 }

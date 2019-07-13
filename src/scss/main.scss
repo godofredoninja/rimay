@@ -4,17 +4,18 @@
 
 @charset 'UTF-8';
 
+// lib
+// --------------------------------------------------
+
+@import 'node_modules/normalize.css/normalize';
+// @import '~/prismjs/themes/prism-okaidia';
+
 // abstracts
 // --------------------------------------------------
 
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 @import 'abstracts/placeholders';
-
-// lib
-// --------------------------------------------------
-
-@import 'node_modules/normalize.css/normalize';
 
 // base
 // --------------------------------------------------
@@ -48,6 +49,7 @@
 // @import 'components/koenig';
 @import 'components/story';
 // @import 'components/tag-card';
+@import 'components/code';
 
 // pages
 // --------------------------------------------------
@@ -57,7 +59,7 @@
 // @import 'pages/tag';
 // @import 'pages/author';
 // @import 'pages/page';
-// @import 'pages/post';
+@import 'pages/post';
 // @import 'pages/amp';
 // @import 'pages/subscribe';
 // @import 'pages/private';

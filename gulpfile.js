@@ -14,6 +14,8 @@ const browserify = require('browserify')
 // const babelify = require('babelify');
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
+//
+const merge = require('merge-stream')
 // end mi settingd
 
 const { name, version, homepage, author, license } = require('./package')
@@ -52,24 +54,45 @@ const style = () => {
 }
 
 const script = () => {
-  const browserifyBundle = browserify({
-    entries: ['./src/js/main.js'],
-    debug: true
-  })
+  const files = [ 'main', 'prismjs', 'search' ]
 
-  return browserifyBundle
-    .transform('babelify', { presets: [ '@babel/env' ] })
-    .bundle()
-    .pipe(source('main.js'))
-    .pipe($.plumber())
-    .pipe(buffer())
-    .pipe($.if(!isProduction, $.sourcemaps.init()))
-    .pipe($.if(isProduction, $.uglify()))
-    .pipe($.if(isProduction, $.header(comments)))
-    .pipe($.if(!isProduction, $.sourcemaps.write('./map')))
-    .pipe(gulp.dest('assets/scripts'))
-    .pipe($.livereload())
+  return merge(files.map(function (file) {
+    return browserify({
+      entries: `./src/js/${file}.js`,
+      debug: true
+    }).transform('babelify', { presets: [ '@babel/env' ] })
+      .bundle()
+      .pipe(source(`${file}.js`))
+      .pipe($.plumber())
+      .pipe(buffer())
+      .pipe($.if(!isProduction, $.sourcemaps.init()))
+      .pipe($.if(isProduction, $.uglify()))
+      .pipe($.if(isProduction, $.header(comments)))
+      .pipe($.if(!isProduction, $.sourcemaps.write('./map')))
+      .pipe(gulp.dest('assets/scripts'))
+      .pipe($.livereload())
+  }))
 }
+
+// const script = () => {
+//   const browserifyBundle = browserify({
+//     entries: ['./src/js/main.js'],
+//     debug: true
+//   })
+
+//   return browserifyBundle
+//     .transform('babelify', { presets: [ '@babel/env' ] })
+//     .bundle()
+//     .pipe(source('main.js'))
+//     .pipe($.plumber())
+//     .pipe(buffer())
+//     .pipe($.if(!isProduction, $.sourcemaps.init()))
+//     .pipe($.if(isProduction, $.uglify()))
+//     .pipe($.if(isProduction, $.header(comments)))
+//     .pipe($.if(!isProduction, $.sourcemaps.write('./map')))
+//     .pipe(gulp.dest('assets/scripts'))
+//     .pipe($.livereload())
+// }
 
 // const script = () => {
 //   return gulp.src('src/js/*.js')
