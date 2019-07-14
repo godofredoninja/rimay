@@ -1,124 +1,132 @@
 *,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-html {
-  // font-size: $font-size-root;
-  font-size: 16px;
-  box-sizing: border-box;
-  text-rendering: optimizeLegibility;
-}
+  html {
+    // font-size: $font-size-root;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+  }
 
-body {
-  // font-weight: 400;
-  font-family: $secundary-font;
-  // color: $primary-text-color;
-  // font-size: $font-size-base;
-  // font-style: normal;
-  font-size: 1rem;
-  line-height: 1.5;
+  body {
+    // font-weight: 400;
+    font-family: $secundary-font;
+    // color: $primary-text-color;
+    // font-size: $font-size-base;
+    // font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5;
 
-  overflow-x: hidden;
-  margin: 0 auto;
-  letter-spacing: 0;
-}
+    overflow-x: hidden;
+    margin: 0 auto;
+    letter-spacing: 0;
+  }
 
-li a, figcaption a, p a {
-  transition: color, border-color 0.2s linear;
+  li a, figcaption a, p a {
+    transition: color, border-color 0.2s linear;
 
-  color: $primary-color;
-  border-bottom: 1px solid transparent;
-}
+    color: $primary-color;
+    border-bottom: 1px solid transparent;
+  }
 
-a,
-li a,
-p a {
-  text-decoration: none;
-}
+  a,
+  li a,
+  p a {
+    text-decoration: none;
+  }
 
-ul, ol { margin: 0 }
+  ul, ol { margin: 0 }
 
-svg {
-  fill: currentColor;
+  svg {
+    fill: currentColor;
 
-  &:not(:root) {
+    &:not(:root) {
+      overflow: hidden;
+    }
+  }
+
+  img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+
+    vertical-align: middle;
+
+    &:not([src]) {
+      visibility: hidden;
+    }
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  figcaption {
+    margin-top: 10px;
+    font-size: .8em;
+    font-style: italic;
+  }
+
+  // Buttons
+  button, input, select, textarea {
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  // text
+  .text--green { color: $primary-color }
+
+  // icon
+  .icon {
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+
+    vertical-align: middle;
+
+    // svg { fill: #000 }
+  }
+
+  .icon--gray { color: #ddd }
+  .icon--black { color: #000 }
+
+  // Video Responsive
+  // ==========================================================================
+  .video-responsive {
+    display: block;
+    height: 0;
     overflow: hidden;
-  }
-}
-
-img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-
-  vertical-align: middle;
-
-  &:not([src]) {
-    visibility: hidden;
-  }
-}
-
-figure {
-  margin: 0;
-}
-
-figcaption {
-  margin-top: 10px;
-  font-size: .8em;
-  font-style: italic;
-}
-
-// text
-.text--green { color: $primary-color }
-
-// icon
-.icon {
-  display: inline-block;
-
-  width: 20px;
-  height: 20px;
-
-  vertical-align: middle;
-
-  // svg { fill: #000 }
-}
-
-.icon--gray { color: #ddd }
-.icon--black { color: #000 }
-
-// Video Responsive
-// ==========================================================================
-.video-responsive {
-  display: block;
-  height: 0;
-  overflow: hidden;
-  padding: 0 0 56.25%;
-  position: relative;
-  width: 100%;
-
-  iframe {
-    border: 0;
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
+    padding: 0 0 56.25%;
+    position: relative;
     width: 100%;
+
+    iframe {
+      border: 0;
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    video {
+      border: 0;
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   }
 
-  video {
-    border: 0;
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-}
-
-// zindex for image zoom
-.medium-zoom-overlay { z-index: 50 }
-.medium-zoom-image--opened { z-index: 51 }
+  // zindex for image zoom
+  .medium-zoom-overlay { z-index: 50 }
+  .medium-zoom-image--opened { z-index: 51 }

@@ -437,6 +437,13 @@ figcaption {
   font-style: italic;
 }
 
+button, input, select, textarea {
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 .text--green {
   color: #00a562;
 }
@@ -1060,6 +1067,56 @@ h6 {
   -webkit-text-fill-color: transparent;
 }
 
+.button {
+  font-size: 18px;
+  display: inline-block;
+  padding: 17px 30px;
+  border: 0;
+  border-radius: 0;
+  margin: 10px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 3px;
+  height: 8px;
+  width: 80%;
+  left: 10%;
+  filter: blur(10px);
+  transition: opacity .2s ease-in-out;
+  opacity: 0;
+}
+
+.button:hover::after {
+  opacity: 1;
+}
+
+.button--secondary {
+  border: 2px solid transparent;
+}
+
+.button--secondary.button--green {
+  border-color: #00a562;
+  color: #00a562;
+}
+
+.button--secondary.button--green:hover::after {
+  background-color: #00a562;
+}
+
+.button:hover:not([disabled]).button--green {
+  background-color: #00a562;
+  color: #fff;
+}
+
 .load-more {
   font-size: 28px;
   color: #00a562;
@@ -1530,6 +1587,12 @@ a > code[class*="language-"] {
 
 .kg-embed-card {
   max-width: 100%;
+}
+
+.newsletter {
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 2px solid #ddd;
 }
 
 @media only screen and (min-width: 700px) {

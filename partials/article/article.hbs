@@ -14,24 +14,24 @@
     {{!-- Article Body --}}
     <div class="article-body">
         {{#if feature_image}}
-            <figure class="article-image u-block u-marginAuto u-textAlignCenter">
-                <img class="u-block u-marginAuto rimay-zoom"
-                    srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
-                    sizes="(max-width: 400px) 300px,(max-width: 730px) 600px, (max-width: 1600px) 100vw"
-                    src="{{img_url feature_image size="xl"}}"
-                    alt="{{title}}"
-                />
-            </figure>
+        <figure class="article-image u-block u-marginAuto u-textAlignCenter">
+            <img class="u-block u-marginAuto rimay-zoom"
+                 srcset="{{img_url feature_image size="s"}} 300w,
+                 {{img_url feature_image size="m"}} 600w,
+                 {{img_url feature_image size="l"}} 1000w,
+                 {{img_url feature_image size="xl"}} 2000w"
+                                         sizes="(max-width: 400px) 300px,(max-width: 730px) 600px, (max-width: 1600px) 100vw"
+                                         src="{{img_url feature_image size="xl"}}"
+                                                                      alt="{{title}}"
+                                                                      />
+        </figure>
         {{/if}}
 
         {{!-- Article Inner --}}
         <div class="article-inner">{{content}}</div>
 
         {{!-- Article Comments --}}
-        <div class="block--comment"> <button class="button button-green button-secondary">{{t "View Comments"}} (2)</button> </div>
+        <div class="block--comment u-marginTop30 u-marginBottom20 u-textAlignCenter"> <button class="button button--green button--secondary">{{t "View Comments"}} (2)</button> </div>
     </div>
 
     {{!-- Newsletter - partials/widget/newsletter.hbs --}}

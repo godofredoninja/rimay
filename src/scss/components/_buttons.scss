@@ -1,3 +1,4 @@
+// Gradient text
 .gradient-text--green {
   background: #00d301;
   background: linear-gradient(79deg,#00d301,#36c275 50%,#00a562);
@@ -11,3 +12,50 @@
   -webkit-text-fill-color: transparent;
 }
 
+// Buttons
+.button {
+  font-size: 18px;
+  display: inline-block;
+  padding: 17px 30px;
+  border: 0;
+  border-radius: 0;
+  margin: 10px;
+  font-family: $primary-font;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: 3px;
+    height: 8px;
+    width: 80%;
+    left: 10%;
+    filter: blur(10px);
+    transition: opacity .2s ease-in-out;
+    opacity: 0;
+  }
+
+  &:hover::after { opacity: 1 }
+}
+
+.button--secondary {
+  border: 2px solid transparent;
+}
+
+.button--secondary.button--green {
+  border-color: #00a562;
+  color: #00a562;
+
+  &:hover::after { background-color: $primary-color }
+}
+
+
+.button:hover:not([disabled]).button--green {
+  background-color: $primary-color;
+  color: #fff;
+}
