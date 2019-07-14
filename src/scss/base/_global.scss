@@ -25,18 +25,20 @@ body {
   letter-spacing: 0;
 }
 
-li a,
-p a {
+li a, figcaption a, p a {
   transition: color, border-color 0.2s linear;
 
   color: $primary-color;
   border-bottom: 1px solid transparent;
 }
+
 a,
 li a,
 p a {
   text-decoration: none;
 }
+
+ul, ol { margin: 0 }
 
 svg {
   fill: currentColor;
@@ -62,6 +64,12 @@ figure {
   margin: 0;
 }
 
+figcaption {
+  margin-top: 10px;
+  font-size: .8em;
+  font-style: italic;
+}
+
 // text
 .text--green { color: $primary-color }
 
@@ -80,4 +88,37 @@ figure {
 .icon--gray { color: #ddd }
 .icon--black { color: #000 }
 
+// Video Responsive
+// ==========================================================================
+.video-responsive {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  padding: 0 0 56.25%;
+  position: relative;
+  width: 100%;
 
+  iframe {
+    border: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  video {
+    border: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+// zindex for image zoom
+.medium-zoom-overlay { z-index: 50 }
+.medium-zoom-image--opened { z-index: 51 }
