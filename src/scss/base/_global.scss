@@ -1,42 +1,42 @@
 *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  html {
-    // font-size: $font-size-root;
-    font-size: 16px;
-    box-sizing: border-box;
-    text-rendering: optimizeLegibility;
-  }
+html {
+  // font-size: $font-size-root;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
 
-  body {
-    // font-weight: 400;
-    font-family: $secundary-font;
-    // color: $primary-text-color;
-    // font-size: $font-size-base;
-    // font-style: normal;
-    font-size: 1rem;
-    line-height: 1.5;
+body {
+  // font-weight: 400;
+  font-family: $secundary-font;
+  // color: $primary-text-color;
+  // font-size: $font-size-base;
+  // font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
 
-    overflow-x: hidden;
-    margin: 0 auto;
-    letter-spacing: 0;
-  }
+  overflow-x: hidden;
+  margin: 0 auto;
+  letter-spacing: 0;
+}
 
-  li a, figcaption a, p a {
-    transition: color, border-color 0.2s linear;
+li a, figcaption a, p a {
+  transition: color, border-color 0.2s linear;
 
-    color: $primary-color;
-    border-bottom: 1px solid transparent;
-  }
+  color: $primary-color;
+  border-bottom: 1px solid transparent;
+}
 
-  a,
-  li a,
-  p a {
-    text-decoration: none;
-  }
+a,
+li a,
+p a {
+  text-decoration: none;
+}
 
 li a:focus,
 li a:hover,
@@ -45,62 +45,95 @@ p a:hover {
   border-bottom-color: #00a562;
 }
 
-  ul, ol { margin: 0 }
+ul, ol { margin: 0 }
 
-  svg {
-    fill: currentColor;
+svg {
+  fill: currentColor;
 
-    &:not(:root) {
-      overflow: hidden;
-    }
+  &:not(:root) {
+    overflow: hidden;
   }
+}
 
-  img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
 
-    vertical-align: middle;
+  vertical-align: middle;
 
-    &:not([src]) {
-      visibility: hidden;
-    }
+  &:not([src]) {
+    visibility: hidden;
   }
+}
 
-  figure {
-    margin: 0;
-  }
+figure {
+  margin: 0;
+}
 
-  figcaption {
-    margin-top: 10px;
-    font-size: .8em;
-    font-style: italic;
-  }
+figcaption {
+  margin-top: 10px;
+  font-size: .8em;
+  font-style: italic;
+}
 
-  button, input { overflow: visible }
+button, input { overflow: visible }
 
-  // Buttons
-  button, input, select, textarea {
-    background-color: transparent;
-    color: inherit;
-    font-size: inherit;
-    line-height: inherit;
-  }
+// Buttons
+button, input, select, textarea {
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
 
-  // text
-  .text--green { color: $primary-color }
+blockquote {
+  border-left: 5px solid $primary-color;
+  color: #000;
+  font-size: 1.375rem;
+  // font-weight: 700;
+  line-height: 1.5;
+  margin: 2.5rem 0 0.9375rem 0 !important;
+  padding-bottom: 2px;
+  padding-left: 20px;
+  font-family: Georgia, serif;
+  p:first-of-type { margin-top: 0 }
+  // a { background-position: 0 1.07em !important } //stylelint-disable-line
+}
 
-  // icon
-  .icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
+// hr
+// ==========================================================================
+hr {
+  margin: 40px auto 10px !important;
+  height: 1px;
+  background-color: #ddd;
+  border: 0;
+  max-width: 100%;
+}
 
-    &--gray { color: #ddd }
-    &--black { color: #000 }
-    &--white { color: #fff }
-  }
+// text
+.text--green { color: $primary-color }
+
+// icon
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+
+  &--gray { color: #ddd }
+  &--black { color: #000 }
+  &--white { color: #fff }
+}
+
+// Rimay Class
+// ==========================================================================
+.rimay--title {
+  font-size: 7rem;
+  margin: 15px 0;
+  letter-spacing: -.6px;
+  font-weight: 900;
+}
 
 
   // Video Responsive

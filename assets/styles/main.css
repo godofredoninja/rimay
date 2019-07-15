@@ -456,6 +456,29 @@ button, input, select, textarea {
   line-height: inherit;
 }
 
+blockquote {
+  border-left: 5px solid #00a562;
+  color: #000;
+  font-size: 1.375rem;
+  line-height: 1.5;
+  margin: 2.5rem 0 0.9375rem 0 !important;
+  padding-bottom: 2px;
+  padding-left: 20px;
+  font-family: Georgia, serif;
+}
+
+blockquote p:first-of-type {
+  margin-top: 0;
+}
+
+hr {
+  margin: 40px auto 10px !important;
+  height: 1px;
+  background-color: #ddd;
+  border: 0;
+  max-width: 100%;
+}
+
 .text--green {
   color: #00a562;
 }
@@ -477,6 +500,13 @@ button, input, select, textarea {
 
 .icon--white {
   color: #fff;
+}
+
+.rimay--title {
+  font-size: 7rem;
+  margin: 15px 0;
+  letter-spacing: -.6px;
+  font-weight: 900;
 }
 
 .video-responsive {
@@ -1548,6 +1578,7 @@ a > code[class*="language-"] {
 
 .article-inner a {
   border-bottom: 1px solid #f1f1f1;
+  color: #00a562;
 }
 
 .article-inner a:hover {
@@ -1555,7 +1586,7 @@ a > code[class*="language-"] {
 }
 
 .article-inner h1 + p, .article-inner h2 + p, .article-inner h3 + p, .article-inner h4 + p, .article-inner h5 + p, .article-inner h6 + p {
-  margin-top: 0.8rem;
+  margin-top: 0.625rem;
 }
 
 .article-inner ul,
