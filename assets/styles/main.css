@@ -404,6 +404,13 @@ p a {
   text-decoration: none;
 }
 
+li a:focus,
+li a:hover,
+p a:focus,
+p a:hover {
+  border-bottom-color: #00a562;
+}
+
 ul, ol {
   margin: 0;
 }
@@ -1471,6 +1478,18 @@ a > code[class*="language-"] {
   position: relative;
 }
 
+.article::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 105vw;
+  left: -10%;
+  height: 500px;
+  max-height: 70vh;
+  bottom: 0;
+  background-image: linear-gradient(0deg, #f0f0f0, #fff);
+}
+
 .article-title {
   padding-top: 20px;
   font-size: 2rem;
@@ -1656,6 +1675,20 @@ a > code[class*="language-"] {
   white-space: nowrap;
 }
 
+.article-tags-wrap {
+  font-size: 1rem;
+  width: 300px;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+.article-tags .menu-item {
+  width: 50%;
+  margin: .3em 0;
+  position: relative;
+  float: left;
+}
+
 @media only screen and (min-width: 700px) {
   .article {
     padding: 0 10% 30px;
@@ -1666,6 +1699,20 @@ a > code[class*="language-"] {
   }
   .article-footer {
     border-bottom: 1px solid #ddd;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .article::before {
+    left: -210px;
+    width: 100vw;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .article::before {
+    left: -250px;
+    width: 100vw;
   }
 }
 

@@ -38,6 +38,13 @@
     text-decoration: none;
   }
 
+li a:focus,
+li a:hover,
+p a:focus,
+p a:hover {
+  border-bottom-color: #00a562;
+}
+
   ul, ol { margin: 0 }
 
   svg {
