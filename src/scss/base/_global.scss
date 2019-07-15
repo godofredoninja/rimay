@@ -70,6 +70,8 @@
     font-style: italic;
   }
 
+  button, input { overflow: visible }
+
   // Buttons
   button, input, select, textarea {
     background-color: transparent;
@@ -84,17 +86,15 @@
   // icon
   .icon {
     display: inline-block;
-
     width: 20px;
     height: 20px;
-
     vertical-align: middle;
 
-    // svg { fill: #000 }
+    &--gray { color: #ddd }
+    &--black { color: #000 }
+    &--white { color: #fff }
   }
 
-  .icon--gray { color: #ddd }
-  .icon--black { color: #000 }
 
   // Video Responsive
   // ==========================================================================

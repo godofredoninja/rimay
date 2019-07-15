@@ -1,25 +1,29 @@
-<footer class="article-footer">
-       <div class="social-share">
+<footer class="article-footer u-marginBottom30 u-flex">
+       <div class="social-share u-flex u-relative">
             <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
                 aria-label="{{t "Share on Facebook"}}"
                 onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
-                {{> "icons/facebook"}}
+                <span class="icon icon--facebook icon--white">{{> "icons/facebook"}}</span>
             </a>
             <a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
                 aria-label="{{t "Share on Twitter"}}"
                 onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-                {{> "icons/twitter"}}
+                <span class="icon icon--twiiter icon--white">{{> "icons/twitter"}}</span>
             </a>
             <a href="https://www.reddit.com/submit?url={{url absolute="true"}}&amp;title={{encode title}}"
                 aria-label="{{t "Share on Reddit"}}"
                 onclick="window.open(this.href, 'share-reddit', 'width=600,height=480');return false;">
+                <span class="icon icon--reddit icon--white">{{> "icons/reddit"}}</span>
             </a>
             <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}"
                 aria-label="{{t "Share on Linkedin"}}"
                 onclick="window.open(this.href, 'share-linkeding', 'width=600,height=480');return false;">
-                {{> "icons/linkedin"}}
+                <span class="icon icon--linkeding icon--white">{{> "icons/linkedin"}}</span>
             </a>
        </div>
 
-       <div class="shortlink"></div>
+       <div class="shortlink u-flex u-relative">
+           <input class="shortlink-input" readonly="" title="{{t "Article Shortlink"}}" type="text" value="{{url absolute="true"}}">
+           <span class="shortlink-indicator">{{t "copy"}}</span>
+       </div>
 </footer>
