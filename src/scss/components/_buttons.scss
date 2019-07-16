@@ -14,18 +14,19 @@
 
 // Buttons
 .button {
-  font-size: 18px;
-  display: inline-block;
-  padding: 17px 30px;
-  border: 0;
   border-radius: 0;
-  margin: 10px;
-  font-family: $primary-font;
-  font-weight: 600;
-  position: relative;
-  text-decoration: none;
+  border: 0;
   cursor: pointer;
+  display: inline-block;
+  font-family: $primary-font;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px;
   outline: 0;
+  padding: 17px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
 
   &::after {
     content: "";
@@ -58,4 +59,14 @@
 .button:hover:not([disabled]).button--green {
   background-color: $primary-color;
   color: #fff;
+}
+
+.button--primary.button--black,
+.button:hover:not([disabled]).button--black {
+  background-color: #000;
+  color: #fff;
+}
+
+.button.button--black:hover::after {
+  background-color: #000;
 }
