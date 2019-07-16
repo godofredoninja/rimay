@@ -8,7 +8,12 @@
                 <span class="article-divider text--green">/</span>
                 <time class="datetime u-meta-time" datetime="{{date format=" YYYY-MM-DD "}}">{{date published_at timeago="true"}}</time>
             </div>
-            <div class="article-comments">Comments</div>
+            {{!-- Comments --}}
+            <div class="article-meta--right">
+                <div class="js-comments-open u-pointer">
+                    <span class="icon icon--md icon--comment u-primaryColor">{{> "icons/comment"}}</span> Comments
+                </div>
+            </div>
         </div>
     </header>
     {{!-- Article Body --}}

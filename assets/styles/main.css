@@ -490,6 +490,11 @@ hr {
   vertical-align: middle;
 }
 
+.icon--md {
+  height: 24px;
+  width: 24px;
+}
+
 .icon--gray {
   color: #ddd;
 }
@@ -509,6 +514,10 @@ hr {
   font-weight: 900;
 }
 
+.instagram {
+  margin-top: 80px;
+}
+
 .instagram-wrap {
   display: flex;
   flex-direction: row;
@@ -523,7 +532,7 @@ hr {
 
 .instagram-col {
   flex: 0 0 auto;
-  flex-basis: 50%;
+  flex-basis: 16.66667%;
 }
 
 .instagram-hover {
@@ -533,7 +542,7 @@ hr {
 }
 
 .instagram-img {
-  height: 150px;
+  height: 264px;
 }
 
 .instagram-img:hover > .instagram-hover {
@@ -598,6 +607,7 @@ hr {
   color: inherit;
 }
 
+.u-primaryColor,
 .u-colorHoverPrimary:hover {
   color: #00a562;
 }

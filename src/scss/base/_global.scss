@@ -121,6 +121,11 @@ hr {
   height: 20px;
   vertical-align: middle;
 
+  &--md {
+    height: 24px;
+    width: 24px;
+  }
+
   &--gray { color: #ddd }
   &--black { color: #000 }
   &--white { color: #fff }
@@ -138,6 +143,8 @@ hr {
 // Instagram
 // ==========================================================================
 .instagram {
+  margin-top: 80px;
+
   &-wrap {
     display: flex;
     flex-direction: row;
@@ -152,8 +159,8 @@ hr {
 
   &-col {
     flex: 0 0 auto;
-    // flex-basis: 16.66667%
-    flex-basis: 50%;
+    flex-basis: 16.66667%
+    // flex-basis: 50%;
   }
 
   &-hover {
@@ -164,8 +171,8 @@ hr {
   }
 
   &-img {
-    // height: 264px;
-    height: 150px;
+    height: 264px;
+    // height: 150px;
 
     &:hover > .instagram-hover { opacity: 1 }
   }
