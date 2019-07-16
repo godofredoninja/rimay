@@ -105,6 +105,7 @@
   },
   "dependencies": {
     "lazysizes": "^5.1.0",
+    "medium-zoom": "^1.0.4",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.16.0"
   }

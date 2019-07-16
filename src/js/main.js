@@ -2,6 +2,7 @@
 
 // import external dependencies
 import 'lazysizes'
+import mediumZoom from 'medium-zoom'
 
 // Impost
 import { loadScript } from './app/app.load-style-script'
@@ -46,16 +47,20 @@ const setup = () => {
     qsa('.article-inner img').forEach(el => !el.closest('a') && el.classList.add('rimay-zoom'))
 
     // medium-zoom
-    const rimayZoom = qsa('.rimay-zoom')
-    if (rimayZoom.length) {
-      loadScript('https://unpkg.com/medium-zoom@1.0.4/dist/medium-zoom.min.js', () => {
-        // https://github.com/francoischalifour/medium-zoom#api
-        window.mediumZoom('.rimay-zoom', {
-          margin: 20,
-          background: 'hsla(0,0%,100%,.85)'
-        })
-      })
-    }
+    mediumZoom('.rimay-zoom', {
+      margin: 20,
+      background: 'hsla(0,0%,100%,.85)'
+    })
+    // const rimayZoom = qsa('.rimay-zoom')
+    // if (rimayZoom.length) {
+    //   loadScript('https://unpkg.com/medium-zoom@1.0.4/dist/medium-zoom.min.js', () => {
+    //     // https://github.com/francoischalifour/medium-zoom#api
+    //     window.mediumZoom('.rimay-zoom', {
+    //       margin: 20,
+    //       background: 'hsla(0,0%,100%,.85)'
+    //     })
+    //   })
+    // }
 
     // Video Responsive
     // -----------------------------------------------------------------------------
