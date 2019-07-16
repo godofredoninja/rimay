@@ -11,7 +11,7 @@ const gulpLoadPlugins = require('gulp-load-plugins')
 
 // Cosas por mi
 const browserify = require('browserify')
-// const babelify = require('babelify');
+const babelify = require('babelify');
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
 //
@@ -60,7 +60,10 @@ const script = () => {
     return browserify({
       entries: `./src/js/${file}.js`,
       debug: true
-    }).transform('babelify', { presets: [ '@babel/env' ] })
+    }).transform('babelify', {
+      presets: [ '@babel/env' ],
+      'plugins': ['@babel/plugin-transform-runtime']
+    })
       .bundle()
       .pipe(source(`${file}.js`))
       .pipe($.plumber())

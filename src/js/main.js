@@ -4,7 +4,8 @@
 import 'lazysizes'
 import mediumZoom from 'medium-zoom'
 
-// Impost
+// Impost App
+import instagram from './app/app.instagram'
 import { loadScript } from './app/app.load-style-script'
 
 //
@@ -73,6 +74,21 @@ const setup = () => {
         el.parentNode.insertBefore(parentForVideo, el)
         parentForVideo.appendChild(el)
       })
+    }
+
+    // Video Responsive
+    // -----------------------------------------------------------------------------
+    const instagramFeed = {
+      token: '1397790551.1aa422d.37dca7d33ba34544941e111aa03e85c7',
+      userId: '1397790551',
+      userName: 'GodoFredoNinja'
+    }
+
+    const url = `https://api.instagram.com/v1/users/${instagramFeed.userId}/media/recent/?access_token=${instagramFeed.token}&count=10&callback=?`
+    const user = `<a href="https://www.instagram.com/${instagramFeed.userName}" class="instagram-btn" target="_blank" rel="noopener noreferrer">@${instagramFeed.userName}</a>`
+
+    if (window.innerWidth > 768) {
+      instagram(url, user)
     }
   }
 }

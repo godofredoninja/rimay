@@ -135,38 +135,90 @@ hr {
   font-weight: 900;
 }
 
-
-  // Video Responsive
-  // ==========================================================================
-  .video-responsive {
-    display: block;
-    height: 0;
-    overflow: hidden;
-    padding: 0 0 56.25%;
-    position: relative;
-    width: 100%;
-
-    iframe {
-      border: 0;
-      bottom: 0;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-
-    video {
-      border: 0;
-      bottom: 0;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
+// Instagram
+// ==========================================================================
+.instagram {
+  &-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
   }
 
-  // zindex for image zoom
-  .medium-zoom-overlay { z-index: 50 }
-  .medium-zoom-image--opened { z-index: 51 }
+  .icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  &-col {
+    flex: 0 0 auto;
+    // flex-basis: 16.66667%
+    flex-basis: 50%;
+  }
+
+  &-hover {
+    background-color: rgba(0, 0, 0, .3);
+    // transition: opacity 1s ease-in-out;
+    opacity: 0;
+    color: #fff;
+  }
+
+  &-img {
+    // height: 264px;
+    height: 150px;
+
+    &:hover > .instagram-hover { opacity: 1 }
+  }
+
+  &-name {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  &-btn {
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    min-width: 200px;
+    padding: 8px 10px;
+    text-align: center;
+  }
+}
+
+// Video Responsive
+// ==========================================================================
+.video-responsive {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  padding: 0 0 56.25%;
+  position: relative;
+  width: 100%;
+
+  iframe {
+    border: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  video {
+    border: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+// zindex for image zoom
+.medium-zoom-overlay { z-index: 50 }
+.medium-zoom-image--opened { z-index: 51 }
