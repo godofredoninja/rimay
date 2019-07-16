@@ -1,34 +1,46 @@
 <header class="header">
-    <div class="desktop-nav u-flexColumnTop">
-        <div class="desktop-nav__header">
+    <div class="nav u-flexColumnTop">
+        <div class="nav-header u-flexCenter">
             {{!-- logo --}}
-            <div class="logo u-fontWeightBold">
-                <a href="/">
+            <div class="logo u-relative">
+                <a href="/" class="u-block">
                     {{#if @site.logo}}
                         <img src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}"/>
                     {{else}}
-                        <span class="u-lineHeight1 u-fontSizeLarger">{{@site.title}}</span>
+                        <span class="u-lineHeight1 u-fontWeightBold u-fontSizeLarger">{{@site.title}}</span>
                     {{/if}}
                 </a>
             </div>
+
+            <div class="nav-header--right u-flexCenter u-hide-after-md">
+                {{!-- Open Search in Mobile --}}
+                <div class="js-open-search nav-menu-search u-pointer"><span class="icon icon--search icon--green">{{> "icons/search"}}</span></div>
+                {{!-- Open Menu in Mobile --}}
+                <div class="js-toggle-menu nav-menu-toggle u-pointer"><span></span><span></span><span></span></div>
+            </div>
         </div>
 
-        <div class="desktop-nav__body">
-            {{!-- menu --}}
-            {{navigation}}
-
-            {{!-- Search --}}
-            <div class="search-field u-marginBottom20">
-                <div class="js-open-search u-pointer">
-                    Search
-                    <span class="icon icon--search icon--gray"> {{> "icons/search"}} </span>
+        <div class="nav-body">
+            <div class="nav-body-wrap">
+                <div class="nav-social-media u-hide-after-md">
+                    {{!-- Widget Social Media - partials/widget/social-media.hbs --}}
+                    {{> "widget/social-media"}}
                 </div>
 
+                {{!-- menu --}}
+                {{navigation}}
+
+                {{!-- Open Seaarch --}}
+                <div class="search-field u-marginBottom20 u-hide-before-md">
+                    <div class="js-open-search u-pointer">
+                        <span>Search</span>
+                        <span class="icon icon--search icon--gray"> {{> "icons/search"}} </span>
+                    </div>
+                </div>
+
+                {{!-- Topics --}}
+                {{> "widget/header-topics"}}
             </div>
-
-            {{!-- Topics --}}
-            {{> "widget/header-topics"}}
-
         </div>
     </div>
 </header>

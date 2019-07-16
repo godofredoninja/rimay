@@ -1,12 +1,8 @@
 <footer class="footer">
     <div class="footer-wrap">
-        <div class="social-media">
-            {{#if @site.facebook}}<a title="Facebook {{@site.facebook}}" href="{{facebook_url}}" target="_blank" rel="noopener noreferrer"><span class="icon icon--facebook icon--black">{{> "icons/facebook"}}</span> <span>Facebook</span></a>{{/if}}
-            {{#if @site.twitter}}<a title="Twitter {{@site.twitter}}" href="{{twitter_url}}" target="_blank" rel="noopener noreferrer"><span class="icon icon--twitter icon--black">{{> "icons/twitter"}}</span> <span>Twitter</a></span>{{/if}}
-            <a title="Instagram" href="https://instagram.com/godofredoninja" target="_blank" rel="noopener noreferrer"><span class="icon icon--youtube icon--black">{{> "icons/instagram"}}</span> <span>Instagram</span></a>
-            <a title="YouTube" href="https://instagram.com/godofredoninja" target="_blank" rel="noopener noreferrer"><span class="icon icon--youtube icon--black">{{> "icons/youtube"}}</span> <span>YouTube</span></a>
-            <a title="GitHub" href="https://instagram.com/godofredoninja" target="_blank" rel="noopener noreferrer"><span class="icon icon--github icon--black">{{> "icons/github"}}</span> <span>GitHub</span></a>
-        </div>
+        {{!-- Widget Social Media - partials/widget/social-media.hbs --}}
+        {{> "widget/social-media"}}
+
         {{!-- copy --}}
         <p class="footer-copy">
             &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a>

@@ -2,91 +2,140 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
-.header {
-  display: block;
-}
-
-.desktop-nav {
-  // height: calc(100% - 40px);
-  position: fixed;
-  z-index: 30;
-  top: 0;
-  right: 0;
-  bottom: 0;
-
+.nav {
+  background-color: #fff;
+  // overflow-y: auto;
   overflow: hidden;
-  overflow-y: auto;
-  // letter-spacing: -.02em;
-
-  width: 290px;
-  padding: 50px 20px 0;
-
+  padding: 0 20px;
   word-wrap: break-word;
-  hyphens: auto;
-  // justify-content: space-between;
-
-  background: #fff;
+  z-index: 30;
 
   a {
     text-decoration: none;
-
     color: inherit;
   }
+}
 
-  .logo {
-    font-size: 1.5rem;
-    line-height: 1;
+// Header nav
+.nav-header {
+  background-color: #fff;
+  height: $header-mobile-height;
+  justify-content: space-between;
 
+  &--right > * {
+    padding: 10px;
+  }
+}
+
+// navigation
+.mainMenu {
+  font-size: 1.125rem;
+  line-height: 1.1;
+  word-wrap: break-word;
+  hyphens: auto;
+  color: #777;
+  margin-bottom: 30px;
+  font-weight: 600;
+
+  .menu-item {
+    padding: 0.3em 0;
+  }
+}
+
+// Social Media
+.nav .social-media {
+  border-bottom: 1px solid hsla(0,0%,100%,.15);
+  margin: 0 -20px 2em;
+  padding: 0 20px 20px;
+
+  span:not(.icon) {
+    display: none;
+  }
+}
+
+// Menu - Toggle
+.nav-menu-toggle {
+  height: 48px;
+  margin-right: -20px;
+  position: relative;
+  transition: transform .4s;
+  width: 48px;
+
+  span {
+    background-color: $primary-color;
     display: block;
+    height: 2px;
+    left: 14px;
+    margin-top: -1px;
+    position: absolute;
+    top: 50%;
+    transition: .4s;
+    width: 20px;
+
+    &:first-child { transform: translate(0, -6px); }
+    &:last-child { transform: translate(0, 6px); }
   }
 }
 
-.desktop-nav {
-  .main-menu {
-    font-size: 1.125rem;
-    line-height: 1.1;
+// breakpoints
+// ==========================================================================
 
-    // letter-spacing: -0.02em;
-    word-wrap: break-word;
-    hyphens: auto;
-    // font-weight: 300;
+@media #{$md-and-down} {
 
-    color: #777;
+  .header { position: sticky; z-index: 10; }
 
-    .menu-item {
-      padding: 0.2em 0;
-    }
-  }
-
-  a:hover {
-    color: $primary-color;
-    border-bottom-color: transparent;
-  }
-
-  //  search
-  .search-field {
-    font-size: 1.1rem;
-    font-weight: 600;
-
-    .icon--search {
-      width: 1em;
-    }
-  }
-}
-
-@media #{$lg-and-up} {
-  .desktop-nav {
+  .nav-body {
+    color: #fff;
+    position: fixed;
     top: 0;
+    width: 100vw;
+    height: 100vh;
     left: 0;
+    transform: translateX(100%);
+    transition: .4s;
+    padding: $header-mobile-height 20px 20px;
+    background: linear-gradient(331deg,#00d301,#36c275 50%,#00a562);
+  }
 
-    width: 210px;
-    padding-top: 30px;
-    padding-left: 30px;
+  .mainMenu {
+    color: #fff;
+    font-size: 1.25rem;
+  }
 
-    background: 0 0;
+  // nav
+  .nav-body-wrap {
+    overflow: auto;
+    border-top: 1px solid hsla(0,0%,100%,.15);
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 48px;
+  }
 
-    .main-menu {
-      font-size: 2.57vh;
+  // Social Media
+  .nav .social-media .icon { color: #fff !important }
+
+  // page has menu
+  body.has-menu {
+    overflow: hidden;
+
+    .nav-header { background-color: transparent }
+    .menu-topics { color: #fff }
+
+    .nav-body { transform: translateX(0) }
+
+    .nav-menu-toggle {
+      border: 0;
+      transform: rotate(90deg);
+      z-index: 10;
+
+      span { background-color: #fff }
+
+      span:first-child { transform: rotate(45deg) translate(0, 0); }
+      span:nth-child(2) { transform: scaleX(0); }
+      span:last-child { transform: rotate(-45deg) translate(0, 0); }
     }
   }
 }

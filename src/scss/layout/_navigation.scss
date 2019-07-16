@@ -1,14 +1,11 @@
-.menu
-{
-    padding: 0;
+.menu {
+  padding: 0;
 }
 
 // topics
-.menu-topics
-{
-    line-height: 1.5;
+.menu-topics {
+  margin: 15px 0;
+  color: $primary-color;
 
-    margin: 15px 0;
-
-    color: $primary-color;
+  a { padding: 2px 0; display: block }
 }

@@ -127,3 +127,10 @@
   // align-items: center;
   justify-content: flex-end;
 }
+
+@media #{$md-and-down} { .u-hide-before-md { display: none !important }}
+@media #{$lg-and-down} { .u-hide-before-lg { display: none !important } }
+
+// hide after
+@media #{$md-and-up} { .u-hide-after-md { display: none !important } }
+@media #{$lg-and-up} { .u-hide-after-lg { display: none !important } }

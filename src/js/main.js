@@ -25,6 +25,13 @@ const setup = () => {
 
   const rimayBody = document.body
 
+  // Toggle Menu
+  // -----------------------------------------------------------------------------
+  qs('.js-toggle-menu').addEventListener('click', e => {
+    e.preventDefault()
+    rimayBody.classList.toggle('has-menu')
+  })
+
   // Article Page
   // -----------------------------------------------------------------------------
   if (rimayBody.classList.contains('is-article')) {

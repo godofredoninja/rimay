@@ -22,7 +22,7 @@
 
 // Social Media
 .social-media {
-  line-height: 44px;
+  // line-height: 44px;
 
   a {
     font-size: 0.9375rem;
@@ -45,10 +45,10 @@
     padding-left: 6px;
   }
 
-  .icon {
-    height: 18px;
-    width: 18px;
-  }
+  // .icon {
+  //   height: 18px;
+  //   width: 18px;
+  // }
 }
 
 @media #{$lg-and-up} {
