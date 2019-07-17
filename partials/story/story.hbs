@@ -1,28 +1,25 @@
-<article class="story u-relative">
+<article class="story u-relative u-flex u-flexWrap">
     {{!-- Story Header --}}
     <header class="story-header">
-        <h2 class="story-title"><a href="{{url}}" class="u-colorInherit">{{title}}</a></h2>
-        <div class="u-meta">
-            <div class="u-meta-byline">
-                {{!-- Datetime --}}
-                <time class="datetime u-meta-time " datetime="{{date format=" YYYY-MM-DD "}}">{{date published_at timeago="true"}}</time>
-                {{!-- Primary Tag --}}
-                {{#if primary_tag}}{{#primary_tag}}<span class="u-meta-tag"><a href="{{url}}" class="u-colorHoverPrimary u-colorInherit u-relative u-textCapitalize zindex3" aria-label="{{name}}">{{name}}</a></span>{{/primary_tag}}{{/if}}
-            </div>
-        </div>
+        <h2 class="story-title u-fontSize22"><a href="{{url}}" class="u-colorInherit">{{title}}</a></h2>
+
+        {{!-- meta helper/helper-meta-story.hbs  --}}
+        {{> "helper/helper-meta-story"}}
     </header>
     {{!-- Story Body --}}
-    <div class="story-body"><p>{{excerpt words="25"}}</p></div>
+    <div class="story-body u-hide-before-md"><p>{{excerpt words="25"}}</p></div>
     {{!-- Story Image --}}
     {{#if feature_image}}
-        <footer class="story-footer u-relative">
-            <img class="story-img u-absolute0 u-image u-block lazyload"
-                src="{{img_url feature_image size="m"}}"
-                srcset="{{img_url feature_image size="xxs"}}"
-                data-srcset="{{img_url feature_image size="s"}} 300w,{{img_url feature_image size="m"}} 600w"
-                data-sizes="(max-width: 1000px) 400px, 600px"
-                alt="{{title}}"
-            />
+        <footer class="story-footer">
+            <figure class="story-media u-relative">
+                <img class="story-img u-absolute0 u-image u-block lazyload"
+                    src="{{img_url feature_image size="m"}}"
+                    srcset="{{img_url feature_image size="xxs"}}"
+                    data-srcset="{{img_url feature_image size="s"}} 300w,{{img_url feature_image size="m"}} 600w"
+                    data-sizes="(max-width: 1000px) 400px, 600px"
+                    alt="{{title}}"
+                />
+            </figure>
         </footer>
     {{/if}}
     {{!-- link --}}

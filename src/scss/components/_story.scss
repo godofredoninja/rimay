@@ -1,14 +1,12 @@
-// Meta
+// Meta tags Global for story and post { author - tag - date }
+// ==========================================================================
 .u-meta {
-  font-size: 1.125rem;
-  font-weight: 700;
-  margin: 5px 0;
-  color: #333;
-
   @extend %primary-font;
 
+  margin: 10px 0;
+  color: #333;
+
   &-time {
-    display: inline-block;
     margin-right: .8em;
     color: #777;
   }
@@ -18,21 +16,7 @@
 // ==========================================================================
 .primary-post {
   &:hover { opacity: .7; }
-
-  &-title {
-    font-size: 28px;
-    font-size: 1.75rem;
-    font-weight: 900;
-    line-height: 1;
-    margin: 0 0 10px;
-    letter-spacing: -0.05em;
-
-    a { color: inherit }
-  }
-
-  &-figure {
-    height: 350px;
-  }
+  &-figure { height: 250px }
 }
 
 // Featured Post Home page right
@@ -40,21 +24,13 @@
 .mini-post {
   margin-bottom: 1em;
   border-bottom: 1px solid #ddd;
-  opacity: 1;
-  transition: opacity .15s linear;
 
-  &:hover { opacity: .7; }
+  &:hover { opacity: .7 }
 
   &-title {
-    font-size: 1.125rem;
     margin-top: 0;
     margin-bottom: .25em;
-    font-weight: 800;
-    line-height: 1.11;
-    letter-spacing: -.7px;
     color: #000;
-
-    a { color: #000 }
   }
 
   &:last-child { border-bottom: none }
@@ -63,17 +39,11 @@
 // Story Global
 // ==========================================================================
 .story {
-  position: relative;
-  margin-top: 1em;
-  margin-bottom: 1.425em;
-  padding-top: 1.425em;
+  margin: 1em 0 1.5em;
+  padding-top: 1.5em;
   border-top: 2px solid #f1f1f1;
-  clear: both;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   transition: all .2s ease .1s;
-  opacity: 1;
 
   &:hover {
     opacity: .6;
@@ -96,15 +66,13 @@
   }
 
   // footer
-  &-footer {
-    flex-basis: 29%;
-    height: 180px;
-  }
+  &-footer { flex-basis: 29% }
+  &-media { padding-bottom: 70% }
 
   // title
   &-title {
-    font-size: 1.375rem;
-    cursor: pointer;
+    // font-size: 1.375rem;
+    // cursor: pointer;
     margin-top: 0;
     margin-bottom: .25em;
     font-weight: 900;

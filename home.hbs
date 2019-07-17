@@ -1,0 +1,38 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+<div class="rimay-wrap">
+    <div class="rimay-content">
+        <div class="rimay-paway">
+            {{!-- First Post Large in Home Page --}}
+            {{> "home/home-primary-story"}}
+
+            {{!-- Featured Post in Home Page --}}
+            {{> "home/home-featured-story"}}
+        </div>
+    </div>
+
+    {{!-- Sidebar for home top--}}
+    {{> "sidebar/sidebar-home-top"}}
+</div>
+
+<div class="rimay-wrap">
+    <div class="rimay-content">
+        {{!-- Title For Home Page --}}
+        <h2 class="rimay-home--title u-fontSize22 u-marginTop15 u-marginBottom15">{{t "The Latest"}}</h2>
+
+        <div class="story-feed">
+            <div class="story-feed-content">
+                {{!-- story - partials/story/story.hbs --}}
+                {{#foreach posts from="2" to="12"}} {{> "story/story"}} {{/foreach}}
+            </div>
+
+            {{!-- Load More - pagination --}}
+            <a href="#" class="load-more" aria-label="{{t "Load More"}}"><span class="gradient-text gradient-text--green">{{t "Load More"}}</span></a>
+        </div>
+    </div>
+
+    {{!-- sidebar - partials/sidebar/sidebar-home-top.hbs --}}
+    {{> "sidebar/sidebar"}}
+</div>

@@ -1,0 +1,10 @@
+{{!-- Primary tags for all story --}}
+<div class="u-meta u-fontSizeSmall u-fontWeightMedium">
+    <div class="u-meta-byline">
+        {{#if primary_tag}}{{#primary_tag}}
+        <span class="u-meta-tag">
+            <a class="u-colorHoverPrimary u-colorInherit u-relative zindex3" href="{{url}}" aria-label="{{name}}">{{name}}</a>
+        </span>
+        {{/primary_tag}}{{/if}}
+    </div>
+</div>

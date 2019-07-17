@@ -1,22 +1,19 @@
 <div class="rimay-paway-left">
     {{#foreach posts limit="1"}}
         <article class="primary-post u-relative">
-            <h1 class="primary-post-title"><a href="{{url}}">{{title}}</a></h1>
-            {{!-- Meta {primary tag} --}}
-            <div class="u-meta">
-                <div class="u-meta-byline">
-                    {{#if primary_tag}}{{#primary_tag}}<span class="u-meta-tag"><a class="u-colorHoverPrimary u-colorInherit u-relative zindex3" href="{{url}}" aria-label="{{name}}">{{name}}</a></span>{{/primary_tag}}{{/if}}
-                </div>
-            </div>
+            <h1 class="primary-post-title u-marginBottom10 u-lineHeight1 u-fontSizeLarger u-fontWeightBold">
+                <a href="{{url}}" class="u-colorInherit">{{title}}</a>
+            </h1>
+            {{!-- Meta {primary tag} partiasl/helper/meta-meta.hbs --}}
+            {{> "helper/helper-meta"}}
 
             {{!-- Image --}}
             <figure class="primary-post-figure u-relative">
                 {{#if feature_image}}
-                    <img class="primary-post-img u-absolute0 u-image u-block lazyload"
+                    <img class="primary-post-img u-absolute0 u-image u-block"
                         src="{{img_url feature_image size="m"}}"
-                        srcset="{{img_url feature_image size="xxs"}}"
-                        data-srcset="{{img_url feature_image size="s"}} 300w,{{img_url feature_image size="m"}} 600w"
-                        data-sizes="(max-width: 1000px) 400px, 600px"
+                        srcset="{{img_url feature_image size="s"}} 300w,{{img_url feature_image size="m"}} 600w"
+                        sizes="(max-width: 1000px) 400px, 600px"
                         alt="{{title}}"
                     />
                 {{else}}

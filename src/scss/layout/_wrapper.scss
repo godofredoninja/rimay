@@ -1,50 +1,75 @@
-.content-wrap
-{
-    // display: flex;
-    // flex-direction: column;
-    position: relative;
-
-    margin-right: auto;
-    //
-    margin-left: 0;
-
+// Rimay class for all wrapper
+// ==========================================================================
+.rimay {
+  // Wrap
+  &-wrap {
     @extend %flex;
     @extend %flex-direction-column;
 
-    @media #{$md-and-up}
-    {
-        flex-direction: row;
-    }
-}
-
-// content
-.content
-{
     position: relative;
+    margin-right: auto;
+  }
 
+  // content
+  &-content {
     width: 90%;
-    min-height: 80%;
     margin-left: 5%;
-
-    @media #{$md-and-up}
-    {
-        flex: 0 1 auto;
-
-        max-width: calc(100vw - 380px);
-        margin-left: 30px;
-    }
-
-    @media #{$lg-and-up}
-    {
-        width: calc(100vw - 210px - 360px);
-        margin-top: 0;
-        margin-left: 210px;
-    }
-
-    @media #{$xl-and-up}
-    {
-        width: calc(100vw - 250px - 360px);
-        max-width: 1390px;
-        margin-left: 250px;
-    }
+    // padding-left: $container-gutter-width;
+    // padding-right: $container-gutter-width;
+    min-height: 80%;
+    position: relative;
+  }
 }
+
+// Rimay Home Top Wrapper
+// ==========================================================================
+.rimay-paway {
+  &-left {
+    border-bottom: 1px solid #ddd;
+    margin: 1em  0;
+    padding-bottom: 10px;
+  }
+
+  &-right {
+    padding-bottom: 1rem;
+    border-bottom: 4px solid #ddd;
+    margin: 1em 20px 0 20px;
+  }
+}
+
+// Wrapper for story
+// ==========================================================================
+.story-feed {
+  position: relative;
+  min-height: 200px
+}
+
+
+
+// // content
+// .content {
+//   position: relative;
+
+//   width: 90%;
+//   min-height: 80%;
+//   margin-left: 5%;
+
+//   @media #{$md-and-up} {
+//     flex: 0 1 auto;
+
+//     max-width: calc(100vw - 380px);
+//     margin-left: 30px;
+//   }
+
+//   @media #{$lg-and-up} {
+//     width: calc(100vw - 210px - 360px);
+//     margin-top: 0;
+//     margin-left: 210px;
+//   }
+
+//   @media #{$xl-and-up} {
+//     width: calc(100vw - 250px - 360px);
+//     max-width: 1390px;
+//     margin-left: 250px;
+//   }
+// }

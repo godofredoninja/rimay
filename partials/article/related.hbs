@@ -1,8 +1,8 @@
 {{#get "posts" limit="6" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags" as |post_related|}}
 {{#if post_related}}
 
-<div class="content-wrap">
-    <div class="content">
+<div class="rimay-wrap">
+    <div class="rimay-content">
         <h2 class="rimay-home--title u-fontSize22">{{t "Related Post"}}</h2>
 
         <div class="story-feed">
