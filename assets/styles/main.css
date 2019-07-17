@@ -1042,6 +1042,10 @@ h6 {
   font-weight: 600;
 }
 
+.mainMenu a:hover {
+  border-bottom-color: transparent;
+}
+
 .mainMenu .menu-item {
   padding: 0.3em 0;
 }
@@ -1084,21 +1088,69 @@ h6 {
   transform: translate(0, 6px);
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1100px) {
   .header {
     position: sticky;
-    z-index: 10;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
   }
   .nav-body {
-    color: #fff;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
+    width: 290px;
     transform: translateX(100%);
     transition: .4s;
     padding: 50px 20px 20px;
+    position: fixed;
+    background: #fff;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  body.has-menu {
+    overflow: hidden;
+  }
+  body.has-menu .nav-body {
+    transform: translateX(0);
+  }
+  body.has-menu .nav-menu-toggle {
+    border: 0;
+    transform: rotate(90deg);
+    z-index: 10;
+  }
+  body.has-menu .nav-menu-toggle span:first-child {
+    transform: rotate(45deg) translate(0, 0);
+  }
+  body.has-menu .nav-menu-toggle span:nth-child(2) {
+    transform: scaleX(0);
+  }
+  body.has-menu .nav-menu-toggle span:last-child {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .mainMenu {
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .mainMenu a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .mainMenu a:hover {
+    color: #00a562;
+  }
+  .mainMenu .menu-item {
+    padding: .2em 0;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .nav-body {
+    color: #fff;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
     background: linear-gradient(331deg, #00d301, #36c275 50%, #00a562);
   }
   .mainMenu {
@@ -1118,34 +1170,40 @@ h6 {
   .nav .social-media .icon {
     color: #fff !important;
   }
-  body.has-menu {
-    overflow: hidden;
-  }
   body.has-menu .nav-header {
     background-color: transparent;
   }
   body.has-menu .menu-topics {
     color: #fff;
   }
-  body.has-menu .nav-body {
-    transform: translateX(0);
-  }
-  body.has-menu .nav-menu-toggle {
-    border: 0;
-    transform: rotate(90deg);
-    z-index: 10;
-  }
   body.has-menu .nav-menu-toggle span {
     background-color: #fff;
   }
-  body.has-menu .nav-menu-toggle span:first-child {
-    transform: rotate(45deg) translate(0, 0);
+}
+
+@media only screen and (min-width: 1100px) {
+  .nav {
+    padding-left: 30px;
+    padding-top: 30px;
+    background: 0 0;
+    top: 0;
+    left: 0;
+    width: 210px;
+    height: calc(100% - 40px);
+    position: fixed;
+    z-index: 30;
   }
-  body.has-menu .nav-menu-toggle span:nth-child(2) {
-    transform: scaleX(0);
+  .nav-header {
+    background-color: transparent;
   }
-  body.has-menu .nav-menu-toggle span:last-child {
-    transform: rotate(-45deg) translate(0, 0);
+  .nav-body {
+    margin: 30px 0;
+  }
+}
+
+@media screen and (min-width: 1100px) and (min-height: 700px) {
+  .mainMenu {
+    font-size: 2.57vh !important;
   }
 }
 
@@ -1160,7 +1218,11 @@ h6 {
 
 .menu-topics a {
   padding: 2px 0;
-  display: block;
+  display: inline-block;
+}
+
+.menu-topics a:hover {
+  border-bottom-color: transparent;
 }
 
 .sticky {

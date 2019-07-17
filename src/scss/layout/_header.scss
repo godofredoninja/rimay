@@ -37,9 +37,9 @@
   margin-bottom: 30px;
   font-weight: 600;
 
-  .menu-item {
-    padding: 0.3em 0;
-  }
+  a:hover { border-bottom-color: transparent; }
+
+  .menu-item { padding: 0.3em 0 }
 }
 
 // Social Media
@@ -77,23 +77,71 @@
   }
 }
 
-// breakpoints
+// breakpoints lg down 1100
 // ==========================================================================
-
-@media #{$md-and-down} {
-
-  .header { position: sticky; z-index: 10; }
+@media #{$lg-and-down} {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);
+  }
 
   .nav-body {
-    color: #fff;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
+    width: 290px;
     transform: translateX(100%);
     transition: .4s;
     padding: $header-mobile-height 20px 20px;
+    position: fixed;
+    background: #fff;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  // page has menu
+  body.has-menu {
+    overflow: hidden;
+
+    .nav-body { transform: translateX(0) }
+
+    .nav-menu-toggle {
+      border: 0;
+      transform: rotate(90deg);
+      z-index: 10;
+
+      span:first-child { transform: rotate(45deg) translate(0, 0); }
+      span:nth-child(2) { transform: scaleX(0); }
+      span:last-child { transform: rotate(-45deg) translate(0, 0); }
+    }
+  }
+}
+
+// breakpoints md up 700
+// ==========================================================================
+@media #{$md-and-up} {
+  .mainMenu {
+    font-weight: 400;
+    font-size: 20px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover { color: $primary-color }
+    }
+
+    .menu-item { padding: .2em 0 }
+  }
+}
+
+// breakpoints md down 700
+// ==========================================================================
+@media #{$md-and-down} {
+  .nav-body {
+    color: #fff;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
     background: linear-gradient(331deg,#00d301,#36c275 50%,#00a562);
   }
 
@@ -119,23 +167,31 @@
 
   // page has menu
   body.has-menu {
-    overflow: hidden;
-
     .nav-header { background-color: transparent }
     .menu-topics { color: #fff }
-
-    .nav-body { transform: translateX(0) }
-
-    .nav-menu-toggle {
-      border: 0;
-      transform: rotate(90deg);
-      z-index: 10;
-
-      span { background-color: #fff }
-
-      span:first-child { transform: rotate(45deg) translate(0, 0); }
-      span:nth-child(2) { transform: scaleX(0); }
-      span:last-child { transform: rotate(-45deg) translate(0, 0); }
-    }
+    .nav-menu-toggle span { background-color: #fff }
   }
+}
+
+// breakpoints lg UP 1100
+// ==========================================================================
+@media #{$lg-and-up} {
+  .nav {
+    padding-left: 30px;
+    padding-top: 30px;
+    background: 0 0;
+    top: 0;
+    left: 0;
+    width: 210px;
+    height: calc(100% - 40px);
+    position: fixed;
+    z-index: 30;
+
+    &-header { background-color: transparent }
+    &-body { margin: 30px 0 }
+  }
+}
+
+@media screen and (min-width:1100px) and (min-height:700px) {
+  .mainMenu { font-size: 2.57vh !important }
 }
