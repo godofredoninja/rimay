@@ -1,7 +1,7 @@
-<article class="story u-relative u-flex u-flexWrap">
+<article class="story u-relative u-flex u-flexWrap {{#has tag="#video, #image"}}story--featured{{/has}}">
     {{!-- Story Header --}}
     <header class="story-header">
-        <h2 class="story-title u-fontSize22"><a href="{{url}}" class="u-colorInherit">{{title}}</a></h2>
+        <h2 class="story-title u-fontWeightBold u-fontSize22"><a href="{{url}}" class="u-colorInherit">{{title}}</a></h2>
 
         {{!-- meta helper/helper-meta-story.hbs  --}}
         {{> "helper/helper-meta-story"}}

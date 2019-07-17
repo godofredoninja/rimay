@@ -865,7 +865,7 @@ hr {
   justify-content: flex-end;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   .u-hide-before-md {
     display: none !important;
   }
@@ -877,7 +877,7 @@ hr {
   }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 800px) {
   .u-hide-after-md {
     display: none !important;
   }
@@ -945,6 +945,48 @@ h6 {
 .story-feed {
   position: relative;
   min-height: 200px;
+}
+
+@media only screen and (min-width: 450px) {
+  .rimay-paway-right {
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .rimay-wrap {
+    flex-direction: row;
+  }
+  .rimay-content {
+    flex: 0 1 auto;
+    margin-left: 30px;
+    max-width: calc(100vw - 380px);
+  }
+  .sidebar {
+    width: 300px;
+    margin: 0 20px 0 30px;
+    padding-top: 10px;
+    position: relative;
+    z-index: 10;
+  }
+}
+
+@media (min-width: 850px), screen and (min-width: 550px) and (max-width: 800px) {
+  .rimay-paway {
+    display: flex;
+    justify-content: space-between;
+  }
+  .rimay-paway-left {
+    flex-basis: 65%;
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .rimay-paway-right {
+    flex-basis: 32%;
+  }
 }
 
 .nav {
@@ -1066,7 +1108,7 @@ h6 {
   }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 800px) {
   .mainMenu {
     font-weight: 400;
     font-size: 20px;
@@ -1083,7 +1125,7 @@ h6 {
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   .nav-body {
     color: #fff;
     width: 100vw;
@@ -1173,7 +1215,7 @@ h6 {
   bottom: 30px;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 800px) {
   .sidebar {
     width: 300px;
     margin: 0 20px 0 30px;
@@ -1400,7 +1442,7 @@ h6 {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.05), 0 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 800px) {
   .newsletter-wrap {
     display: flex;
     justify-content: space-between;
@@ -1447,6 +1489,7 @@ h6 {
   margin-top: 0;
   margin-bottom: .25em;
   color: #000;
+  letter-spacing: -.008em;
 }
 
 .mini-post:last-child {
@@ -1492,13 +1535,22 @@ h6 {
 .story-title {
   margin-top: 0;
   margin-bottom: .25em;
-  font-weight: 900;
-  line-height: 1.09;
-  letter-spacing: -.7px;
+  line-height: 1.1;
+  letter-spacing: -.008em;
   color: #000;
 }
 
-@media only screen and (min-width: 700px) {
+.story.story--featured .story-footer {
+  order: -1;
+  margin-bottom: 15px;
+}
+
+.story.story--featured .story-footer,
+.story.story--featured .story-header {
+  flex-basis: 100%;
+}
+
+@media only screen and (min-width: 800px) {
   .primary-post-title {
     font-size: 3rem;
     line-height: 1.1;
@@ -1909,7 +1961,7 @@ a > code[class*="language-"] {
   float: left;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 800px) {
   .article {
     padding: 0 10% 30px;
   }

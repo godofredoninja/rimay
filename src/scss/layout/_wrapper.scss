@@ -45,6 +45,57 @@
 }
 
 
+// Breakpoints Media Queries
+// ==========================================================================
+
+@media #{$sm-and-up} {
+  .rimay-paway-right {
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media #{$md-and-up} {
+  .rimay {
+    &-wrap { flex-direction: row }
+
+    &-content {
+      flex: 0 1 auto;
+      margin-left: 30px;
+      max-width: calc(100vw - 380px);
+    }
+  }
+  .sidebar {
+    width: 300px;
+    margin: 0 20px 0 30px;
+    padding-top: 10px;
+    position: relative;
+    z-index: 10;
+  }
+}
+
+// @media screen and (min-width:1100px) and (min-height:700px) {
+
+// }
+
+@media (min-width:850px), screen and (min-width:550px) and (max-width:800px) {
+  .rimay-paway {
+    display: flex;
+    justify-content: space-between;
+
+    &-left {
+      flex-basis: 65%;
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    &-right { flex-basis: 32% }
+  }
+}
+
+
 
 // // content
 // .content {

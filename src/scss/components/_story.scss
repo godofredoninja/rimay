@@ -31,6 +31,7 @@
     margin-top: 0;
     margin-bottom: .25em;
     color: #000;
+    letter-spacing: -.008em;
   }
 
   &:last-child { border-bottom: none }
@@ -71,14 +72,19 @@
 
   // title
   &-title {
-    // font-size: 1.375rem;
-    // cursor: pointer;
     margin-top: 0;
     margin-bottom: .25em;
-    font-weight: 900;
-    line-height: 1.09;
-    letter-spacing: -.7px;
+    line-height: 1.1;
+    letter-spacing: -.008em;
     color: #000;
+  }
+
+  // is Featured or has video or image
+  &.story--featured {
+    .story-footer { order: -1; margin-bottom: 15px }
+
+    .story-footer,
+    .story-header { flex-basis: 100% }
   }
 }
 
