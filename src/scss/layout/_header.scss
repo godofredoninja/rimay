@@ -16,6 +16,8 @@
   }
 }
 
+.logo { @extend %primary-font; }
+
 // Header nav
 .nav-header {
   background-color: #fff;

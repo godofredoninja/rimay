@@ -339,7 +339,7 @@ template {
 
 /* Typography
 /* ---------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6, .footer, .u-meta, .article-meta {
+h1, h2, h3, h4, h5, h6, .logo, .footer, .load-more, .u-meta, .article-meta {
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -1391,7 +1391,6 @@ h6 {
   color: #00a562;
   line-height: 1.09;
   letter-spacing: -.7px;
-  font-family: "Source Sans Pro", sans-serif;
   font-weight: 800;
   text-align: center;
   border: 0;

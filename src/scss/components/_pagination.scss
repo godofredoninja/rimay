@@ -1,9 +1,11 @@
 .load-more {
+  @extend %primary-font;
+
   font-size: 28px;
   color: $primary-color;
   line-height: 1.09;
   letter-spacing: -.7px;
-  font-family: $primary-font;
+  // font-family: $primary-font;
   font-weight: 800;
   text-align: center;
   border: 0;
