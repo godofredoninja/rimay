@@ -402,6 +402,7 @@ a,
 li a,
 p a {
   text-decoration: none;
+  outline: none;
 }
 
 li a:focus,
@@ -509,13 +510,6 @@ hr {
 
 .icon--green {
   color: #00a562;
-}
-
-.rimay--title {
-  font-size: 7rem;
-  margin: 15px 0;
-  letter-spacing: -.6px;
-  font-weight: 900;
 }
 
 .instagram {
@@ -920,6 +914,31 @@ h6 {
 
 p {
   margin: 0;
+}
+
+.rimay--title {
+  font-size: 2.5rem;
+  margin: 15px 0;
+  letter-spacing: -.02em;
+  font-weight: 900;
+}
+
+@media only screen and (min-width: 800px) {
+  .rimay--title {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .rimay--title {
+    font-size: 4.8rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .rimay--title {
+    font-size: 6.8rem;
+  }
 }
 
 .rimay-wrap {

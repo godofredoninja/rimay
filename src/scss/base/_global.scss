@@ -36,6 +36,7 @@ a,
 li a,
 p a {
   text-decoration: none;
+  outline: none
 }
 
 li a:focus,
@@ -130,15 +131,6 @@ hr {
   &--black { color: #000 }
   &--white { color: #fff }
   &--green { color: $primary-color }
-}
-
-// Rimay Class
-// ==========================================================================
-.rimay--title {
-  font-size: 7rem;
-  margin: 15px 0;
-  letter-spacing: -.6px;
-  font-weight: 900;
 }
 
 // Instagram

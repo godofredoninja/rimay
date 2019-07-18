@@ -15,3 +15,18 @@ h5 { font-size: $font-size-h5 }
 h6 { font-size: $font-size-h6 }
 
 p { margin: 0 }
+
+// Rimay Class
+// ==========================================================================
+.rimay--title {
+  font-size: 2.5rem;
+  // font-size: 7rem;
+  margin: 15px 0;
+  letter-spacing: -.02em;
+  font-weight: 900;
+}
+
+@media #{$md-and-up} { .rimay--title { font-size: 3rem } }
+@media #{$lg-and-up} { .rimay--title { font-size: 4.8rem } }
+@media #{$xl-and-up} { .rimay--title { font-size: 6.8rem } }
+
