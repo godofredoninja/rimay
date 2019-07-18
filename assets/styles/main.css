@@ -512,6 +512,16 @@ hr {
   color: #00a562;
 }
 
+.icon--play {
+  background-color: #fff;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
 .instagram {
   margin-top: 80px;
 }
@@ -1606,6 +1616,11 @@ p {
 @media only screen and (min-width: 800px) {
   .primary-post-title {
     font-size: 2.5rem;
+  }
+  .icon--play {
+    padding: 18px;
+    width: 64px;
+    height: 64px;
   }
   .story-header {
     flex-basis: 28%;
