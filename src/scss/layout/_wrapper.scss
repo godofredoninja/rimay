@@ -63,7 +63,7 @@
 
     &-content {
       flex: 0 1 auto;
-      margin-left: 30px;
+      margin-left: 20px;
       max-width: calc(100vw - 380px);
     }
   }
@@ -73,6 +73,22 @@
     padding-top: 10px;
     position: relative;
     z-index: 10;
+  }
+}
+
+@media #{$lg-and-up} {
+  .rimay-content {
+    margin-left: 210px;
+    width: calc(100vw - 210px - 360px);
+    margin-top: 0;
+  }
+}
+
+@media #{$xl-and-up} {
+  .rimay-content {
+    margin-left: 250px;
+    width: calc(100vw - 250px - 360px);
+    max-width: 1390px;
   }
 }
 

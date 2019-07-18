@@ -2,12 +2,13 @@
     {{!-- Story Header --}}
     <header class="story-header">
         <h2 class="story-title u-fontWeightBold u-fontSize22"><a href="{{url}}" class="u-colorInherit">{{title}}</a></h2>
-
+        {{!-- Excerpt if story is video or image --}}
+        {{#has tag="#video, #image"}}<div class="story-body u-hide-before-md"><p>{{excerpt words="25"}}</p></div>{{/has}}
         {{!-- meta helper/helper-meta-story.hbs  --}}
         {{> "helper/helper-meta-story"}}
     </header>
-    {{!-- Story Body --}}
-    <div class="story-body u-hide-before-md"><p>{{excerpt words="25"}}</p></div>
+    {{!-- Story Body - excerpt is not video or image--}}
+    {{^has tag="#video, #image"}}<div class="story-body u-hide-before-md"><p>{{excerpt words="25"}}</p></div>{{/has}}
     {{!-- Story Image --}}
     {{#if feature_image}}
         <footer class="story-footer">

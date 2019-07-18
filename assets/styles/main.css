@@ -918,6 +918,10 @@ h6 {
   font-size: 1.25rem;
 }
 
+p {
+  margin: 0;
+}
+
 .rimay-wrap {
   position: relative;
   margin-right: auto;
@@ -962,7 +966,7 @@ h6 {
   }
   .rimay-content {
     flex: 0 1 auto;
-    margin-left: 30px;
+    margin-left: 20px;
     max-width: calc(100vw - 380px);
   }
   .sidebar {
@@ -971,6 +975,22 @@ h6 {
     padding-top: 10px;
     position: relative;
     z-index: 10;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .rimay-content {
+    margin-left: 210px;
+    width: calc(100vw - 210px - 360px);
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .rimay-content {
+    margin-left: 250px;
+    width: calc(100vw - 250px - 360px);
+    max-width: 1390px;
   }
 }
 
@@ -1178,6 +1198,12 @@ h6 {
   }
   .nav-body {
     margin: 30px 0;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .nav {
+    width: 250px;
   }
 }
 
@@ -1489,7 +1515,7 @@ h6 {
   margin-top: 0;
   margin-bottom: .25em;
   color: #000;
-  letter-spacing: -.008em;
+  letter-spacing: -.02em;
 }
 
 .mini-post:last-child {
@@ -1514,13 +1540,12 @@ h6 {
 }
 
 .story-body {
-  font-size: 14px;
-  font-size: .875rem;
+  font-size: 1rem;
   flex-basis: 67.5%;
   flex-shrink: 0;
   display: block;
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-  line-height: 1.43;
+  line-height: 1.4;
   color: #777;
 }
 
@@ -1536,7 +1561,7 @@ h6 {
   margin-top: 0;
   margin-bottom: .25em;
   line-height: 1.1;
-  letter-spacing: -.008em;
+  letter-spacing: -.02em;
   color: #000;
 }
 
@@ -1550,10 +1575,18 @@ h6 {
   flex-basis: 100%;
 }
 
+.story.story--featured .story-body {
+  flex-basis: 0;
+  margin: 15px 0;
+}
+
+.story.story--featured .story-media {
+  padding-bottom: 50%;
+}
+
 @media only screen and (min-width: 800px) {
   .primary-post-title {
-    font-size: 3rem;
-    line-height: 1.1;
+    font-size: 2.5rem;
   }
   .story-header {
     flex-basis: 28%;
@@ -1569,6 +1602,14 @@ h6 {
   .story-title {
     margin-bottom: 10px;
   }
+  .story.story--featured .story-header {
+    flex-basis: 28%;
+  }
+  .story.story--featured .story-footer {
+    order: 2;
+    margin-bottom: 0;
+    flex-basis: 67.5%;
+  }
 }
 
 @media only screen and (min-width: 1100px) {
@@ -1578,12 +1619,6 @@ h6 {
     line-height: 1.05;
     letter-spacing: -.5px;
   }
-  .story-body {
-    font-size: 20px;
-  }
-  .story-title {
-    font-size: 26px;
-  }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -1592,6 +1627,15 @@ h6 {
   }
   .story-title {
     font-size: 2.3rem;
+  }
+  .story-body {
+    font-size: 1.25rem;
+  }
+  .story-media {
+    padding-bottom: 60%;
+  }
+  .primary-post-figure {
+    height: 340px;
   }
 }
 

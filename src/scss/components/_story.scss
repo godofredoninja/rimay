@@ -31,7 +31,7 @@
     margin-top: 0;
     margin-bottom: .25em;
     color: #000;
-    letter-spacing: -.008em;
+    letter-spacing: -.02em;
   }
 
   &:last-child { border-bottom: none }
@@ -56,13 +56,12 @@
 
   // body
   &-body {
-    font-size: 14px;
-    font-size: .875rem;
+    font-size: 1rem;
     flex-basis: 67.5%;
     flex-shrink: 0;
     display: block;
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-    line-height: 1.43;
+    line-height: 1.4;
     color: #777;
   }
 
@@ -75,7 +74,7 @@
     margin-top: 0;
     margin-bottom: .25em;
     line-height: 1.1;
-    letter-spacing: -.008em;
+    letter-spacing: -.02em;
     color: #000;
   }
 
@@ -85,16 +84,14 @@
 
     .story-footer,
     .story-header { flex-basis: 100% }
+
+    .story-body { flex-basis: 0; margin: 15px 0 }
+    .story-media { padding-bottom: 50% }
   }
 }
 
 @media #{$md-and-up} {
-  .primary-post {
-    &-title {
-      font-size: 3rem;
-      line-height: 1.1;
-    }
-  }
+  .primary-post-title { font-size: 2.5rem }
 
   // Story
   .story {
@@ -107,6 +104,16 @@
     &-body { flex-basis: 32% }
     &-footer { flex-basis: 31% }
     &-title { margin-bottom: 10px }
+
+    // is Featured or has video or image
+    &.story--featured {
+      .story-header { flex-basis: 28% }
+      .story-footer {
+        order: 2;
+        margin-bottom: 0;
+        flex-basis: 67.5%;
+      }
+    }
   }
 }
 
@@ -117,13 +124,12 @@
     line-height: 1.05;
     letter-spacing: -.5px;
   }
-
-  // story
-  .story-body { font-size: 20px }
-  .story-title { font-size: 26px }
 }
 
 @media #{$xl-and-up} {
   .mini-post-title { font-size: 1.875rem }
   .story-title { font-size: 2.3rem }
+  .story-body { font-size: 1.25rem }
+  .story-media { padding-bottom: 60% }
+  .primary-post-figure { height: 340px }
 }
