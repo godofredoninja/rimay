@@ -1,0 +1,49 @@
+{{!< default}}
+
+{{!-- Class for <body> --}}
+{{#contentFor "special_body_class"}}is-article is-video{{/contentFor}}
+
+{{#post}}
+
+<div class="rimay-wrap">
+    <div class="rimay-content">
+        {{!-- Article - partials/article/article.hbs --}}
+        <article class="article">
+            {{!-- Article Header --}}
+            <header class="article-header">
+                <h1 class="article-title">{{title}}</h1>
+                {{!-- Article Meta (author - read time - comments) - partials/article/article-meta.hbs --}}
+                {{> "article/article-meta"}}
+            </header>
+            {{!-- Article Body --}}
+            <div class="article-body u-relative">
+                <div class="js-video-media article-media u-block u-marginAuto u-textAlignCenter"></div>
+
+                {{!-- Article Inner --}}
+                <div class="article-inner">{{content}}</div>
+                {{!-- Article Comments --}}
+                <div class="block--comment u-marginTop30 u-marginBottom20 u-textAlignCenter"> <button class="button button--green button--secondary">{{t "View Comments"}} (2)</button> </div>
+            </div>
+
+            {{!-- Newsletter - partials/widget/newsletter.hbs --}}
+            {{> "widget/newsletter"}}
+
+            {{!-- Article Footer - parials/article/footer.hbs --}}
+            {{> "article/footer"}}
+
+            {{!-- Article topics - parials/article/topics.hbs --}}
+            {{> "article/topics"}}
+        </article>
+    </div>
+
+    {{!-- sidebar - partials/sidebar/sidebar.hbs --}}
+    {{> "sidebar/sidebar"}}
+</div>
+
+{{/post}}
+
+{{!-- Article Related - partials/article/related.hbs --}}
+{{> "article/related"}}
+
+{{!-- Article Related - partials/widget/intagram-feed.hbs --}}
+{{> "widget/instagram-feed"}}
