@@ -1,0 +1,13 @@
+<div class="article-meta u-meta u-flexCenter u-fontSizeSmall u-fontWeightMedium">
+    <div class="article-byline u-meta-byline">
+        {{#primary_author}}<a aria-label="{{t "Post by"}} {{name}}" href="{{url}}" class="u-colorHoverPrimary u-colorInherit u-relative u-textCapitalize">{{name}}</a>{{/primary_author}}
+        <span class="article-divider text--green">/</span>
+        <time class="datetime u-meta-time" datetime="{{date format=" YYYY-MM-DD "}}">{{date published_at timeago="true"}}</time>
+    </div>
+    {{!-- Comments --}}
+    <div class="article-meta--right u-hide-before-md">
+        <div class="js-comments-open u-pointer">
+            <span class="icon icon--md icon--comment u-primaryColor">{{> "icons/comment"}}</span> Comments
+        </div>
+    </div>
+</div>

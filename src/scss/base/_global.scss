@@ -76,6 +76,7 @@ figcaption {
   margin-top: 10px;
   font-size: .8em;
   font-style: italic;
+  line-height: 1.2;
 }
 
 button, input { overflow: visible }
@@ -91,9 +92,9 @@ button, input, select, textarea {
 blockquote {
   border-left: 5px solid $primary-color;
   color: #000;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   // font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.7;
   margin: 2.5rem 0 0.9375rem 0 !important;
   padding-bottom: 2px;
   padding-left: 20px;

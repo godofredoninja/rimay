@@ -339,7 +339,7 @@ template {
 
 /* Typography
 /* ---------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6, .logo, .footer, .load-more, .u-meta, .article-meta {
+h1, h2, h3, h4, h5, h6, .logo, .footer, .load-more, .u-meta {
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -443,6 +443,7 @@ figcaption {
   margin-top: 10px;
   font-size: .8em;
   font-style: italic;
+  line-height: 1.2;
 }
 
 button,
@@ -460,8 +461,8 @@ button, input, select, textarea {
 blockquote {
   border-left: 5px solid #00a562;
   color: #000;
-  font-size: 1.375rem;
-  line-height: 1.5;
+  font-size: 1.25rem;
+  line-height: 1.7;
   margin: 2.5rem 0 0.9375rem 0 !important;
   padding-bottom: 2px;
   padding-left: 20px;
@@ -845,6 +846,14 @@ hr {
   position: absolute;
 }
 
+.u-floatRight {
+  float: right;
+}
+
+.u-floatLeft {
+  float: left;
+}
+
 .u-flex-1 {
   flex: 1;
 }
@@ -894,32 +903,34 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   margin: 0;
 }
 
 h1 {
-  font-size: 2.375rem;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 2.125rem;
+  font-size: 1.8rem;
 }
 
 h3 {
-  font-size: 1.875rem;
+  font-size: 1.6rem;
 }
 
 h4 {
-  font-size: 1.625rem;
+  font-size: 1.4rem;
 }
 
 h5 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 h6 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 p {
@@ -1497,7 +1508,7 @@ p {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.05), 0 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1440px) {
   .newsletter-wrap {
     display: flex;
     justify-content: space-between;
@@ -1673,30 +1684,17 @@ p {
   }
 }
 
-/* Code Boxes
-/* ---------------------------------------------------------- */
-code,
-pre {
-  font-family: Menlo, Courier, monospace;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  tab-size: 4;
-  hyphens: none;
-}
-
-.article-inner code {
-  padding: 0 5px 2px;
-  font-size: 0.8em;
-  line-height: 1em;
-  font-weight: 400 !important;
+:not(pre) > code {
+  padding: 1px 5px;
+  border-radius: .3px;
+  white-space: normal;
   background: #e5eff5;
-  border-radius: 3px;
-  white-space: pre-wrap;
+  text-shadow: none;
+  color: #343f44;
+  font-size: .9em;
 }
 
-.article-inner pre {
+pre {
   overflow-x: auto;
   margin: 1.5em 0 3em;
   padding: 20px;
@@ -1709,7 +1707,7 @@ pre {
   border-radius: 5px;
 }
 
-.article-inner pre code {
+pre code {
   padding: 0;
   font-size: inherit;
   line-height: inherit;
@@ -1717,8 +1715,21 @@ pre {
   white-space: pre;
 }
 
-.article-inner pre code * {
+pre code * {
   color: inherit;
+}
+
+/* Code Boxes
+/* ---------------------------------------------------------- */
+code,
+pre {
+  font-family: Menlo, Courier, monospace;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  tab-size: 4;
+  hyphens: none;
 }
 
 /* Prism
@@ -1755,7 +1766,7 @@ a > code[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .token.punctuation {
@@ -1828,7 +1839,7 @@ a > code[class*="language-"] {
 
 .article {
   margin: 0;
-  padding: 0 5% 30px;
+  padding: 0 0 30px;
   border-top: 2px solid #f1f1f1;
   position: relative;
 }
@@ -1846,20 +1857,16 @@ a > code[class*="language-"] {
 }
 
 .article-title {
-  padding-top: 20px;
   font-size: 2rem;
   font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: 0;
-  margin-right: 20px;
+  padding-top: 20px;
 }
 
 .article-meta {
-  display: flex;
   justify-content: space-between;
   margin: 25px 0;
-  color: #777;
-  font-weight: 600;
 }
 
 .article-byline a {
@@ -1875,7 +1882,7 @@ a > code[class*="language-"] {
   padding-right: 5px;
 }
 
-.article-image {
+.article-media {
   margin: auto;
   display: block;
   width: 125%;
@@ -1883,13 +1890,17 @@ a > code[class*="language-"] {
   margin-left: -12.5%;
 }
 
+.article-media img {
+  width: 100%;
+}
+
 .article-inner {
   font-weight: 400;
   color: #333;
   letter-spacing: -.1px;
   margin: 20px 0;
-  font-size: 21px;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.7;
 }
 
 .article-inner > * {
@@ -1897,8 +1908,8 @@ a > code[class*="language-"] {
   min-width: 100%;
 }
 
-.article-inner p {
-  margin-bottom: 0;
+.article-inner p:first-child {
+  margin-top: 0;
 }
 
 .article-inner a {
@@ -1918,12 +1929,12 @@ a > code[class*="language-"] {
 .article-inner ol {
   counter-reset: post;
   list-style-type: none;
-  padding-left: 20px;
+  padding-left: 0;
 }
 
 .article-inner ul li,
 .article-inner ol li {
-  margin-left: 30px;
+  margin-left: 25px;
 }
 
 .article-inner ul li::before,
@@ -1937,8 +1948,6 @@ a > code[class*="language-"] {
 
 .article-inner ul > li::before {
   content: "\2022";
-  opacity: .9;
-  font-family: Georgia, Arial, system-ui;
   transform: scale(1.1);
 }
 
@@ -1977,29 +1986,52 @@ a > code[class*="language-"] {
   bottom: -1px;
 }
 
-.social-share .icon {
-  background: #00a562;
+.social-share a {
   width: 60px;
   height: 60px;
-  padding: 18px;
-  border-right: 1px solid #57c196;
+  justify-content: center;
 }
 
-.social-share .icon:hover {
-  background-color: #037545;
+.social-share a:hover {
+  opacity: .8;
+}
+
+.social-share .icon {
+  justify-content: center;
+}
+
+.social-share .icon--facebook {
+  background-color: #3b5998;
+}
+
+.social-share .icon--twitter {
+  background-color: #55acee;
+}
+
+.social-share .icon--linkedin {
+  background-color: #007bb6;
+}
+
+.social-share .icon--reddit {
+  background-color: #ff4500;
+}
+
+.social-share .icon--whatsapp {
+  background-color: #64d448;
 }
 
 .shortlink-input {
+  border: 0;
+  color: #777;
+  cursor: pointer;
   font-size: 18px;
   line-height: 2.8em;
-  cursor: pointer;
-  border: 0;
-  width: auto;
+  max-width: 260px;
   min-width: 210px;
   padding: 5px 50px 5px 20px;
-  color: #777;
-  transition: color .15s linear;
   text-align: center;
+  transition: color .15s linear;
+  width: auto;
 }
 
 .shortlink-input:focus, .shortlink-input:hover {
@@ -2037,6 +2069,23 @@ a > code[class*="language-"] {
   margin: .3em 0;
   position: relative;
   float: left;
+}
+
+@media only screen and (max-width: 800px) {
+  .article-footer {
+    margin: 0;
+  }
+  .social-share {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .social-share a {
+    flex-basis: 20%;
+    height: 32px;
+  }
 }
 
 @media only screen and (min-width: 800px) {

@@ -3,6 +3,41 @@ $whitegrey : #e5eff5;
 $darkgrey : #343f44;
 $blue :#3eb0ef;
 
+:not(pre) > code {
+  padding: 1px 5px;
+  border-radius: .3px;
+  white-space: normal;
+  background: $whitegrey;
+  text-shadow: none;
+  color: $darkgrey ;
+  font-size: .9em;
+}
+
+pre {
+  overflow-x: auto;
+  margin: 1.5em 0 3em;
+  padding: 20px;
+  max-width: 100%;
+  border: none;
+  color: $whitegrey;
+  font-size: 0.875rem;
+  line-height: 1.6em;
+  background: #2a3644;
+  border-radius: 5px;
+
+  code {
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+    background: transparent;
+    white-space: pre;
+
+    * { color: inherit }
+  }
+}
+
+
+
 /* Code Boxes
 /* ---------------------------------------------------------- */
 
@@ -17,40 +52,15 @@ pre {
   hyphens: none;
 }
 
-.article-inner code {
-  padding: 0 5px 2px;
-  font-size: 0.8em;
-  line-height: 1em;
-  font-weight: 400 !important;
-  background: $whitegrey;
-  border-radius: 3px;
-  white-space: pre-wrap;
-}
-
-.article-inner pre {
-  overflow-x: auto;
-  margin: 1.5em 0 3em;
-  padding: 20px;
-  max-width: 100%;
-  border: none;
-  color: $whitegrey;
-  font-size: 0.875rem;
-  line-height: 1.6em;
-  background: #2a3644;
-  border-radius: 5px;
-}
-
-.article-inner pre code {
-  padding: 0;
-  font-size: inherit;
-  line-height: inherit;
-  background: transparent;
-  white-space: pre;
-}
-
-.article-inner pre code * {
-  color: inherit;
-}
+// .article-inner code {
+//   padding: 1px 5px;
+//   font-size: 0.8em;
+//   line-height: 1em;
+//   font-weight: 400 !important;
+//   background: $whitegrey;
+//   border-radius: 3px;
+//   white-space: pre-wrap;
+// }
 
 /* Prism
 /* ---------------------------------------------------------- */
@@ -86,7 +96,7 @@ a > code[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: rgba(255,255,255,0.4);
+	color: rgba(255,255,255,0.5);
 }
 
 .token.punctuation {

@@ -1,6 +1,6 @@
 .article {
   margin: 0;
-  padding: 0 5% 30px;
+  padding: 0 0 30px;
   border-top: 2px solid #f1f1f1;
   position: relative;
 
@@ -19,24 +19,17 @@
 
   // title
   &-title {
-    padding-top: 20px;
-
     font-size: 2rem;
     font-weight: 800;
+    letter-spacing: -0.02em;
     line-height: 1.1;
-    margin-bottom: 0;
-    margin-right: 20px;
+    padding-top: 20px;
   }
 
   // Meta
   &-meta {
-    @extend %primary-font;
-
-    display: flex;
     justify-content: space-between;
     margin: 25px 0;
-    color: #777;
-    font-weight: 600;
   }
 
   // Byline
@@ -56,13 +49,15 @@
   }
 
   // Image
-  &-image {
+  &-media {
     margin: auto;
     display: block;
     //
     width: 125%;
     max-width: 125%;
     margin-left: -12.5%;
+
+    img { width: 100% }
   }
 }
 
@@ -77,15 +72,18 @@
   color: #333;
   letter-spacing: -.1px;
   margin: 20px 0;
-  font-size: 21px;
-  line-height: 1.6;
+  // font-size: 21px;
+  font-size: 1.125rem;
+  line-height: 1.7;
 
   & > * {
     margin-top: 26px;
     min-width: 100%;
   }
 
-  p { margin-bottom: 0 }
+  p:first-child { margin-top: 0 }
+
+  // p { margin-bottom: 0 }
 
   a {
     border-bottom: 1px solid #f1f1f1;
@@ -105,10 +103,10 @@
   ol {
     counter-reset: post;
     list-style-type: none;
-    padding-left: 20px;
+    padding-left: 0;
 
     li {
-      margin-left: 30px;
+      margin-left: 25px;
 
       &::before {
         box-sizing: border-box;
@@ -121,9 +119,8 @@
   }
 
   ul > li::before {
+    // color: $primary-color;
     content: "\2022";
-    opacity: .9;
-    font-family: Georgia, Arial, system-ui; // stylelint-disable-line
     transform: scale(1.1);
   }
 
@@ -195,31 +192,46 @@
 .social-share {
   bottom: -1px;
 
-  .icon {
-    background: $primary-color;
+  // @each $name in $color-share {
+  //   $i: index($color-share, $name);
+  //   > a:nth-child(#{$i}) { background: $name }
+  // }
+
+  a {
     width: 60px;
     height: 60px;
-    padding: 18px;
-    border-right: 1px solid #57c196;
+    justify-content: center;
 
     &:hover {
-      background-color: #037545
+      opacity: .8;
     }
   }
+
+  .icon { justify-content: center }
+
+  @each $social-name, $color in $social-colors {
+    .icon--#{$social-name} { background-color: $color }
+  }
+
+  // .icon {
+  //   width: 60px;
+  //   height: 60px;
+  // }
 }
 
 
 .shortlink-input {
+  border: 0;
+  color: #777;
+  cursor: pointer;
   font-size: 18px;
   line-height: 2.8em;
-  cursor: pointer;
-  border: 0;
-  width: auto;
+  max-width: 260px;
   min-width: 210px;
   padding: 5px 50px 5px 20px;
-  color: #777;
-  transition: color .15s linear;
   text-align: center;
+  transition: color .15s linear;
+  width: auto;
 
   &:focus,
   &:hover {
@@ -263,6 +275,27 @@
     float: left;
   }
 }
+
+
+// Breakpoints
+// ==========================================================================
+@media #{$md-and-down} {
+  .article-footer { margin: 0 }
+
+  .social-share {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    a {
+      flex-basis: 20%;
+      height: 32px;
+    }
+  }
+}
+
 
 @media #{$md-and-up} {
   .article {

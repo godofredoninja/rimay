@@ -95,6 +95,10 @@
 .u-absolute { position: absolute }
 .u-absolute0 { @extend %u-absolute0; }
 
+// Float
+.u-floatRight { float: right; }
+.u-floatLeft { float: left; }
+
 //  flex
 .u-flex { @extend %flex }
 

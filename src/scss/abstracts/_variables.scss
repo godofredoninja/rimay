@@ -5,6 +5,30 @@
 // color
 $primary-color: #00a562;
 
+$color-share: #04a763 #20b66d #34c174 #1ec942 #08d013;
+
+// social colors
+$social-colors: (
+  facebook:   #3b5998,
+  twitter:    #55acee,
+  // google:     #dd4b39,
+  // instagram:  #306088,
+  // youtube:    #e52d27,
+  // github:     #555,
+  linkedin:   #007bb6,
+  // spotify:    #2ebd59,
+  // codepen:    #222,
+  // behance:    #131418,
+  // dribbble:   #ea4c89,
+  // flickr:     #0063dc,
+  reddit:     #ff4500,
+  // pocket:     #f50057,
+  // pinterest:  #bd081c,
+  whatsapp:   #64d448,
+  // telegram:   #08c,
+  // rss:          orange,
+);
+
 // fonts
 $primary-font: 'Source Sans Pro', sans-serif;
 $secundary-font: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -20,9 +44,16 @@ $font-size-h4:    1.625rem;
 $font-size-h5:    1.5rem;
 $font-size-h6:    1.25rem;
 
+$font-size-md-h1:    2rem;
+$font-size-md-h2:    1.8rem;
+$font-size-md-h3:    1.6rem;
+$font-size-md-h4:    1.4rem;
+$font-size-md-h5:    1.3rem;
+$font-size-md-h6:    1.2rem;
+
 $headings-font-family:     $primary-font;
 $headings-font-weight:     700;
-$headings-line-height:     1.2;
+$headings-line-height:     1.1;
 
 // Header
 // ==========================================================================
