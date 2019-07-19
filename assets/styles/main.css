@@ -339,7 +339,7 @@ template {
 
 /* Typography
 /* ---------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6, .logo, .footer, .load-more, .u-meta {
+figcaption, h1, h2, h3, h4, h5, h6, .logo, .footer, .load-more, .u-meta {
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -444,6 +444,7 @@ figcaption {
   font-size: .8em;
   font-style: italic;
   line-height: 1.2;
+  color: #777;
 }
 
 button,
@@ -459,7 +460,7 @@ button, input, select, textarea {
 }
 
 blockquote {
-  border-left: 5px solid #00a562;
+  border-left: 8px solid #00a562;
   color: #000;
   font-size: 1.25rem;
   line-height: 1.7;
@@ -953,6 +954,24 @@ p {
 @media only screen and (min-width: 1100px) {
   .rimay--title {
     font-size: 4.8rem;
+  }
+  h1 {
+    font-size: 2.375rem;
+  }
+  h2 {
+    font-size: 2.125rem;
+  }
+  h3 {
+    font-size: 1.875rem;
+  }
+  h4 {
+    font-size: 1.625rem;
+  }
+  h5 {
+    font-size: 1.5rem;
+  }
+  h6 {
+    font-size: 1.25rem;
   }
 }
 
@@ -1691,7 +1710,7 @@ p {
   background: #e5eff5;
   text-shadow: none;
   color: #343f44;
-  font-size: .9em;
+  font-size: .8em;
 }
 
 pre {
@@ -1900,7 +1919,7 @@ a > code[class*="language-"] {
   letter-spacing: -.1px;
   margin: 20px 0;
   font-size: 1.125rem;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .article-inner > * {
@@ -1958,11 +1977,6 @@ a > code[class*="language-"] {
   padding-right: 12px;
 }
 
-.kg-gallery-container {
-  max-width: 1000px;
-  width: 100vw;
-}
-
 .kg-gallery-row:not(:first-of-type) {
   margin: 0.75em 0 0 0;
 }
@@ -1980,6 +1994,13 @@ a > code[class*="language-"] {
 
 .kg-embed-card {
   max-width: 100%;
+}
+
+.kg-gallery,
+.kg-width-wide,
+.kg-width-full {
+  width: 125%;
+  max-width: 125%;
 }
 
 .social-share {
@@ -2086,6 +2107,17 @@ a > code[class*="language-"] {
     flex-basis: 20%;
     height: 32px;
   }
+  .kg-gallery,
+  .kg-width-wide,
+  .kg-width-full {
+    max-width: 1000px;
+    width: 100vw;
+  }
+  .kg-gallery figcaption,
+  .kg-width-wide figcaption,
+  .kg-width-full figcaption {
+    margin-left: 10px;
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -2098,6 +2130,9 @@ a > code[class*="language-"] {
   }
   .article-footer {
     border-bottom: 1px solid #ddd;
+  }
+  .article-inner {
+    font-size: 1.1875rem;
   }
 }
 
@@ -2112,6 +2147,9 @@ a > code[class*="language-"] {
   .article::before {
     left: -250px;
     width: 100vw;
+  }
+  .article-inner {
+    font-size: 1.375rem;
   }
 }
 

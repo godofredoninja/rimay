@@ -73,10 +73,13 @@ figure {
 }
 
 figcaption {
+  @extend %primary-font;
+
   margin-top: 10px;
   font-size: .8em;
   font-style: italic;
   line-height: 1.2;
+  color: #777;
 }
 
 button, input { overflow: visible }
@@ -90,7 +93,7 @@ button, input, select, textarea {
 }
 
 blockquote {
-  border-left: 5px solid $primary-color;
+  border-left: 8px solid $primary-color;
   color: #000;
   font-size: 1.25rem;
   // font-weight: 700;

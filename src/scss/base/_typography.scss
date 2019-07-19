@@ -26,7 +26,18 @@ p { margin: 0 }
   font-weight: 900;
 }
 
+
 @media #{$md-and-up} { .rimay--title { font-size: 3rem } }
-@media #{$lg-and-up} { .rimay--title { font-size: 4.8rem } }
+
+@media #{$lg-and-up} {
+  .rimay--title { font-size: 4.8rem }
+  h1 { font-size: $font-size-h1 }
+  h2 { font-size: $font-size-h2 }
+  h3 { font-size: $font-size-h3 }
+  h4 { font-size: $font-size-h4 }
+  h5 { font-size: $font-size-h5 }
+  h6 { font-size: $font-size-h6 }
+}
+
 @media #{$xl-and-up} { .rimay--title { font-size: 6.8rem } }
 
