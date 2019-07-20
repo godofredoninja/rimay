@@ -1,0 +1,74 @@
+{{!< default}}
+
+{{!-- Class for <body> --}}
+{{#contentFor "special_body_class"}}is-article is-image{{/contentFor}}
+
+{{!-- Header for my Big Image .pif(post image format) --}}
+{{#post}}
+<div class="pif rimay-wrap u-relative">
+    {{!-- Image --}}
+    {{#if feature_image}}
+    <img class="u-block u-marginAuto u-absolute0 u-image lazyload"
+        src="{{img_url feature_image size="xl"}}"
+        srcset="{{img_url feature_image size="s"}}"
+        data-srcset="{{img_url feature_image size="s"}} 300w,
+                {{img_url feature_image size="m"}} 600w,
+                {{img_url feature_image size="l"}} 1000w,
+                {{img_url feature_image size="xl"}} 2000w"
+        data-sizes="(max-width: 400px) 300px,(max-width: 730px) 600px, (max-width: 1600px) 100vw"
+        {{!-- sizes="(max-width: 730px) 100vw, (max-width: 1600px) 75vw, 1390px" --}}
+        alt="{{title}}"
+    />
+    <div class="pif-bg u-absolute0 zindex1"></div>
+    {{/if}}
+
+    <div class="rimay-content u-relative zindex2">
+        <div class="article u-flex">
+            {{!-- Article Header --}}
+            <header class="article-header u-flex">
+                <div>
+                    <h1 class="article-title">{{title}}</h1>
+                    {{#if custom_excerpt}}<h2 class="article-excerpt u-fontSize20 u-lineHeightTight u-fontWeightNormal u-marginTop30">{{custom_excerpt}}</h2>{{/if}}
+                </div>
+                {{!-- Article Meta (author - read time - comments) - partials/article/article-meta.hbs --}}
+                {{> "article/article-meta"}}
+            </header>
+        </div>
+    </div>
+
+</div>
+{{!-- ./ end for big Image --}}
+
+<div class="rimay-wrap">
+    <div class="rimay-content">
+    <article class="article article-shadow">
+        <div class="article-body u-relative">
+            {{!-- Article Inner --}}
+            <div class="article-inner">{{content}}</div>
+
+            {{!-- Article Comments --}}
+            <div class="block--comment u-marginTop30 u-marginBottom20 u-textAlignCenter"> <button class="button button--green button--secondary">{{t "View Comments"}} (2)</button> </div>
+        </div>
+
+        {{!-- Newsletter - partials/widget/newsletter.hbs --}}
+        {{> "widget/newsletter"}}
+
+        {{!-- Article Footer - parials/article/footer.hbs --}}
+        {{> "article/footer"}}
+
+        {{!-- Article topics - parials/article/topics.hbs --}}
+        {{> "article/topics"}}
+    </article>
+    </div>
+
+    {{!-- sidebar - partials/sidebar/sidebar.hbs --}}
+    {{> "sidebar/sidebar"}}
+</div>
+
+{{/post}}
+
+{{!-- Article Related - partials/article/related.hbs --}}
+{{> "article/related"}}
+
+{{!-- Article Related - partials/widget/intagram-feed.hbs --}}
+{{> "widget/instagram-feed"}}
