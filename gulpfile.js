@@ -11,7 +11,7 @@ const gulpLoadPlugins = require('gulp-load-plugins')
 
 // Cosas por mi
 const browserify = require('browserify')
-const babelify = require('babelify');
+// const babelify = require('babelify')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
 //
@@ -54,7 +54,7 @@ const style = () => {
 }
 
 const script = () => {
-  const files = [ 'main', 'prismjs', 'search' ]
+  const files = [ 'main', 'prismjs', 'search', 'pagination' ]
 
   return merge(files.map(function (file) {
     return browserify({

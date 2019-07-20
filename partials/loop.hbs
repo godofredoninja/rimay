@@ -8,10 +8,9 @@
                 {{!-- story - partials/story/story.hbs --}}
                 {{#foreach posts}} {{> "story/story"}} {{/foreach}}
             </div>
-
-            {{!-- Load More - pagination --}}
-            <a href="#" class="load-more" aria-label="{{t "Load More"}}"><span class="gradient-text gradient-text--green">{{t "Load More"}}</span></a>
         </div>
+        {{!-- Load More - pagination --}}
+        <a href="#" class="js-load-more load-more u-pointer u-hide" aria-label="{{t "Load More"}}"><span class="gradient-text gradient-text--green">{{t "Load More"}}</span></a>
     </div>
 
     {{!-- sidebar - partials/sidebar/sidebar.hbs --}}

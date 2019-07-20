@@ -855,6 +855,10 @@ hr {
   float: left;
 }
 
+.u-hide {
+  display: none !important;
+}
+
 .u-flex-1 {
   flex: 1;
 }
