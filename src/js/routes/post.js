@@ -6,6 +6,7 @@ import mediumZoom from 'medium-zoom'
 import * as rimay from '../app/app.variables'
 import { loadScript } from '../app/app.load-style-script'
 import instagram from '../app/app.instagram'
+import facebookCommentsCount from '../app/app.facebook-comment-count'
 
 export default {
   init () {
@@ -41,6 +42,15 @@ export default {
       margin: 20,
       background: 'hsla(0,0%,100%,.85)'
     })
+
+    // medium-zoom
+    // -----------------------------------------------------------------------------
+    const facebookAppId = '344388876498138'
+    const facebookAppSecretKey = 'f19d6496fe2394dfc1915a53a6fe2388'
+    const articleUrl = window.location.href
+    const urlEncode = `https://graph.facebook.com/?id=${encodeURIComponent(articleUrl)}&fields=engagement&access_token=${facebookAppId}|${facebookAppSecretKey}`
+
+    facebookCommentsCount(urlEncode, rimay.qs('.js-comments-count'))
 
     // Instagram Feed
     // -----------------------------------------------------------------------------

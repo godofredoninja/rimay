@@ -46,8 +46,8 @@
             {{!-- Article Inner --}}
             <div class="article-inner">{{content}}</div>
 
-            {{!-- Article Comments --}}
-            <div class="block--comment u-marginTop30 u-marginBottom20 u-textAlignCenter"> <button class="button button--green button--secondary">{{t "View Comments"}} (2)</button> </div>
+            {{!-- Article Comments - partials/article/comment-count.hbs --}}
+            {{> "article/comment-count"}}
         </div>
 
         {{!-- Newsletter - partials/widget/newsletter.hbs --}}
