@@ -91,6 +91,7 @@
 .u-paddingBottom15 { padding-bottom: 15px }
 
 // Positions
+.u-fixed { position: fixed !important }
 .u-relative { position: relative }
 .u-absolute { position: absolute }
 .u-absolute0 { @extend %u-absolute0; }

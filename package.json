@@ -106,6 +106,7 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "fuzzysort": "^1.1.4",
     "lazysizes": "^5.1.0",
     "medium-zoom": "^1.0.4",
     "normalize.css": "^8.0.1",

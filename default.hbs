@@ -30,19 +30,25 @@
         {{> "footer"}}
     </div>
 
+    {{!-- Search - partials/widget/search.hbs --}}
+    {{> "widget/search"}}
+
     {{!-- Site Url --}}
     <script> var siteUrl = '{{@site.url}}'; </script>
 
-    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
-    {{{block "scripts"}}}
+    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+    {{ghost_foot}}
 
     {{!-- The main JavaScript --}}
     <script src="{{asset "scripts/main.js"}}" defer></script>
+    {{!-- Search --}}
+    {{!-- <script src="https://unpkg.com/@tryghost/content-api@1.2.5/umd/content-api.min.js" defer></script>
+    <script src="{{asset "scripts/search.js"}}" defer></script> --}}
 
     {{!-- Pagination --}}
     {{#if pagination.pages}}<script src="{{asset "scripts/pagination.js"}}" defer></script>{{/if}}
 
-    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
-    {{ghost_foot}}
+    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+    {{{block "scripts"}}}
 </body>
 </html>
