@@ -54,7 +54,8 @@ import GhostSearch from './app/app.search'
     t = t || 0
     e = e || 'up'
 
-    // if (window.innerWidth < 768) return
+    // Dont use key functions
+    if (window.innerWidth < 768) return
 
     const searchLInk = searchResults.querySelectorAll('a')
 
@@ -98,7 +99,7 @@ import GhostSearch from './app/app.search'
     let e
     let indexTheLink = 0
 
-    const resultActive = searchResults.querySelectorAll('.search-result--active')[0]
+    const resultActive = searchResults.querySelector('.search-result--active')
     if (resultActive) {
       indexTheLink = [].slice.call(resultActive.parentNode.children).indexOf(resultActive)
     }
@@ -156,9 +157,9 @@ import GhostSearch from './app/app.search'
   // -----------------------------------------------------------------------------
   qsa('.js-open-search').forEach(item => item.addEventListener('click', e => {
     e.preventDefault()
-    searchInput.focus()
     document.body.classList.add('has-search')
-    document.addEventListener('keyup', mySearchKey)
+    searchInput.focus()
+    window.innerWidth > 768 && document.addEventListener('keyup', mySearchKey)
   }))
 
   // Close Search
