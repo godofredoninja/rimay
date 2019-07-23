@@ -1,12 +1,14 @@
 <div class="search u-fixed u-flexColumnTop u-flexCenter u-fixed u-absolute0">
     <div class="js-close-search search-shader u-absolute0 zindex1"></div>
-    <div class="js-close-search search-close zindex3 u-hide-after-lg button button--circle i-close"></div>
+    <div class="js-close-search search-close zindex3 u-hide-after-lg">
+        <span class="icon icon--close icon--green">{{> "icons/close"}}</span>
+    </div>
 
     <div class="search-inner u-relative u-marginAuto zindex2">
         <div class="search-wrap">
             {{!-- search form --}}
             <form class="search-form u-sizeFullWidth u-flex u-flexCenter u-fontSizeBase">
-                <i class="i-search"></i>
+                <span class="icon icon--search icon--md icon--gray">{{> "icons/search"}}</span>
                 <input id="search-field" class="u-sizeFullWidth" type="text" placeholder="{{t "Search"}}..." aria-label="Search box"/>
             </form>
             {{!-- show a message to the user if there is no post --}}
