@@ -85,5 +85,40 @@ export default {
       jsf.async = true
       rimay.body.appendChild(jsf)
     }))
+
+    // Windows Scroll
+    // -----------------------------------------------------------------------------
+    const socialShare = rimay.qs('.js-social-share')
+    const articleFooterOffsetTop = rimay.qs('.article-footer').offsetTop
+    const buffer = 300
+    let lastScrollY = 0
+    let lastWindowHeight = window.innerHeight
+
+    function myAllScroll () {
+      // remove and add class (.share-open) social share
+      lastScrollY > 120 ? socialShare.classList.remove('share-open') : socialShare.classList.add('share-open')
+
+      // remove and add class (.share--fixwed) social share
+      if (lastScrollY > articleFooterOffsetTop - lastWindowHeight - buffer) {
+        socialShare.classList.remove('share--fixed')
+      } else {
+        socialShare.classList.add('share--fixed')
+      }
+    }
+
+    function myScroll () {
+      lastScrollY = window.scrollY
+      myAllScroll()
+    }
+
+    function onResize () {
+      lastScrollY = window.scrollY
+      lastWindowHeight = window.innerHeight
+
+      myAllScroll()
+    }
+
+    window.addEventListener('scroll', myScroll, { passive: true })
+    window.addEventListener('resize', onResize)
   } // End Finalize
 }
