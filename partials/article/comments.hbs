@@ -1,0 +1,14 @@
+<aside class="comments u-fixed u-absolute0 u-fontSizeSmall">
+    <div class="comments-wrap">
+        <div class="comments-header u-flex">
+            <span class="js-comments-toggle icon icon--md icon--close icon--green u-pointer">{{> "icons/close"}}</span>
+        </div>
+        <div class="comments-body">
+            <div class="fb-comments" data-href="{{url absolute="true"}}" data-width="100%" data-numposts="5"></div>
+        </div>
+    </div>
+</aside>
+
+{{#contentFor "scripts"}}
+<div id="fb-root"></div>
+{{/contentFor}}

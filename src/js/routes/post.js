@@ -70,5 +70,20 @@ export default {
     if (rimay.qsa('.article-inner pre').length) {
       loadScript(`${siteUrl}/assets/scripts/prismjs.js`)
     }
+
+    // Facebook Comments Load
+    // -----------------------------------------------------------------------------
+    rimay.qsa('.js-comments-toggle').forEach(item => item.addEventListener('click', e => {
+      e.preventDefault()
+      rimay.body.classList.toggle('has-comments')
+
+      if (document.getElementById('facebook-jssdk')) return
+      let jsf = document.createElement('script')
+      jsf.id = 'facebook-jssdk'
+      jsf.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3'
+      jsf.defer = true
+      jsf.async = true
+      rimay.body.appendChild(jsf)
+    }))
   } // End Finalize
 }
