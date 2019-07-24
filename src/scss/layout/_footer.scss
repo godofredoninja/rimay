@@ -13,10 +13,10 @@
 
   &-copy {
     font-size: 15px;
-    color: #777;
+    color: $footer-color;
     line-height: 2.8rem;
 
-    a:hover { border-bottom-color: #777 }
+    a:hover { border-bottom-color: $footer-color }
   }
 }
 
@@ -28,7 +28,7 @@
     font-size: 0.9375rem;
     flex: 0 0 auto;
     text-decoration: none;
-    color: #777;
+    color: $footer-color;
     line-height: 18px;
     margin-right: 20px;
 

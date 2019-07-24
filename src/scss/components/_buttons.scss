@@ -49,8 +49,8 @@
 }
 
 .button--secondary.button--green {
-  border-color: #00a562;
-  color: #00a562;
+  border-color: $primary-color;
+  color: $primary-color;
 
   &:hover::after { background-color: $primary-color }
 }

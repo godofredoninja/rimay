@@ -126,7 +126,7 @@
   ol > li::before {
     content: counter(post) ".";
     counter-increment: post;
-    color: #777;
+    color: $primary-color-gray;
     padding-right: 12px;
   }
 

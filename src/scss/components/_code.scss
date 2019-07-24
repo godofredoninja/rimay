@@ -22,8 +22,10 @@ pre {
   color: $whitegrey;
   font-size: 0.875rem;
   line-height: 1.6em;
-  background: #2a3644;
+  // background: #2a3644;
   border-radius: 5px;
+  // background: #1d1d35;
+  background: #132419;
 
   code {
     padding: 0;
@@ -43,7 +45,7 @@ pre {
 
 code,
 pre {
-  font-family: Menlo, Courier, monospace;
+  font-family: "Operator Mono Medium", "Dank Mono", "Fira Code", Menlo, Courier, monospace;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
@@ -74,7 +76,8 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
     border: none;
-	  background: #2a3644;
+    // background: #2a3644;
+    // background: #1d1d35;
 }
 
 /* Inline code */

@@ -412,7 +412,7 @@ body {
 
 li a, figcaption a, p a {
   transition: color, border-color 0.2s linear;
-  color: #00a562;
+  color: #00854F;
   border-bottom: 1px solid transparent;
 }
 
@@ -462,7 +462,7 @@ figcaption {
   font-size: .8em;
   font-style: italic;
   line-height: 1.2;
-  color: #777;
+  color: #757575;
 }
 
 button,
@@ -478,7 +478,7 @@ button, input, select, textarea {
 }
 
 blockquote {
-  border-left: 8px solid #00a562;
+  border-left: 8px solid #00854F;
   color: #000;
   font-size: 1.25rem;
   line-height: 1.7;
@@ -501,7 +501,7 @@ hr {
 }
 
 .text--green {
-  color: #00a562;
+  color: #00854F;
 }
 
 .icon {
@@ -529,7 +529,7 @@ hr {
 }
 
 .icon--green {
-  color: #00a562;
+  color: #00854F;
 }
 
 .icon--play {
@@ -637,7 +637,7 @@ hr {
 
 .u-primaryColor,
 .u-colorHoverPrimary:hover {
-  color: #00a562;
+  color: #00854F;
 }
 
 .zindex1 {
@@ -1126,7 +1126,7 @@ p {
   line-height: 1.1;
   word-wrap: break-word;
   hyphens: auto;
-  color: #777;
+  color: #757575;
   margin-bottom: 30px;
   font-weight: 600;
 }
@@ -1158,7 +1158,7 @@ p {
 }
 
 .nav-menu-toggle span {
-  background-color: #00a562;
+  background-color: #00854F;
   display: block;
   height: 2px;
   left: 14px;
@@ -1227,7 +1227,7 @@ p {
     text-decoration: none;
   }
   .mainMenu a:hover {
-    color: #00a562;
+    color: #00854F;
   }
   .mainMenu .menu-item {
     padding: .2em 0;
@@ -1308,7 +1308,7 @@ p {
 
 .menu-topics {
   margin: 15px 0;
-  color: #00a562;
+  color: #00854F;
 }
 
 .menu-topics a {
@@ -1354,19 +1354,19 @@ p {
 
 .footer-copy {
   font-size: 15px;
-  color: #777;
+  color: #6E6E6E;
   line-height: 2.8rem;
 }
 
 .footer-copy a:hover {
-  border-bottom-color: #777;
+  border-bottom-color: #6E6E6E;
 }
 
 .social-media a {
   font-size: 0.9375rem;
   flex: 0 0 auto;
   text-decoration: none;
-  color: #777;
+  color: #6E6E6E;
   line-height: 18px;
   margin-right: 20px;
 }
@@ -1477,16 +1477,16 @@ body.has-comments .comments {
 }
 
 .button--secondary.button--green {
-  border-color: #00a562;
-  color: #00a562;
+  border-color: #00854F;
+  color: #00854F;
 }
 
 .button--secondary.button--green:hover::after {
-  background-color: #00a562;
+  background-color: #00854F;
 }
 
 .button:hover:not([disabled]).button--green {
-  background-color: #00a562;
+  background-color: #00854F;
   color: #fff;
 }
 
@@ -1502,7 +1502,7 @@ body.has-comments .comments {
 
 .load-more {
   font-size: 28px;
-  color: #00a562;
+  color: #00854F;
   line-height: 1.09;
   letter-spacing: -.7px;
   font-weight: 800;
@@ -1536,7 +1536,7 @@ body.has-comments .comments {
   margin-top: 15px;
   margin-bottom: 20px;
   display: block;
-  color: #777;
+  color: #757575;
 }
 
 .newsletter-form {
@@ -1597,9 +1597,14 @@ body.has-comments .comments {
   color: #333;
 }
 
+.u-meta a {
+  padding: 2px 3px;
+  display: inline-block;
+}
+
 .u-meta-time {
   margin-right: .8em;
-  color: #777;
+  color: #757575;
 }
 
 .primary-post:hover {
@@ -1654,7 +1659,7 @@ body.has-comments .comments {
   display: block;
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   line-height: 1.4;
-  color: #777;
+  color: #757575;
 }
 
 .story-footer {
@@ -1771,8 +1776,8 @@ pre {
   color: #e5eff5;
   font-size: 0.875rem;
   line-height: 1.6em;
-  background: #2a3644;
   border-radius: 5px;
+  background: #132419;
 }
 
 pre code {
@@ -1791,7 +1796,7 @@ pre code * {
 /* ---------------------------------------------------------- */
 code,
 pre {
-  font-family: Menlo, Courier, monospace;
+  font-family: "Operator Mono Medium", "Dank Mono", "Fira Code", Menlo, Courier, monospace;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
@@ -1812,7 +1817,6 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   border: none;
-  background: #2a3644;
 }
 
 /* Inline code */
@@ -2068,35 +2072,9 @@ body.has-search .search-inner {
   background-color: #64d448;
 }
 
-.share--fixed {
-  margin-left: -58px;
-  position: fixed;
-  bottom: 0;
-}
-
-.share--fixed.share-open div > * {
-  left: auto;
-  position: relative;
-}
-
-.share--fixed > div > * {
-  position: absolute;
-  left: 0;
-  transition: left .15s ease-in-out;
-}
-
-.share--fixed > div:hover * {
-  position: relative;
-  left: auto;
-}
-
-.share--fixed a.icon--linkedin {
-  position: relative;
-}
-
 .shortlink-input {
   border: 0;
-  color: #777;
+  color: #757575;
   cursor: pointer;
   font-size: 18px;
   line-height: 2.8em;
@@ -2109,7 +2087,7 @@ body.has-search .search-inner {
 }
 
 .shortlink-input:focus, .shortlink-input:hover {
-  color: #00a562;
+  color: #00854F;
   background-color: transparent;
 }
 
@@ -2129,6 +2107,34 @@ body.has-search .search-inner {
   text-align: center;
   height: 22px;
   white-space: nowrap;
+}
+
+@media only screen and (min-width: 1100px) {
+  .share--fixed {
+    margin-left: -80px;
+    position: fixed;
+    bottom: 0;
+  }
+  .share--fixed > * {
+    position: absolute;
+    left: 0;
+    transition: left .15s ease-in-out;
+  }
+  .share--fixed .icon--facebook {
+    position: relative;
+  }
+  .share--fixed.share-open > *:nth-child(2),
+  .share--fixed:hover *:nth-child(2) {
+    left: 60px;
+  }
+  .share--fixed.share-open > *:nth-child(3),
+  .share--fixed:hover *:nth-child(3) {
+    left: 120px;
+  }
+  .share--fixed.share-open > *:nth-child(4),
+  .share--fixed:hover *:nth-child(4) {
+    left: 180px;
+  }
 }
 
 .article {
@@ -2207,11 +2213,11 @@ body.has-search .search-inner {
 
 .article-inner a {
   border-bottom: 1px solid #f1f1f1;
-  color: #00a562;
+  color: #00854F;
 }
 
 .article-inner a:hover {
-  border-bottom-color: #00a562;
+  border-bottom-color: #00854F;
 }
 
 .article-inner h1 + p, .article-inner h2 + p, .article-inner h3 + p, .article-inner h4 + p, .article-inner h5 + p, .article-inner h6 + p {
@@ -2247,7 +2253,7 @@ body.has-search .search-inner {
 .article-inner ol > li::before {
   content: counter(post) ".";
   counter-increment: post;
-  color: #777;
+  color: #757575;
   padding-right: 12px;
 }
 

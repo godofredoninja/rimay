@@ -6,9 +6,11 @@
   margin: 10px 0;
   color: #333;
 
+  a { padding: 2px 3px; display: inline-block }
+
   &-time {
     margin-right: .8em;
-    color: #777;
+    color: $primary-color-gray;
   }
 }
 
@@ -62,7 +64,7 @@
     display: block;
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     line-height: 1.4;
-    color: #777;
+    color: $primary-color-gray;
   }
 
   // footer

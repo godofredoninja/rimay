@@ -111,14 +111,17 @@ export default {
       myAllScroll()
     }
 
-    function onResize () {
-      lastScrollY = window.scrollY
-      lastWindowHeight = window.innerHeight
+    // function onResize () {
+    //   lastScrollY = window.scrollY
+    //   lastWindowHeight = window.innerHeight
 
-      myAllScroll()
+    //   myAllScroll()
+    // }
+
+    if (window.innerWidth > 1095) {
+      window.addEventListener('scroll', myScroll, { passive: true })
+      // window.addEventListener('resize', onResize)
     }
 
-    window.addEventListener('scroll', myScroll, { passive: true })
-    window.addEventListener('resize', onResize)
   } // End Finalize
 }

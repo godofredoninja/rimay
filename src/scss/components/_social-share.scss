@@ -12,7 +12,7 @@
     justify-content: center;
 
     // &:hover {
-    //   opacity: .8;
+    //   opacity: .9;
     // }
   }
 
@@ -21,44 +21,11 @@
   @each $social-name, $color in $social-colors {
     .icon--#{$social-name} { background-color: $color }
   }
-
-  // .icon {
-  //   width: 60px;
-  //   height: 60px;
-  // }
 }
-
-// fixed
-.share--fixed {
-  margin-left: -58px;
-  position: fixed;
-  bottom: 0;
-
-  &.share-open div > * {
-    left: auto;
-    position: relative;
-  }
-
-  & > div > * {
-    position: absolute;
-    left: 0;
-    transition: left .15s ease-in-out;
-  }
-
-  & > div:hover * {
-    position: relative;
-    left: auto;
-  }
-
-  a.icon--linkedin {
-    position: relative;
-  }
-}
-
 
 .shortlink-input {
   border: 0;
-  color: #777;
+  color: $primary-color-gray;
   cursor: pointer;
   font-size: 18px;
   line-height: 2.8em;
@@ -92,4 +59,28 @@
   text-align: center;
   height: 22px;
   white-space: nowrap;
+}
+
+@media #{$lg-and-up} {
+  // fixed
+  .share--fixed {
+    margin-left: -80px;
+    position: fixed;
+    bottom: 0;
+
+    & > * {
+      position: absolute;
+      left: 0;
+      transition: left .15s ease-in-out;
+    }
+
+    .icon--facebook { position: relative }
+
+    &.share-open > *,
+    &:hover * {
+      @for $i from 1 through 3 {
+        &:nth-child(#{1 + $i}) { left: 60px * $i }
+      }
+    }
+  }
 }
