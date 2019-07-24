@@ -50,7 +50,9 @@ export default {
     const articleUrl = window.location.href
     const urlEncode = `https://graph.facebook.com/?id=${encodeURIComponent(articleUrl)}&fields=engagement&access_token=${facebookAppId}|${facebookAppSecretKey}`
 
-    facebookCommentsCount(urlEncode, rimay.qs('.js-comments-count'))
+    const facebookCommentsBox = rimay.qs('.js-comments-count')
+
+    facebookCommentsBox && facebookCommentsCount(urlEncode, facebookCommentsBox)
 
     // Instagram Feed
     // -----------------------------------------------------------------------------
@@ -63,7 +65,9 @@ export default {
     const url = `https://api.instagram.com/v1/users/${instagramFeed.userId}/media/recent/?access_token=${instagramFeed.token}&count=10&callback=?`
     const user = `<a href="https://www.instagram.com/${instagramFeed.userName}" class="instagram-btn" target="_blank" rel="noopener noreferrer">@${instagramFeed.userName}</a>`
 
-    window.innerWidth > 768 && instagram(url, user)
+    if (window.innerWidth > 768 && rimay.qs('instagram')) {
+      instagram(url, user)
+    }
 
     // highlight prismjs
     // -----------------------------------------------------------------------------
@@ -92,25 +96,32 @@ export default {
     const shortLink = rimay.qs('.shortlink')
     const shortLinkIndicator = rimay.qs('.shortlink-indicator')
 
-    shortLink.addEventListener('click', function (e) {
-      e.preventDefault()
-      copyThis.select()
-      document.execCommand('copy')
-      this.classList.add('active')
-      shortLinkIndicator.textContent = 'Copied!'
-      copyThis.focus()
-    })
+    if (shortLink) {
+      shortLink.addEventListener('click', function (e) {
+        e.preventDefault()
+        copyThis.select()
+        document.execCommand('copy')
+        this.classList.add('active')
+        shortLinkIndicator.textContent = 'Copied!'
+        copyThis.focus()
+      })
 
-    copyThis.addEventListener('focusout', e => {
-      e.preventDefault()
-      shortLink.classList.remove('active')
-      shortLinkIndicator.textContent = 'copy'
-    })
+      copyThis.addEventListener('focusout', e => {
+        e.preventDefault()
+        shortLink.classList.remove('active')
+        shortLinkIndicator.textContent = 'copy'
+      })
+    }
 
     // Windows Scroll
     // -----------------------------------------------------------------------------
     const socialShare = rimay.qs('.js-social-share')
-    const articleFooterOffsetTop = rimay.qs('.article-footer').offsetTop
+    let articleFooterOffsetTop = 0
+
+    if (socialShare) articleFooterOffsetTop = socialShare.parentNode.offsetTop
+
+    // const articleFooterOffsetTop = rimay.qs('.article-footer').offsetTop
+
     const buffer = 300
     let lastScrollY = 0
     let lastWindowHeight = window.innerHeight
@@ -139,7 +150,7 @@ export default {
     //   myAllScroll()
     // }
 
-    if (window.innerWidth > 1095) {
+    if (window.innerWidth > 1095 && socialShare) {
       window.addEventListener('scroll', myScroll, { passive: true })
       // window.addEventListener('resize', onResize)
     }
