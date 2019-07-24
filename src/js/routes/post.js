@@ -86,6 +86,27 @@ export default {
       rimay.body.appendChild(jsf)
     }))
 
+    // URL Copy link
+    // -----------------------------------------------------------------------------
+    const copyThis = document.getElementById('shortlink')
+    const shortLink = rimay.qs('.shortlink')
+    const shortLinkIndicator = rimay.qs('.shortlink-indicator')
+
+    shortLink.addEventListener('click', function (e) {
+      e.preventDefault()
+      copyThis.select()
+      document.execCommand('copy')
+      this.classList.add('active')
+      shortLinkIndicator.textContent = 'Copied!'
+      copyThis.focus()
+    })
+
+    copyThis.addEventListener('focusout', e => {
+      e.preventDefault()
+      shortLink.classList.remove('active')
+      shortLinkIndicator.textContent = 'copy'
+    })
+
     // Windows Scroll
     // -----------------------------------------------------------------------------
     const socialShare = rimay.qs('.js-social-share')
@@ -122,6 +143,5 @@ export default {
       window.addEventListener('scroll', myScroll, { passive: true })
       // window.addEventListener('resize', onResize)
     }
-
   } // End Finalize
 }

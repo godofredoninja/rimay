@@ -23,6 +23,21 @@
   }
 }
 
+
+// animation
+@keyframes bounce-in-out {
+  0% { right: 10px}
+  40% { right: 0px }
+  80% { right: 2px }
+  100% { right: 10px }
+}
+
+.shortlink.active .shortlink-indicator {
+  background-color: $primary-color;
+  animation: bounce-in-out .2s 1;
+  animation-timing-function: ease;
+}
+
 .shortlink-input {
   border: 0;
   color: $primary-color-gray;
@@ -36,6 +51,7 @@
   transition: color .15s linear;
   width: auto;
 
+  &::selection,
   &:focus,
   &:hover {
     color: $primary-color;
