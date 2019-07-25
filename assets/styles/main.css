@@ -1591,6 +1591,7 @@ body.has-comments .comments {
     padding-right: 20px;
     flex-basis: 250px;
     font-size: 2rem;
+    text-align: right;
   }
   .newsletter-right {
     flex-basis: 67.5%;
@@ -2310,7 +2311,7 @@ body.has-search .search-inner {
 }
 
 .article-inner > * {
-  margin-top: 26px;
+  margin-top: 2rem;
   min-width: 100%;
 }
 
