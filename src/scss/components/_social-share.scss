@@ -83,6 +83,7 @@
     margin-left: -80px;
     position: fixed;
     bottom: 0;
+    z-index: 2;
 
     & > * {
       position: absolute;
