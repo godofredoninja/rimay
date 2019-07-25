@@ -2425,4 +2425,56 @@ body.has-search .search-inner {
   }
 }
 
+.topic-items {
+  height: 280px;
+  padding: 15px;
+  background-color: #333;
+}
+
+.topic-items h3 {
+  color: #fff;
+}
+
+.topic-items:hover .topic-gradient {
+  opacity: .7;
+}
+
+.topic-title {
+  flex-basis: 100%;
+  margin: 20px 0 40px;
+  font-size: 3rem;
+}
+
+.topic-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.topic-col {
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-basis: 100%;
+}
+
+.topic-gradient {
+  transition: .4s;
+  background-color: #000;
+  opacity: .5;
+}
+
+@media only screen and (min-width: 800px) {
+  .topic-col {
+    flex-basis: 48%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .topic-col {
+    flex-basis: 32%;
+  }
+}
+
 /*# sourceMappingURL=map/main.css.map */
