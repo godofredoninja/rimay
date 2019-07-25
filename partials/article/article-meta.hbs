@@ -1,8 +1,13 @@
 <div class="article-meta u-meta u-flexCenter u-fontSizeSmall u-fontWeightMedium">
     <div class="article-byline u-meta-byline">
-        {{#primary_author}}<a class="article-byline-author" aria-label="{{t "Post by"}} {{name}}" href="{{url}}" class="u-colorHoverPrimary u-colorInherit u-relative u-textCapitalize">{{name}}</a>{{/primary_author}}
-        <span class="article-divider text--green">/</span>
-        <time class="datetime u-meta-time" datetime="{{date format=" YYYY-MM-DD "}}">{{date published_at timeago="true"}}</time>
+        {{#primary_author}}
+        <a class="article-byline-author u-fontSize20 u-fontWeightMedium" aria-label="{{t "Post by"}} {{name}}" href="{{url}}" class="u-colorHoverPrimary u-colorInherit u-relative u-textCapitalize">{{name}}</a>
+        <span class="article-byline-meta u-meta-time">
+            {{#if twitter}}<a href="{{twitter_url}}" title="{{twitter}}" class="u-colorInherit" target="_blank" rel="noopener noreferrer">{{twitter}}</a>{{/if}}
+        {{/primary_author}}
+            <span class="article-divider text--green">/</span>
+            <time class="datetime" datetime="{{date format=" YYYY-MM-DD "}}">{{date published_at timeago="true"}}</time>
+        </span>
     </div>
     {{!-- Comments --}}
     <div class="article-meta--right u-hide-before-md">

@@ -1,5 +1,5 @@
 {{!-- Tag Cloud --}}
-{{#get "tags" limit="10" include="count.posts" order="count.posts desc" as |topics|}}
+{{#get "tags" limit="6" include="count.posts" order="count.posts desc" as |topics|}}
     {{#if topics}}
         <ul class="menu menu-topics u-fontSizeSmall u-unstyled">
             {{#foreach topics}}

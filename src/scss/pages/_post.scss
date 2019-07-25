@@ -21,12 +21,8 @@
 
   // Byline
   &-byline {
-    a {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: #333;
-      line-height: 20px;
-    }
+    &-author { color: #333 }
+    a:hover { color: $primary-color }
   }
 
   &-divider {
