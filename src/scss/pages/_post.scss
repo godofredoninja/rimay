@@ -7,7 +7,7 @@
   // title
   &-title {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: -0.02em;
     line-height: 1.1;
     padding-top: 20px;
@@ -299,6 +299,8 @@
       left: -250px;
       width: 100vw;
     }
+
+    &-title { font-size: 3.2em }
 
     &-inner { font-size: 1.375rem }
   }

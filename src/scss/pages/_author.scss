@@ -19,15 +19,17 @@
 
   &-bio { margin: 40px 0 20px }
 
-  &-social a {
-    margin-right: 10px;
-    border: 1px solid #000;
-    padding: 10px;
-    color: #000;
-    display: inline-block;
+  .button { padding: 10px 15px  }
 
-    &:hover { border-color: $primary-color }
-  }
+  // &-social a {
+  //   margin-right: 10px;
+  //   border: 1px solid #000;
+  //   padding: 10px;
+  //   color: #000;
+  //   display: inline-block;
+
+  //   &:hover { border-color: $primary-color }
+  // }
 
   &-meta > * {
     margin-right: 10px;
@@ -41,9 +43,9 @@
 
     .author-name { color: #fff }
 
-    .author-social a {
-      color: #fff;
-      border-color: #fff;
+    .button {
+      color: #f1f1f1;
+      border-color: #f1f1f1;
 
       // &:hover {
       //   color: $primary-color;

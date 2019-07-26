@@ -70,3 +70,8 @@
 .button.button--black:hover::after {
   background-color: #000;
 }
+
+.button--secondary.button--black {
+    border-color: #000;
+    color: #000;
+}
