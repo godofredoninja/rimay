@@ -1385,63 +1385,103 @@ p {
   }
 }
 
-.footer {
-  background-color: #f1f1f1;
-  padding: 20px;
-  margin-top: 30px;
-  width: 100vw;
+body:not(.is-article) .footer {
+  margin-top: 3rem;
+}
+
+.footer-wrap {
+  padding: 50px 20px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 100%;
 }
 
 .footer a {
+  color: #6EE193;
+}
+
+.sft {
+  background: #110f16;
+  color: #ccc;
+}
+
+.sft-c {
+  padding: 15px;
+  border-radius: 4px;
+  background: #18151f;
+  font-size: 18px;
+  line-height: 1.6;
+  height: 100%;
+}
+
+.sft-c p {
+  padding-bottom: 10px;
+}
+
+.sft-t {
+  color: #f1f1f1;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #444;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.sft-s a {
+  display: inline-block;
+  padding: 4px;
+  margin-right: 10px;
+}
+
+.sft .social-media .icon {
+  color: #ccc;
+}
+
+.sft--a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sft--p a {
   color: inherit;
-  text-decoration: none;
 }
 
-.footer-copy {
-  font-size: 15px;
-  color: #6E6E6E;
-  line-height: 2.8rem;
+.sft--p a:hover {
+  color: #6EE193;
+  border-bottom-color: transparent;
 }
 
-.footer-copy a:hover {
-  border-bottom-color: #6E6E6E;
+.sft--p a:hover img {
+  opacity: 1 !important;
 }
 
-.social-media a {
-  font-size: 0.9375rem;
-  flex: 0 0 auto;
-  text-decoration: none;
-  color: #6E6E6E;
-  line-height: 18px;
-  margin-right: 20px;
+.g-yts {
+  padding: 10px;
+  background: #fff;
+  border-radius: 3px;
+  min-height: 68px;
+  line-height: 1;
 }
 
-.social-media a:hover .icon--facebook {
-  color: #3b5998;
-}
-
-.social-media a:hover .icon--twitter {
-  color: #00aced;
-}
-
-.social-media a:hover .icon--youtube {
-  color: #b00;
-}
-
-.social-media a:hover .icon--instagram {
-  color: #bc2a8d;
-}
-
-.social-media span:not(.icon) {
-  display: inline;
-  padding-left: 6px;
+@media only screen and (min-width: 800px) {
+  .footer-col {
+    flex-basis: 48%;
+  }
 }
 
 @media only screen and (min-width: 1100px) {
   .footer {
     margin-left: 0;
     margin-right: auto;
-    padding: 25px 0 18px;
   }
   .footer-wrap {
     margin-left: 210px;
@@ -1549,7 +1589,7 @@ body.has-comments .comments {
 }
 
 .load-more {
-  font-size: 28px;
+  font-size: 2.2rem;
   color: #00854F;
   line-height: 1.09;
   letter-spacing: -.7px;
@@ -1562,6 +1602,7 @@ body.has-comments .comments {
   transition: background-color .2s ease;
   background-color: transparent;
   display: block;
+  margin-top: 2rem;
 }
 
 .load-more:hover {
