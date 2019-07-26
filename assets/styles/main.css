@@ -2245,6 +2245,50 @@ body.has-search .search-inner {
   }
 }
 
+.godo-a {
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+}
+
+.godo-a > * {
+  margin: auto;
+  display: block;
+  max-width: 100%;
+}
+
+body.is-image .godo-a-lg {
+  background-color: #000;
+  border-bottom: 0;
+}
+
+body.is-image .godo-a-lg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  left: -250px;
+  background-color: #000;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 1100px) {
+  .godo-a-lg {
+    border-bottom: 2px solid #f1f1f1;
+    margin-left: 210px;
+    width: calc(100vw - 210px);
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .godo-a-lg {
+    margin-left: 250px;
+    width: calc(100vw - 250px);
+  }
+}
+
 .author {
   color: #333;
   text-align: center;
