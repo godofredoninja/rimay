@@ -500,6 +500,37 @@ hr {
   max-width: 100%;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 35px 0 0;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+table th {
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 .text--green {
   color: #00854F;
 }
@@ -1115,6 +1146,15 @@ p {
   color: inherit;
 }
 
+.logo-svg {
+  width: 100px;
+}
+
+.logo-svg svg {
+  height: 100%;
+  width: 100%;
+}
+
 .nav-header {
   background-color: #fff;
   height: 50px;
@@ -1289,6 +1329,9 @@ p {
   .nav-body {
     margin: 30px 0 0 0;
     overflow-y: auto;
+  }
+  .logo-svg {
+    width: 150px;
   }
 }
 

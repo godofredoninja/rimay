@@ -18,6 +18,15 @@
 
 .logo { @extend %primary-font; }
 
+.logo-svg {
+  width: 100px;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
 // Header nav
 .nav-header {
   background-color: #fff;
@@ -192,6 +201,8 @@
     &-header { background-color: transparent }
     &-body { margin: 30px 0 0 0; overflow-y: auto }
   }
+
+  .logo-svg { width: 150px  }
 }
 
 @media #{$xl-and-up} {
