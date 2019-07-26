@@ -1189,10 +1189,6 @@ p {
   padding: 0 20px 20px;
 }
 
-.nav .social-media span:not(.icon) {
-  display: none;
-}
-
 .nav-menu-toggle {
   height: 48px;
   margin-right: -20px;
@@ -1219,6 +1215,12 @@ p {
 
 .nav-menu-toggle span:last-child {
   transform: translate(0, 6px);
+}
+
+.social-media a {
+  display: inline-block;
+  padding: 4px;
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -1434,12 +1436,6 @@ body:not(.is-article) .footer {
   margin-bottom: 12px;
   font-weight: 600;
   letter-spacing: 0;
-}
-
-.sft-s a {
-  display: inline-block;
-  padding: 4px;
-  margin-right: 10px;
 }
 
 .sft .social-media .icon {

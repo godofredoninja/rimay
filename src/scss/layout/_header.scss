@@ -58,10 +58,6 @@
   border-bottom: 1px solid hsla(0,0%,100%,.15);
   margin: 0 -20px 2em;
   padding: 0 20px 20px;
-
-  span:not(.icon) {
-    display: none;
-  }
 }
 
 // Menu - Toggle
@@ -86,6 +82,13 @@
     &:first-child { transform: translate(0, -6px); }
     &:last-child { transform: translate(0, 6px); }
   }
+}
+
+
+.social-media a {
+  display: inline-block;
+  padding: 4px;
+  margin-right: 10px;
 }
 
 // breakpoints lg down 1100
