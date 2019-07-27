@@ -36,7 +36,6 @@
     "url": "https://github.com/godofredoninja/rimay.git"
   },
   "bugs": "https://github.com/godofredoninja/rimay/issues",
-  "contributors": "https://github.com/godofredoninja/rimay/network/dependencies",
   "config": {
     "posts_per_page": 12,
     "image_sizes": {
@@ -59,57 +58,5 @@
         "width": 2000
       }
     }
-  },
-  "browserslist": [
-    "last 2 versions",
-    "android 4",
-    "opera 12"
-  ],
-  "scripts": {
-    "lint:js": "standard src/js/*.js gulpfile.js",
-    "lint:scss": "csscomb -c src/scss/.csscomb.json src/scss",
-    "lint": "yarn lint:js && yarn lint:scss",
-    "test": "yarn lint && gscan .",
-    "build": "gulp build",
-    "release": "gulp release --production",
-    "dev": "gulp develop"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@babel/plugin-transform-runtime": "^7.5.0",
-    "@babel/preset-env": "^7.5.4",
-    "@babel/runtime": "^7.5.4",
-    "autoprefixer": "^9.6.1",
-    "babelify": "^10.0.0",
-    "browserify": "^16.3.0",
-    "css-mqpacker": "7.0.0",
-    "csscomb": "4.3.0",
-    "cssnano": "4.1.10",
-    "del": "5.0.0",
-    "gscan": "2.6.2",
-    "gulp": "4.0.2",
-    "gulp-babel": "8.0.0",
-    "gulp-header": "2.0.7",
-    "gulp-if": "2.0.2",
-    "gulp-imagemin": "6.0.0",
-    "gulp-livereload": "4.0.1",
-    "gulp-load-plugins": "2.0.0",
-    "gulp-plumber": "1.2.1",
-    "gulp-postcss": "8.0.0",
-    "gulp-sass": "4.0.2",
-    "gulp-sourcemaps": "2.6.5",
-    "gulp-uglify": "3.0.2",
-    "gulp-zip": "5.0.0",
-    "merge-stream": "^2.0.0",
-    "standard": "12.0.1",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
-  },
-  "dependencies": {
-    "fuzzysort": "^1.1.4",
-    "lazysizes": "^5.1.0",
-    "medium-zoom": "^1.0.4",
-    "normalize.css": "^8.0.1",
-    "prismjs": "^1.16.0"
   }
 }
