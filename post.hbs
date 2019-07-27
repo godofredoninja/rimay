@@ -6,17 +6,22 @@
 {{!-- Ads large in the header page--}}
 {{> "ads/ad-lg-header"}}
 
+{{#post}}
+
 <div class="rimay-wrap">
     <div class="rimay-content">
         {{!-- Article - partials/article/article.hbs --}}
-        {{#post}} {{> "article/article"}} {{/post}}
+        {{> "article/article"}}
     </div>
 
     {{!-- sidebar - partials/sidebar/sidebar.hbs --}}
     {{> "sidebar/sidebar"}}
 </div>
 
+{{/post}}
+
 {{!-- Article Related - partials/article/related.hbs --}}
-{{> "article/related"}}
+{{#if post.tags}}{{> "article/related"}}{{/if}}
+
 
 {{> "widget/instagram-feed"}}

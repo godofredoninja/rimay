@@ -74,7 +74,7 @@
 {{/post}}
 
 {{!-- Article Related - partials/article/related.hbs --}}
-{{> "article/related"}}
+{{#if post.tags}}{{> "article/related"}}{{/if}}
 
 {{!-- Article Related - partials/widget/intagram-feed.hbs --}}
 {{> "widget/instagram-feed"}}
