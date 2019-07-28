@@ -47,7 +47,11 @@
     <article class="article article-shadow">
         <div class="article-body u-relative">
             {{!-- Article Inner --}}
-            <div class="article-inner">{{content}}</div>
+            <div class="article-inner">
+                {{content}}
+                {{!-- ad --}}
+                {{> "ads/ad-article-footer"}}
+            </div>
 
             {{!-- Article Comments - partials/article/comment-count.hbs --}}
             {{> "article/comment-count"}}

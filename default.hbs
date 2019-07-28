@@ -12,8 +12,6 @@
 
     {{!-- Styles --}}
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700,900&display=swap" rel="stylesheet">
-    {{!-- <link href="https://fonts.googleapis.com/css?family=Paytone+One|Rokkitt:400,500&display=swap" rel="stylesheet"> --}}
-    {{!-- <link href="https://fonts.googleapis.com/css?family=Alegreya:400,500,700,800&display=swap" rel="stylesheet"> --}}
 
     {{!-- <link rel="stylesheet" type="text/css" href="{{asset "styles/main.css"}}"/> --}}
     <style>{{> "styles"}}</style>
@@ -50,5 +48,14 @@
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
+
+    {{#is "post"}}
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3462564966072994",
+            enable_page_level_ads: true
+        });
+    </script>
+    {{/is}}
 </body>
 </html>

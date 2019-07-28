@@ -22,7 +22,11 @@
             <div class="article-body u-relative">
                 <div class="js-video-media article-media u-block u-marginAuto u-textAlignCenter"></div>
                 {{!-- Article Inner --}}
-                <div class="article-inner">{{content}}</div>
+                <div class="article-inner">
+                    {{content}}
+                    {{!-- ad --}}
+                    {{> "ads/ad-article-footer"}}
+                </div>
                 {{!-- Article Comments - partials/article/comment-count.hbs --}}
                 {{> "article/comment-count"}}
             </div>
