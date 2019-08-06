@@ -412,7 +412,7 @@ body {
 
 li a, figcaption a, p a {
   transition: color, border-color 0.2s linear;
-  color: #00854F;
+  color: #00a562;
   border-bottom: 1px solid transparent;
 }
 
@@ -462,7 +462,7 @@ figcaption {
   font-size: .8em;
   font-style: italic;
   line-height: 1.2;
-  color: #757575;
+  color: #777;
 }
 
 button,
@@ -478,7 +478,7 @@ button, input, select, textarea {
 }
 
 blockquote {
-  border-left: 8px solid #00854F;
+  border-left: 8px solid #00a562;
   color: #000;
   font-size: 1.25rem;
   line-height: 1.7;
@@ -532,7 +532,7 @@ table th {
 }
 
 .text--green {
-  color: #00854F;
+  color: #00a562;
 }
 
 .icon {
@@ -560,7 +560,7 @@ table th {
 }
 
 .icon--green {
-  color: #00854F;
+  color: #00a562;
 }
 
 .icon--play {
@@ -668,7 +668,7 @@ table th {
 
 .u-primaryColor,
 .u-colorHoverPrimary:hover {
-  color: #00854F;
+  color: #00a562;
 }
 
 .zindex1 {
@@ -1194,7 +1194,7 @@ p {
 }
 
 .nav-menu-toggle span {
-  background-color: #00854F;
+  background-color: #00a562;
   display: block;
   height: 2px;
   left: 14px;
@@ -1269,7 +1269,7 @@ p {
     text-decoration: none;
   }
   .mainMenu a:hover {
-    color: #00854F;
+    color: #00a562;
   }
 }
 
@@ -1351,7 +1351,7 @@ p {
 
 .menu-topics {
   margin: 15px 0;
-  color: #00854F;
+  color: #00a562;
 }
 
 .menu-topics a {
@@ -1527,16 +1527,16 @@ p {
 }
 
 .button--secondary.button--green {
-  border-color: #00854F;
-  color: #00854F;
+  border-color: #00a562;
+  color: #00a562;
 }
 
 .button--secondary.button--green:hover::after {
-  background-color: #00854F;
+  background-color: #00a562;
 }
 
 .button:hover:not([disabled]).button--green {
-  background-color: #00854F;
+  background-color: #00a562;
   color: #fff;
 }
 
@@ -1557,7 +1557,7 @@ p {
 
 .load-more {
   font-size: 2.2rem;
-  color: #00854F;
+  color: #00a562;
   line-height: 1.09;
   letter-spacing: -.7px;
   font-weight: 800;
@@ -1592,7 +1592,7 @@ p {
   margin-top: 15px;
   margin-bottom: 20px;
   display: block;
-  color: #757575;
+  color: #777;
 }
 
 .newsletter-form {
@@ -1661,7 +1661,7 @@ p {
 
 .u-meta-time {
   margin-right: .8em;
-  color: #757575;
+  color: #777;
 }
 
 .primary-post:hover {
@@ -1716,7 +1716,7 @@ p {
   display: block;
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   line-height: 1.4;
-  color: #757575;
+  color: #777;
 }
 
 .story-footer {
@@ -2145,14 +2145,14 @@ body.has-search .search-inner {
 }
 
 .shortlink.active .shortlink-indicator {
-  background-color: #00854F;
+  background-color: #00a562;
   animation: bounce-in-out .2s 1;
   animation-timing-function: ease;
 }
 
 .shortlink-input {
   border: 0;
-  color: #757575;
+  color: #777;
   cursor: pointer;
   font-size: 18px;
   line-height: 2.8em;
@@ -2165,7 +2165,7 @@ body.has-search .search-inner {
 }
 
 .shortlink-input::selection, .shortlink-input:focus, .shortlink-input:hover {
-  color: #00854F;
+  color: #00a562;
   background-color: transparent;
 }
 
@@ -2274,7 +2274,7 @@ body.is-image .godo-a-lg:before {
 }
 
 .author a:hover {
-  color: #00854F;
+  color: #00a562;
 }
 
 .author-avatar {
@@ -2356,7 +2356,7 @@ body.is-image .godo-a-lg:before {
 }
 
 .article-byline a:hover {
-  color: #00854F;
+  color: #00a562;
 }
 
 .article-divider {
@@ -2408,11 +2408,11 @@ body.is-image .godo-a-lg:before {
 
 .article-inner a {
   border-bottom: 1px solid #f1f1f1;
-  color: #00854F;
+  color: #00a562;
 }
 
 .article-inner a:hover {
-  border-bottom-color: #00854F;
+  border-bottom-color: #00a562;
 }
 
 .article-inner h1 + p, .article-inner h2 + p, .article-inner h3 + p, .article-inner h4 + p, .article-inner h5 + p, .article-inner h6 + p {
@@ -2448,7 +2448,7 @@ body.is-image .godo-a-lg:before {
 .article-inner ol > li::before {
   content: counter(post) ".";
   counter-increment: post;
-  color: #757575;
+  color: #777;
   padding-right: 12px;
 }
 
