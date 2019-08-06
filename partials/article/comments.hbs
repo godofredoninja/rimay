@@ -1,14 +1,31 @@
-<aside class="comments u-fixed u-absolute0 u-fontSizeSmall">
+<aside id="comments" class="js-comments comments u-fontSizeSmall u-hide u-marginTop30">
     <div class="comments-wrap">
-        <div class="comments-header u-flex">
-            <span class="js-comments-toggle icon icon--md icon--close icon--green u-pointer">{{> "icons/close"}}</span>
-        </div>
         <div class="comments-body">
-            <div class="fb-comments" data-href="{{url absolute="true"}}" data-width="100%" data-numposts="5"></div>
+             <div id="disqus_thread" class="mapache-disqus"></div>
         </div>
     </div>
 </aside>
 
 {{#contentFor "scripts"}}
-<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+    if (typeof disqusShortName === 'undefined') return;
+
+    document.querySelector('.js-comments').classList.remove('u-hide');
+
+    var disqus_config = function () {
+        this.page.url = '{{url absolute="true"}}';
+        this.page.identifier = 'ghost-{{comment_id}}';
+    };
+
+    if (d.getElementById(id)) return;
+    var js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://'+disqusShortName+'.disqus.com/embed.js';
+    js.async = true;
+    js.defer = true;
+    d.body.appendChild(js)
+}(document, 'script', 'disqus-js'));
+</script>
+
 {{/contentFor}}

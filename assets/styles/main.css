@@ -1078,10 +1078,6 @@ p {
     margin-left: 0;
     margin-right: 0;
   }
-  .comments {
-    left: auto !important;
-    width: 470px !important;
-  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -1475,22 +1471,9 @@ p {
 }
 
 .comments {
-  z-index: 50;
   width: 100%;
-  overflow-y: auto;
-  background: #fff;
-  border-left: 1px solid #f1f1f1;
-  transform: translateX(100%);
-  transition: .4s;
-}
-
-.comments-header {
-  padding: 1em 1.25em;
-  border-bottom: 1px solid #ddd;
-}
-
-body.has-comments .comments {
-  transform: translateX(0);
+  border-top: 2px solid #ddd;
+  padding-top: 30px;
 }
 
 .gradient-text--green {

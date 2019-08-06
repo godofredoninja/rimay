@@ -5,7 +5,7 @@ import mediumZoom from 'medium-zoom'
 // Variables
 import * as rimay from '../app/app.variables'
 import { loadScript } from '../app/app.load-style-script'
-import instagram from '../app/app.instagram'
+// import instagram from '../app/app.instagram'
 import facebookCommentsCount from '../app/app.facebook-comment-count'
 
 export default {
@@ -43,31 +43,31 @@ export default {
       background: 'hsla(0,0%,100%,.85)'
     })
 
-    // medium-zoom
+    // Facebook Comments Count
     // -----------------------------------------------------------------------------
-    const facebookAppId = '344388876498138'
-    const facebookAppSecretKey = 'f19d6496fe2394dfc1915a53a6fe2388'
-    const articleUrl = window.location.href
-    const urlEncode = `https://graph.facebook.com/?id=${encodeURIComponent(articleUrl)}&fields=engagement&access_token=${facebookAppId}|${facebookAppSecretKey}`
+    // const facebookAppId = '344388876498138'
+    // const facebookAppSecretKey = 'f19d6496fe2394dfc1915a53a6fe2388'
+    // const articleUrl = window.location.href
+    // const urlEncode = `https://graph.facebook.com/?id=${encodeURIComponent(articleUrl)}&fields=engagement&access_token=${facebookAppId}|${facebookAppSecretKey}`
 
-    const facebookCommentsBox = rimay.qs('.js-comments-count')
+    // const facebookCommentsBox = rimay.qs('.js-comments-count')
 
-    facebookCommentsBox && facebookCommentsCount(urlEncode, facebookCommentsBox)
+    // facebookCommentsBox && facebookCommentsCount(urlEncode, facebookCommentsBox)
 
     // Instagram Feed
     // -----------------------------------------------------------------------------
-    const instagramFeed = {
-      token: '1397790551.1aa422d.37dca7d33ba34544941e111aa03e85c7',
-      userId: '1397790551',
-      userName: 'GodoFredoNinja'
-    }
+    // const instagramFeed = {
+    //   token: '1397790551.1aa422d.37dca7d33ba34544941e111aa03e85c7',
+    //   userId: '1397790551',
+    //   userName: 'GodoFredoNinja'
+    // }
 
-    const url = `https://api.instagram.com/v1/users/${instagramFeed.userId}/media/recent/?access_token=${instagramFeed.token}&count=10&callback=?`
-    const user = `<a href="https://www.instagram.com/${instagramFeed.userName}" class="instagram-btn" target="_blank" rel="noopener noreferrer">@${instagramFeed.userName}</a>`
+    // const url = `https://api.instagram.com/v1/users/${instagramFeed.userId}/media/recent/?access_token=${instagramFeed.token}&count=10&callback=?`
+    // const user = `<a href="https://www.instagram.com/${instagramFeed.userName}" class="instagram-btn" target="_blank" rel="noopener noreferrer">@${instagramFeed.userName}</a>`
 
-    if (window.innerWidth > 768 && rimay.qs('.instagram')) {
-      instagram(url, user)
-    }
+    // if (window.innerWidth > 768 && rimay.qs('.instagram')) {
+    //   instagram(url, user)
+    // }
 
     // highlight prismjs
     // -----------------------------------------------------------------------------
@@ -77,18 +77,18 @@ export default {
 
     // Facebook Comments Load
     // -----------------------------------------------------------------------------
-    rimay.qsa('.js-comments-toggle').forEach(item => item.addEventListener('click', e => {
-      e.preventDefault()
-      rimay.body.classList.toggle('has-comments')
+    // rimay.qsa('.js-comments-toggle').forEach(item => item.addEventListener('click', e => {
+    //   e.preventDefault()
+    //   rimay.body.classList.toggle('has-comments')
 
-      if (document.getElementById('facebook-jssdk')) return
-      let jsf = document.createElement('script')
-      jsf.id = 'facebook-jssdk'
-      jsf.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3'
-      jsf.defer = true
-      jsf.async = true
-      rimay.body.appendChild(jsf)
-    }))
+    //   if (document.getElementById('facebook-jssdk')) return
+    //   let jsf = document.createElement('script')
+    //   jsf.id = 'facebook-jssdk'
+    //   jsf.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3'
+    //   jsf.defer = true
+    //   jsf.async = true
+    //   rimay.body.appendChild(jsf)
+    // }))
 
     // URL Copy link
     // -----------------------------------------------------------------------------
