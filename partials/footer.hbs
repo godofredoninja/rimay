@@ -1,12 +1,21 @@
 <footer class="footer">
     <div class="footer-wrap">
+        {{!-- Footer menu --}}
+        <ul class="menu footer-menu u-unstyled">
+            <li class="menu-item"><a href="#">Menu01</a></li>
+            <li class="menu-item"><a href="#">Menu02</a></li>
+            <li class="menu-item"><a href="#">Menu03</a></li>
+            <li class="menu-item"><a href="#">Menu04</a></li>
+            <li class="menu-item"><a href="#">Menu05</a></li>
+        </ul>
+
+        {{!-- Footer Copy --}}
+        <p class="footer-copy">
+            <span>© {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a>. All rights reserved.</span>
+            <span>Powered by <a href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>. Fonts by <a href="https://google.com" target="_blank" rel="noopener noreferrer">Google</a>.</span>
+        </p>
+
         {{!-- Widget Social Media - partials/widget/social-media.hbs --}}
         {{> "widget/social-media"}}
-
-        {{!-- copy --}}
-        <p class="footer-copy">
-            &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a>
-            Design with <3 by <a href="https://godofredo.ninja" title="Developer FullStack.">@GodoFredoNinja</a>
-        </p>
     </div>
 </footer>
