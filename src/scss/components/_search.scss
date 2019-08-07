@@ -134,4 +134,5 @@ body.has-search {
 
 @media #{$md-and-down} {
   .search-inner { padding-top: 3.5rem }
+  .search-results { max-height: calc(100vh - 1rem);  }
 }
