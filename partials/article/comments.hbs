@@ -1,31 +1,12 @@
-<aside id="comments" class="js-comments comments u-fontSizeSmall u-hide u-marginTop30">
+<aside id="comments" class="js-comments comments u-fontSizeSmall u-marginTop30">
     <div class="comments-wrap">
         <div class="comments-body">
-             <div id="disqus_thread" class="mapache-disqus"></div>
+            <div class="fb-comments" data-href="{{url absolute="true"}}" data-width="100%" data-numposts="5"></div>
         </div>
     </div>
 </aside>
 
 {{#contentFor "scripts"}}
-<script>
-(function(d, s, id) {
-    if (typeof disqusShortName === 'undefined') return;
-
-    document.querySelector('.js-comments').classList.remove('u-hide');
-
-    var disqus_config = function () {
-        this.page.url = '{{url absolute="true"}}';
-        this.page.identifier = 'ghost-{{comment_id}}';
-    };
-
-    if (d.getElementById(id)) return;
-    var js = d.createElement(s);
-    js.id = id;
-    js.src = 'https://'+disqusShortName+'.disqus.com/embed.js';
-    js.async = true;
-    js.defer = true;
-    d.body.appendChild(js)
-}(document, 'script', 'disqus-js'));
-</script>
-
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v4.0"></script>
 {{/contentFor}}
