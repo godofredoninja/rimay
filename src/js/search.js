@@ -71,7 +71,7 @@ import GhostSearch from './app/app.search'
 
     searchLInk[t].classList.add('search-result--active')
 
-    let n = searchLInk[t].offsetTop
+    const n = searchLInk[t].offsetTop
     let o = 0
 
     e === 'down' && n > searchResultsHeight.outer / 2 ? o = n - searchResultsHeight.outer / 2 : e === 'up' && (o = n < searchResultsHeight.scroll - searchResultsHeight.outer / 2 ? n - searchResultsHeight.outer / 2 : searchResultsHeight.scroll)
@@ -131,7 +131,7 @@ import GhostSearch from './app/app.search'
   function mySearchKey (e) {
     e.preventDefault()
 
-    let keyNumber = e.keyCode
+    const keyNumber = e.keyCode
 
     /**
       * 38 => Top / Arriba

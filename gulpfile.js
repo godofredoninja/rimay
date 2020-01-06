@@ -9,16 +9,20 @@ const mqpacker = require('css-mqpacker')
 const autoprefixer = require('autoprefixer')
 const gulpLoadPlugins = require('gulp-load-plugins')
 
-// Cosas por mi
+const rename = require('gulp-rename')
+
+const pxtorem = require('postcss-pxtorem')
+const stripCssComments = require('gulp-strip-css-comments')
+const replace = require('gulp-replace')
+
 const browserify = require('browserify')
 // const babelify = require('babelify')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
 //
 const merge = require('merge-stream')
-// end mi settingd
 
-const { name, version, homepage, author, license } = require('./package')
+const { name, version, author, license, repository } = require('./package')
 
 // loade all gulp plugins
 const $ = gulpLoadPlugins()
@@ -28,8 +32,8 @@ const isProduction = process.argv.includes('--production') || process.env.NODE_E
 
 // build comments
 const comments = `/*!
- * ${name} v${version} (${homepage})
- * Copyright ${new Date().getFullYear()} ${author.name} <${author.email}> (${author.url})
+ * ${name} v${version}
+ * Copyright ${new Date().getFullYear()} ${author.name} <${author.email}> (${repository.url})
  * Licensed under ${license}
  */`
 
@@ -38,7 +42,12 @@ const comments = `/*!
  */
 
 const clean = () => {
-  return del(['assets'])
+  return del([
+    'assets',
+    'partials/styles.hbs',
+    // 'partials/amp/amp-styles.hbs',
+    `${name}-v${version}.zip`
+  ])
 }
 
 const style = () => {
@@ -46,7 +55,8 @@ const style = () => {
     .pipe($.plumber())
     .pipe($.if(!isProduction, $.sourcemaps.init()))
     .pipe($.sass({ outputStyle: 'expanded' }).on('error', $.sass.logError))
-    .pipe($.if(isProduction, $.postcss([ autoprefixer(), mqpacker(), cssnano() ])))
+    .pipe($.if(isProduction, $.postcss([autoprefixer(), pxtorem(), mqpacker(), cssnano()])))
+    .pipe($.if(isProduction, stripCssComments({ preserve: false })))
     .pipe($.if(isProduction, $.header(comments)))
     .pipe($.if(!isProduction, $.sourcemaps.write('./map')))
     .pipe(gulp.dest('assets/styles'))
@@ -54,21 +64,24 @@ const style = () => {
 }
 
 const script = () => {
-  const files = [ 'main', 'prismjs', 'search', 'pagination' ]
+  const files = ['main', 'search', 'pagination', 'prismjs']
 
   return merge(files.map(function (file) {
     return browserify({
+      basedir: '.',
+      debug: true,
       entries: `./src/js/${file}.js`,
-      debug: true
+      cache: {},
+      packageCache: {}
     }).transform('babelify', {
-      presets: [ '@babel/env' ],
-      'plugins': ['@babel/plugin-transform-runtime']
+      presets: ['@babel/env'],
+      plugins: ['@babel/plugin-transform-runtime']
     })
       .bundle()
       .pipe(source(`${file}.js`))
       .pipe($.plumber())
       .pipe(buffer())
-      .pipe($.if(!isProduction, $.sourcemaps.init()))
+      .pipe($.if(!isProduction, $.sourcemaps.init({ loadMaps: true })))
       .pipe($.if(isProduction, $.uglify()))
       .pipe($.if(isProduction, $.header(comments)))
       .pipe($.if(!isProduction, $.sourcemaps.write('./map')))
@@ -77,36 +90,9 @@ const script = () => {
   }))
 }
 
-// const script = () => {
-//   const browserifyBundle = browserify({
-//     entries: ['./src/js/main.js'],
-//     debug: true
-//   })
-
-//   return browserifyBundle
-//     .transform('babelify', { presets: [ '@babel/env' ] })
-//     .bundle()
-//     .pipe(source('main.js'))
-//     .pipe($.plumber())
-//     .pipe(buffer())
-//     .pipe($.if(!isProduction, $.sourcemaps.init()))
-//     .pipe($.if(isProduction, $.uglify()))
-//     .pipe($.if(isProduction, $.header(comments)))
-//     .pipe($.if(!isProduction, $.sourcemaps.write('./map')))
-//     .pipe(gulp.dest('assets/scripts'))
-//     .pipe($.livereload())
-// }
-
-// const script = () => {
-//   return gulp.src('src/js/*.js')
-//     .pipe($.plumber())
-//     .pipe($.if(!isProduction, $.sourcemaps.init()))
-//     .pipe($.babel({ presets: [ '@babel/preset-env' ] }))
-//     .pipe($.if(isProduction, $.uglify()))
-//     .pipe($.if(isProduction, $.header(comments)))
-//     .pipe($.if(!isProduction, $.sourcemaps.write()))
-//     .pipe(gulp.dest('assets/scripts'))
-//     .pipe($.livereload())
+// const copyFonts = () => {
+//   return gulp.src('src/fonts/**/*.{ttf,woff,eof,svg}')
+//     .pipe(gulp.dest('assets/fonts'))
 // }
 
 const image = () => {
@@ -121,7 +107,10 @@ const archive = () => {
   const source = [
     'assets/**',
     'locales/*.json',
-    '**/*.hbs', '!node_modules/**',
+    '**/*.hbs',
+    '!node_modules', '!node_modules/**',
+    '!src', '!src/**',
+    '!documentation', '!documentation/**',
     'LICENSE',
     'package.json',
     'README.md'
@@ -129,19 +118,43 @@ const archive = () => {
 
   return gulp.src(source, { base: '.' })
     .pipe($.plumber())
-    // .pipe($.zip(`${name}-v${version}.zip`))
-    .pipe($.zip(`${name}.zip`))
+    .pipe($.zip(`${name}-v${version}.zip`))
     .pipe(gulp.dest('.'))
+}
+
+const copyPrismJs = () => {
+  return gulp.src('node_modules/prismjs/components/*.min.js')
+    .pipe($.plumber())
+    .pipe(gulp.dest('assets/scripts/components'))
+}
+
+const copyMainStyle = () => {
+  return gulp.src('assets/styles/main.css')
+    .pipe($.plumber())
+    .pipe(rename('styles.hbs'))
+    .pipe(gulp.dest('partials'))
+}
+
+const copyAmpStyle = () => {
+  return gulp.src('assets/styles/amp.css')
+    .pipe($.plumber())
+    .pipe(replace('@charset "UTF-8";', ''))
+    .pipe(stripCssComments({ preserve: false }))
+    .pipe($.postcss([cssnano()]))
+    .pipe(rename('amp-styles.hbs'))
+    .pipe(gulp.dest('partials/amp'))
 }
 
 const watch = () => {
   $.livereload.listen()
   gulp.watch('src/scss/**', style)
+  // gulp.watch('src/scss/theme/**', styleTheme)
   gulp.watch('src/js/**', script)
   gulp.watch('src/img/**/*.*', image)
   gulp.watch('**/*.hbs').on('change', p => $.livereload.changed(p))
 }
 
+// const compile = gulp.parallel(style, script, copyFonts, image)
 const compile = gulp.parallel(style, script, image)
 
 /**
@@ -150,7 +163,7 @@ const compile = gulp.parallel(style, script, image)
 
 const build = gulp.series(clean, compile)
 
-const release = gulp.series(build, archive)
+const release = gulp.series(build, copyMainStyle, copyAmpStyle, copyPrismJs, archive)
 
 const develop = gulp.series(build, watch)
 
