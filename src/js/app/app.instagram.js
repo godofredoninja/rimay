@@ -14,7 +14,7 @@ const templateInstagram = data => {
     <a href="${data.link}" class="instagram-img u-relative u-block" target="_blank" rel="noopener noreferrer">
       <img class="u-absolute u-image u-block lazyload" data-src="${data.images.standard_resolution.url}"/>
       <div class="instagram-hover u-absolute0 u-flexColumnCenter zindex3">
-        <div class="u-textAlignCenter u-fontWeightBold u-fontSize20">
+        <div class="u-textAlignCenter u-fontWeightSemibold u-fontSize20">
           <span style="padding-right:10px"><span class="icon icon--white">${iconHeart}</span> ${data.likes.count}</span>
           <span style="padding-left:10px"><span class="icon icon--white">${iconComments}</span> ${data.comments.count}</span>
         </div>

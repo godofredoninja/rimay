@@ -11,12 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{!-- Styles --}}
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700,900&display=swap" rel="stylesheet">
-    {{!-- <link href="https://fonts.googleapis.com/css?family=Paytone+One|Rokkitt:400,500&display=swap" rel="stylesheet"> --}}
-    {{!-- <link href="https://fonts.googleapis.com/css?family=Alegreya:400,500,700,800&display=swap" rel="stylesheet"> --}}
-
-    {{!-- <link rel="stylesheet" type="text/css" href="{{asset "styles/main.css"}}"/> --}}
-    <style>{{> "styles"}}</style>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset "styles/main.css"}}"/>
+    {{!-- <style>{{> "styles"}}</style> --}}
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -29,8 +26,8 @@
         <div class="rimay-main-content"> {{{body}}} </div>
 
         {{!-- Footer --}}
-        {{!-- {{> "footer"}} --}}
-        {{> "footer-two"}}
+        {{> "footer"}}
+        {{!-- {{> "footer-two"}} --}}
     </div>
 
     {{!-- Search - partials/widget/search.hbs --}}
@@ -46,7 +43,7 @@
     <script src="{{asset "scripts/main.js"}}" defer></script>
 
     {{!-- Pagination --}}
-    {{#if pagination.pages}}<script src="{{asset "scripts/pagination.js"}}" defer></script>{{/if}}
+    {{#if pagination.pages}}<script src="{{asset "scripts/pagination.js"}}" async defer></script>{{/if}}
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}

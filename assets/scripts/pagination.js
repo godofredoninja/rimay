@@ -1,5 +1,56 @@
-/*!
- * rimay v0.0.1 (https://github.com/godofredoninja/rimay#readme)
- * Copyright 2019 GodoFredo <hello@godofredo.ninja> (https://godofredo.ninja)
- * Licensed under GPLv3
- */!function i(u,s,f){function c(r,e){if(!s[r]){if(!u[r]){var t="function"==typeof require&&require;if(!e&&t)return t(r,!0);if(a)return a(r,!0);var n=new Error("Cannot find module '"+r+"'");throw n.code="MODULE_NOT_FOUND",n}var o=s[r]={exports:{}};u[r][0].call(o.exports,function(e){return c(u[r][1][e]||e)},o,o.exports,i,u,s,f)}return s[r].exports}for(var a="function"==typeof require&&require,e=0;e<f.length;e++)c(f[e]);return c}({1:[function(e,r,t){"use strict";!function(r,e){var t=e.querySelector("link[rel=next]");if(t){var n=e.querySelector(".story-feed");if(n){var o=!1,i=e.querySelector(".js-load-more");i.classList.remove("u-hide"),i.addEventListener("click",function(e){e.preventDefault(),o||r.requestAnimationFrame(s),o=!0})}}function u(){if(404!==this.status){var e=this.response.querySelector(".story-feed-content");n.appendChild(e);var r=this.response.querySelector("link[rel=next]");r?t.href=r.href:i.remove(),o=!1}else i.remove()}function s(){var e=new r.XMLHttpRequest;e.responseType="document",e.addEventListener("load",u),e.open("GET",t.href),e.send(null)}}(window,document)},{}]},{},[1]);
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+"use strict";
+
+(function (window, document) {
+  var nextElement = document.querySelector('link[rel=next]');
+  if (!nextElement) return;
+  var storyFeedContent = document.querySelector('.story-feed');
+  if (!storyFeedContent) return;
+  var ticking = false; // Button Load More
+
+  var loadMoreButton = document.querySelector('.js-load-more');
+  loadMoreButton.classList.remove('u-hide');
+
+  function onPageLoad() {
+    if (this.status === 404) {
+      loadMoreButton.remove();
+      return;
+    } // append Contents
+
+
+    var postElements = this.response.querySelector('.story-feed-content');
+    storyFeedContent.appendChild(postElements); // set next link
+
+    var resNextElement = this.response.querySelector('link[rel=next]');
+
+    if (resNextElement) {
+      nextElement.href = resNextElement.href;
+    } else {
+      loadMoreButton.remove();
+    } // Sync status
+
+
+    ticking = false;
+  }
+
+  function onUpdate() {
+    var xhr = new window.XMLHttpRequest();
+    xhr.responseType = 'document';
+    xhr.addEventListener('load', onPageLoad);
+    xhr.open('GET', nextElement.href);
+    xhr.send(null);
+  }
+
+  function requestTick(e) {
+    e.preventDefault();
+    ticking || window.requestAnimationFrame(onUpdate);
+    ticking = true;
+  } // click button load more
+
+
+  loadMoreButton.addEventListener('click', requestTick);
+})(window, document);
+
+},{}]},{},[1])
+
+//# sourceMappingURL=map/pagination.js.map

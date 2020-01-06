@@ -1,7 +1,7 @@
 <article class="story u-relative u-flex u-flexWrap {{#has tag="#video, #image"}}story--featured{{/has}}">
     {{!-- Story Header --}}
     <header class="story-header">
-        <h2 class="story-title u-fontWeightBold u-fontSize22"><a href="{{url}}" class="u-colorInherit">{{title}}</a></h2>
+        <h2 class="story-title u-fontWeightSemibold u-fontSize22"><a href="{{url}}" class="u-colorInherit">{{title}}</a></h2>
         {{!-- Excerpt if story is video or image --}}
         {{#has tag="#video, #image"}}<div class="story-body u-hide-before-md"><p>{{excerpt words="25"}}</p></div>{{/has}}
         {{!-- meta helper/helper-meta-story.hbs  --}}
