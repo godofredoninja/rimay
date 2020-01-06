@@ -2,7 +2,7 @@ h1, h2, h3, h4, h5, h6 {
   @extend %primary-font;
 
   font-weight: 900;
-  letter-spacing: -0.02em;
+  // letter-spacing: -0.02em;
   line-height: $headings-line-height;
   margin: 0;
 }

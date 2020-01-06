@@ -116,6 +116,7 @@
     // is Featured or has video or image
     &.story--featured {
       .story-header { flex-basis: 28% }
+
       .story-footer {
         order: 2;
         margin-bottom: 0;
@@ -130,12 +131,12 @@
     font-size: 1.25rem;
     margin-bottom: .3em;
     line-height: 1.05;
-    letter-spacing: -.5px;
+    // letter-spacing: -.5px;
   }
 }
 
 @media #{$xl-and-up} {
-  .mini-post-title { font-size: 1.875rem }
+  .mini-post-title { font-size: 28px }
   .story-title { font-size: 2.3rem }
   .story-body { font-size: 1.25rem }
   .story-media { padding-bottom: 60% }

@@ -962,7 +962,6 @@ table th {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
-  letter-spacing: -0.02em;
   line-height: 1.1;
   margin: 0;
 }
@@ -1822,13 +1821,12 @@ body.has-comments .comments {
     font-size: 1.25rem;
     margin-bottom: .3em;
     line-height: 1.05;
-    letter-spacing: -.5px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .mini-post-title {
-    font-size: 1.875rem;
+    font-size: 28px;
   }
   .story-title {
     font-size: 2.3rem;
