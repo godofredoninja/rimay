@@ -1,16 +1,18 @@
+/* Article
+/* ---------------------------------------------------------- */
+
 .article {
   margin: 0;
   padding: 0 0 30px;
-  border-top: 2px solid #f1f1f1;
+  // border-top: 2px solid #f1f1f1;
   position: relative;
 
   // title
   &-title {
     font-size: 2rem;
     font-weight: 900;
-    letter-spacing: -0.02em;
+    // letter-spacing: -0.02em;
     line-height: 1.1;
-    padding-top: 20px;
   }
 
   // Meta
@@ -21,13 +23,13 @@
 
   // Byline
   &-byline {
-    &-author { color: #333 }
+    &-author { color: $primary-text-color }
     a:hover { color: $primary-color }
   }
 
   &-divider {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 
   // Image
@@ -39,11 +41,13 @@
     max-width: 125%;
     margin-left: -12.5%;
 
-    img { width: 100% }
+    // img { width: 100% }
   }
 }
 
-// backaground in the footer page
+/* Article backaground in the footer
+/* ---------------------------------------------------------- */
+
 .article-shadow::before {
   content: "";
   position: absolute;
@@ -53,44 +57,58 @@
   height: 500px;
   max-height: 70vh;
   bottom: 0;
-  background-image: linear-gradient(0deg,#f0f0f0,#fff);
+  background-image: linear-gradient(0deg, #f0f0f0, #fff);
 }
 
-// Article Inner
-// ==========================================================================
+/* Article Inner
+/* ---------------------------------------------------------- */
+
 .article-inner {
   @extend %flex;
-  @extend %flex-direction-column;
+  @extend %flex-direction-column-justify-content-start;
   @extend %flex-align-items-center;
 
   font-weight: 400;
-  color: #333;
+  color: $primary-text-color;
   letter-spacing: -.1px;
-  margin: 20px 0;
+  margin: 0 0 20px 0;
   // font-size: 21px;
-  font-size: 1.125rem;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.6em;
+  padding-top: 1.875rem;
 
   & > * {
-    margin-top: 2rem;
+    // margin: 1.5rem 0;
+    // min-width: 100%;
+    margin: 0 0 2rem;
     min-width: 100%;
   }
 
-  p:first-child { margin-top: 0 }
+  // p:first-child { margin-top: 0 }
 
-  // p { margin-bottom: 0 }
+  p { margin-bottom: 2rem }
 
-  a {
+  a:not(.kg-bookmark-container) {
     border-bottom: 1px solid #f1f1f1;
-    color: $primary-color;
+    // color: $primary-color;
+    color: #007db5;
 
-    &:hover { border-bottom-color: $primary-color }
+    &:hover {
+      @extend %gradient-text;
+      @extend %gradient-text--primary;
+
+      border-bottom-color: $primary-color;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
-    // margin: .75em 0;
+    margin: .5em 0 .4em;
 
-    & + p { margin-top: 0.625rem }
+    // & + p { margin-top: 0 }
+  }
+
+  figure {
+    margin: .2em 0 1.5em;
   }
 
   // UL and OL
@@ -125,80 +143,30 @@
     color: $primary-color-gray;
     padding-right: 12px;
   }
-
 }
 
-// Clases for box of ghost
-// ==========================================================================
-.kg-gallery {
-  &-container {
-    @extend %flex;
-    @extend %flex-direction-column;
-    // display: flex;
-    // flex-direction: column;
-    // max-width: 1000px;
-    // width: 100vw;
-  }
+/* Article Footer
+/* ---------------------------------------------------------- */
 
-  &-row {
-    @extend %flex;
-    @extend %flex-direction-row;
-    @extend %flex-justify-content-center;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: center;
-
-    &:not(:first-of-type) { margin: 0.75em 0 0 0 }
-  }
-
-  &-image {
-    img {
-      display: block;
-      margin: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    &:not(:first-of-type) { margin: 0 0 0 0.75em }
-  }
+.article-footer {
+  margin: 40px auto;
 }
 
-// .kg-code-card pre { margin-top: 0 }
+/* Article Tags or Topic
+/* ---------------------------------------------------------- */
 
-// stylelint-disable-next-line
-.kg-embed-card, .kg-gallery-container {
-  @extend %flex;
-  @extend %flex-direction-column;
-}
-
-// stylelint-disable-next-line
-.kg-embed-card {
-  @extend %flex-align-items-center;
-  max-width: 100%;
-}
-
-.kg-gallery,
-.kg-width-wide,
-.kg-width-full {
-  width: 125%;
-  max-width: 125%;
-}
-
-// Article Footer
-// ==========================================================================
-
-
-// Article Tags or Topic
-// ==========================================================================
 .article-tags {
-  &-wrap  {
-    font-size: 1rem;
+  @extend %primary-font;
+
+  &-content {
+    font-size: 17px;
     width: 300px;
     max-width: 300px;
     line-height: 1.5;
+    padding: 0;
   }
 
-  .menu-item {
+  &-item {
     width: 50%;
     margin: .3em 0;
     position: relative;
@@ -206,75 +174,27 @@
   }
 }
 
-// Image Post Format
-// ==========================================================================
-.pif {
-  max-height: 500px;
-  min-height: 400px;
-  height: 100vh;
-  background-color: #333;
-  color: #fff;
+/* Code Card
+/* ---------------------------------------------------------- */
 
-  &-bg { background-color: rgba(0,0,0,.65) }
-  .article-byline-author { color: #fff }
-  .rimay-content { height: 100%; }
-  .u-meta-time, .u-meta { color: #999 }
-
-  .article {
-    border: none;
-    height: 100%;
-
-    &-header {
-      flex-direction: column;
-      justify-content: space-between;
-    }
-  }
-
+.kg-code-card {
+  width: 100%;
 }
 
-// Breakpoints
-// ==========================================================================
-@media #{$md-and-down} {
-  .article-footer { margin: 0 }
-
-  .social-share {
-    position: fixed;
-    z-index: 10;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    a {
-      flex-basis: 20%;
-      height: 32px;
-    }
-  }
-
-.kg-gallery,
-.kg-width-wide,
-.kg-width-full {
-  // width: 125%;
-  // max-width: 125%;
-  max-width: 1000px;
-  width: 100vw;
-
-  figcaption { margin-left: 10px }
-}
-
-}
-
+/* Breakpoints
+/* ---------------------------------------------------------- */
 
 @media #{$md-and-up} {
   .article {
     padding: 0 10% 30px;
 
     &-title {
-      font-size: 3rem;
+      font-size: 45px;
       margin-right: 0;
     }
 
     &-footer { border-bottom: 1px solid #ddd }
-    &-inner { font-size: 1.1875rem }
+    &-inner { font-size: 20px }
   }
 }
 
@@ -285,12 +205,6 @@
       width: 100vw;
     }
   }
-
-  .pif {
-    max-height: inherit;
-    min-height: 600px;
-    height: 98vh;
-  }
 }
 
 @media #{$xl-and-up} {
@@ -300,13 +214,6 @@
       width: 100vw;
     }
 
-    &-title { font-size: 3.2em }
-
-    &-inner { font-size: 1.375rem }
-  }
-
-  .pif {
-    .article-title { font-size: 4rem; padding-top: 30px }
-    .article-excerpt { font-size: 1.75rem }
+    &-inner { font-size: 22px }
   }
 }

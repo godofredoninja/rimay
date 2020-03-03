@@ -1,3 +1,6 @@
+/* Paginattion - Load More
+/* ---------------------------------------------------------- */
+
 .load-more {
   @extend %primary-font;
 
@@ -20,5 +23,16 @@
   &:hover {
     cursor: pointer;
     background-color: #f1f1f1;
+  }
+
+  .icon--loader {
+    display: none;
+    height: 30px;
+    width: 30px;
+  }
+
+  &.active .icon--loader {
+    display: inline-block;
+    animation: spin .8s linear infinite;
   }
 }

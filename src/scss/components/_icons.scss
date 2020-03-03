@@ -1,0 +1,31 @@
+// icon
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+
+  &--md {
+    height: 24px;
+    width: 24px;
+  }
+
+  &--gray { color: #ddd }
+  &--black { color: #000 }
+  &--white { color: #fff }
+  &--red { color: red; }
+  &--green { color: $primary-color }
+}
+
+.icon--play {
+  background-color: #fff;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

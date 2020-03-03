@@ -1,51 +1,40 @@
 .social-share {
   bottom: -1px;
 
-  // @each $name in $color-share {
-  //   $i: index($color-share, $name);
-  //   > a:nth-child(#{$i}) { background: $name }
-  // }
+  // Background color social share Items
+  &-content {
+    @each $name in $color-share {
+      $i: index($color-share, $name);
+
+      > a:nth-child(#{$i}) {
+        background: $name;
+
+        &:hover {
+          background: darken($name, 10)
+        }
+      }
+    }
+  }
 
   a {
-    width: 60px;
-    height: 60px;
+    height: 45px;
     justify-content: center;
-
-    // &:hover {
-    //   opacity: .9;
-    // }
+    flex: 1 1 auto;
   }
 
-  .icon { justify-content: center }
-
-  @each $social-name, $color in $social-colors {
-    .icon--#{$social-name} { background-color: $color }
-  }
-}
-
-
-// animation
-@keyframes bounce-in-out {
-  0% { right: 10px}
-  40% { right: 0px }
-  80% { right: 2px }
-  100% { right: 10px }
-}
-
-.shortlink.active .shortlink-indicator {
-  background-color: $primary-color;
-  animation: bounce-in-out .2s 1;
-  animation-timing-function: ease;
+  // @each $social-name, $color in $social-colors {
+  //   .icon--#{$social-name} { background-color: $color }
+  // }
 }
 
 .shortlink-input {
   border: 0;
   color: $primary-color-gray;
+  background: transparent;
   cursor: pointer;
   font-size: 18px;
-  line-height: 2.8em;
   max-width: 260px;
-  min-width: 210px;
+  // min-width: 210px;
   padding: 5px 50px 5px 20px;
   text-align: center;
   transition: color .15s linear;
@@ -56,6 +45,7 @@
   &:hover {
     color: $primary-color;
     background-color: transparent;
+    box-shadow: none;
   }
 }
 
@@ -75,9 +65,50 @@
   text-align: center;
   height: 22px;
   white-space: nowrap;
+  line-height: 22px;
 }
 
+.shortlink.active .shortlink-indicator {
+  background-color: $primary-color;
+  animation: bounce-in-out .2s 1;
+  animation-timing-function: ease;
+}
+
+// @media #{$md-and-down} {
+//   .social-share {
+//     position: fixed;
+//     z-index: 10;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+
+//     a {
+//       flex-basis: 20%;
+//       height: 32px;
+//     }
+//   }
+// }
+
 @media #{$lg-and-up} {
+  .article-footer {
+    display: flex;
+    // justify-content: center;
+  }
+
+  .social-share {
+    width: 300px;
+  }
+
+  .social-share a {
+    height: 60px;
+    width: 60px;
+  }
+
+  .social-share .icon {
+    height: 30px;
+    width: 30px;
+  }
+
   // fixed
   .share--fixed {
     margin-left: -80px;
@@ -95,7 +126,7 @@
 
     &.share-open > *,
     &:hover * {
-      @for $i from 1 through 3 {
+      @for $i from 1 through 4 {
         &:nth-child(#{1 + $i}) { left: 60px * $i }
       }
     }

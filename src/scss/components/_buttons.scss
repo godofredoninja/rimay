@@ -1,32 +1,29 @@
-// Gradient text
-.gradient-text--green {
-  background: #00d301;
-  background: linear-gradient(79deg,#00d301,#36c275 50%,#00a562);
-}
-
-.gradient-text {
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-
 // Buttons
+
 .button {
-  border-radius: 0;
-  border: 0;
-  cursor: pointer;
-  display: inline-block;
   font-family: $primary-font;
-  font-size: 18px;
-  font-weight: 600;
-  margin: 10px;
-  outline: 0;
-  padding: 17px 30px;
+  box-sizing: border-box;
+  color: $button-color;
+  cursor: pointer;
+  border: 2px solid transparent;
+  display: inline-block;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  height: $button-height;
+  letter-spacing: 0;
+  line-height: $button-height - 4;
+  padding: 0 16px;
   position: relative;
   text-align: center;
   text-decoration: none;
+  text-rendering: optimizeLegibility;
+  transition: .1s background-color, .1s border-color, .1s color, .1s fill;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:focus { outline: none }
 
   &::after {
     content: "";
@@ -42,36 +39,63 @@
   }
 
   &:hover::after { opacity: 1 }
+
+  .icon {
+    position: relative;
+    top: -2px
+  }
+
+  &.button--primary {
+    @extend %gradient-primary--border;
+
+    background: linear-gradient(286deg, $primary-gradient);
+    border-image-source: linear-gradient(286deg, $primary-gradient);
+    color: #fff;
+
+    &::after {
+      background: linear-gradient(286deg, $primary-gradient);
+    }
+  }
+
+  &.button--primary-line {
+    @extend %gradient-text--primary;
+    @extend %gradient-text;
+    @extend %gradient-primary--border;
+
+    // border-color: #00a562;
+    // border-image-slice: 1;
+    // border-image-source: linear-gradient(79deg, $primary-gradient);
+    color: $primary-color;
+
+    &:hover {
+      -webkit-text-fill-color: #fff;
+      background: linear-gradient(286deg, $primary-gradient);
+      border-image-source: linear-gradient(286deg, $primary-gradient);
+      color: #fff;
+    }
+  }
+
+  &--black {
+    background-color: #000;
+    color: #fff;
+
+    &:hover::after { background-color: #000 }
+  }
+
+  &--large {
+    line-height: 1.5;
+    padding: 17px 30px;
+    height: auto;
+    font-size: 18px;
+  }
 }
 
-.button--secondary {
-  border: 2px solid transparent;
-}
+.buttonSet {
+  > .button {
+    margin-right: 8px;
+    margin-bottom: 8px;
+    vertical-align: middle;
 
-.button--secondary.button--green {
-  border-color: $primary-color;
-  color: $primary-color;
-
-  &:hover::after { background-color: $primary-color }
-}
-
-
-.button:hover:not([disabled]).button--green {
-  background-color: $primary-color;
-  color: #fff;
-}
-
-.button--primary.button--black,
-.button:hover:not([disabled]).button--black {
-  background-color: #000;
-  color: #fff;
-}
-
-.button.button--black:hover::after {
-  background-color: #000;
-}
-
-.button--secondary.button--black {
-    border-color: #000;
-    color: #000;
+    &:last-child { margin-right: 0 }
+  }
 }

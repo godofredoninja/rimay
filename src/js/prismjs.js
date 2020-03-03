@@ -1,3 +1,15 @@
-import 'prismjs'
+/* global prismJsComponents */
+
+// https://ghost.org/tutorials/code-syntax-highlighting/
+// https://cdnjs.com/libraries/prism/
+
+import Prism from 'prismjs'
 import 'prismjs/plugins/autoloader/prism-autoloader'
-Prism.plugins.autoloader.languages_path = `${siteUrl}/assets/scripts/components/` // eslint-disable-line
+
+(prism => {
+  prism.highlightAll()
+
+  if (typeof prismJsComponents === 'undefined') return
+
+  prism.plugins.autoloader.languages_path = prismJsComponents
+})(Prism)

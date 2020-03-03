@@ -1,0 +1,11 @@
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce-in-out {
+  0% { right: 10px }
+  40% { right: 0 }
+  80% { right: 2px }
+  100% { right: 10px }
+}

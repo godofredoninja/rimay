@@ -1,10 +1,9 @@
-// Rimay class for all wrapper
-// ==========================================================================
+/* Rimay class for all wrapper
+/* ---------------------------------------------------------- */
 .rimay {
   // Wrap
   &-wrap {
-    @extend %flex;
-    @extend %flex-direction-column;
+    @extend %flex-direction-column-justify-content-start;
 
     position: relative;
     margin-right: auto;
@@ -21,8 +20,8 @@
   }
 }
 
-// Rimay Home Top Wrapper
-// ==========================================================================
+/* Rimay Home Top Wrapper
+/* ---------------------------------------------------------- */
 .rimay-paway {
   &-left {
     border-bottom: 1px solid #ddd;
@@ -33,20 +32,19 @@
   &-right {
     padding-bottom: 1rem;
     border-bottom: 4px solid #ddd;
-    margin: 1em 20px 0 20px;
+    margin: 1em 0;
   }
 }
 
-// Wrapper for story
-// ==========================================================================
+/* Wrapper for story
+/* ---------------------------------------------------------- */
 .story-feed {
   position: relative;
   min-height: 200px
 }
 
-
-// Breakpoints Media Queries
-// ==========================================================================
+/* Breakpoints Media Queries
+/* ---------------------------------------------------------- */
 
 @media #{$sm-and-up} {
   .rimay-paway-right {
@@ -71,7 +69,13 @@
       margin-left: 20px;
       max-width: calc(100vw - 380px);
     }
+
+    &-paway {
+      max-width: none;
+      width: calc(100vw - 40px);
+    }
   }
+
   .sidebar {
     width: 300px;
     margin: 0 20px 0 30px;
@@ -87,6 +91,8 @@
     width: calc(100vw - 210px - 360px);
     margin-top: 0;
   }
+
+  .rimay-paway { width: calc(100vw - 210px - 20px) }
 }
 
 @media #{$xl-and-up} {
@@ -95,53 +101,44 @@
     width: calc(100vw - 250px - 360px);
     max-width: 1390px;
   }
+
+  .rimay-paway { width: calc(100vw - 210px - 5%) }
 }
 
 // @media screen and (min-width:1100px) and (min-height:700px) {
 
 // }
 
-@media (min-width:850px), screen and (min-width:550px) and (max-width:800px) {
+@media #{$md-and-up} {
   .rimay-paway {
-    display: flex;
-    justify-content: space-between;
-
-    &-left {
-      flex-basis: 65%;
-      border-bottom: 0;
-      padding-bottom: 0;
+    &-content {
+      display: flex;
+      justify-content: space-between;
     }
 
-    &-right { flex-basis: 32% }
+    &-left {
+      flex-basis: 55%;
+      border-bottom: 0;
+      padding-bottom: 0;
+      padding-right: 2%;
+    }
+
+    &-right { flex-basis: 43% }
   }
 }
 
+// @media (min-width: 950px), screen and (min-width: 650px) and (max-width: 910px) {
+//   .rimay-paway-content {
+//     display: flex;
+//     justify-content: space-between;
 
+//     &-left {
+//       flex-basis: 65%;
+//       border-bottom: 0;
+//       padding-bottom: 0;
+//       padding-right: 2%;
+//     }
 
-// // content
-// .content {
-//   position: relative;
-
-//   width: 90%;
-//   min-height: 80%;
-//   margin-left: 5%;
-
-//   @media #{$md-and-up} {
-//     flex: 0 1 auto;
-
-//     max-width: calc(100vw - 380px);
-//     margin-left: 30px;
-//   }
-
-//   @media #{$lg-and-up} {
-//     width: calc(100vw - 210px - 360px);
-//     margin-top: 0;
-//     margin-left: 210px;
-//   }
-
-//   @media #{$xl-and-up} {
-//     width: calc(100vw - 250px - 360px);
-//     max-width: 1390px;
-//     margin-left: 250px;
+//     &-right { flex-basis: 32% }
 //   }
 // }

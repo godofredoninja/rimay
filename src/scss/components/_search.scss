@@ -1,5 +1,5 @@
-// Search
-// ==========================================================================
+/* Search
+/* ---------------------------------------------------------- */
 
 .search {
   @extend %modal;
@@ -35,12 +35,10 @@
   }
 
   &-close {
-    background: #fff;
-    border-radius: 50%;
     position: absolute;
     right: 20px;
     top: 8px;
-    padding: 5px;
+    padding: 0 5px;
 
     .icon--close {
       height: 25px;
@@ -49,7 +47,7 @@
   }
 
   &-form {
-    padding: 16px;
+    padding: 10px;
     overflow: hidden;
 
     & > .icon--search { margin-right: 5px }
@@ -58,9 +56,12 @@
       background: #fff;
       border: none;
       width: 100%;
-      padding: 0;
+      font-size: 18px;
 
-      &:focus { outline: 0; }
+      &:focus {
+        outline: 0;
+        box-shadow: none;
+      }
     }
   }
 
@@ -72,13 +73,14 @@
 
     a {
       padding: 10px 20px;
-      background: rgba(0, 0, 0, .05);
-      color: rgba(0, 0, 0, .7);
+      // background: rgba(0, 0, 0, .05);
+      color: #000;
       text-decoration: none;
       display: block;
       transition: all 0.3s ease-in-out;
+      font-size: 18px;
 
-      &:hover, &.search-result--active { background: #dedede }
+      &:hover, &.search-result--active { background: #ddd }
     }
   }
 }

@@ -3,25 +3,57 @@
 {{!-- Class for <body> --}}
 {{#contentFor "special_body_class"}}is-article{{/contentFor}}
 
-{{!-- Ads large in the header page--}}
-{{> "ads/ad-lg-header"}}
-
 {{#post}}
 
 <div class="rimay-wrap">
     <div class="rimay-content">
-        {{!-- Article - partials/article/article.hbs --}}
-        {{> "article/article"}}
+        <article class="article article-shadow">
+            <header class="article-header">
+                <h1 class="article-title u-marginTop20">{{title}}</h1>
+                {{!-- Author (Name - Twitter) - Read time - partials/article/article-meta.hbs --}}
+                {{> "article/article-meta"}}
+            </header>
+
+            <div class="article-body u-relative">
+                {{#if feature_image}}
+                <figure class="article-media u-block u-marginAuto u-textAlignCenter">
+                    <img class="u-block u-marginAuto rimay-zoom"
+                        srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 600w,
+                                {{img_url feature_image size="l"}} 1000w,
+                                {{img_url feature_image size="xl"}} 2000w"
+                        sizes="(max-width: 400px) 300px,(max-width: 730px) 600px, (max-width: 1600px) 100vw"
+                        {{!-- sizes="(max-width: 730px) 100vw, (max-width: 1600px) 75vw, 1390px" --}}
+                        src="{{img_url feature_image size="xl"}}"
+                        alt="{{title}}"
+                    />
+                </figure>
+                {{/if}}
+
+                {{!-- Article Content --}}
+                <div class="article-inner">{{content}}</div>
+            </div>
+
+            <hr>
+            {{!-- Disqus Comments Count - partials/article/comment-count.hbs --}}
+            {{> "article/comment-count"}}
+
+            {{!-- [Social Share - Copy link ] - parials/article/articlefooter.hbs --}}
+            {{> "article/article-footer"}}
+
+            {{!-- Tags Cloud - parials/article/article-tags.hbs --}}
+            {{> "article/article-tags"}}
+
+            {{!-- Article Comments - parials/article/comments.hbs --}}
+            {{> "article/article-comments"}}
+        </article>
     </div>
 
-    {{!-- sidebar - partials/sidebar/sidebar.hbs --}}
+    {{!-- Box for the Newsletter - partials/sidebar/sidebar.hbs --}}
     {{> "sidebar/sidebar"}}
 </div>
 
 {{/post}}
 
-{{!-- Article Related - partials/article/related.hbs --}}
-{{#if post.tags}}{{> "article/related"}}{{/if}}
-
-
-{{> "widget/instagram-feed"}}
+{{!-- 6 Related Aricles - partials/article/related.hbs --}}
+{{#if post.tags}}{{> "article/article-related"}}{{/if}}

@@ -13,54 +13,53 @@ html {
 
 body {
   // font-weight: 400;
-  font-family: $secundary-font;
+  // font-family: $secundary-font;
   // color: $primary-text-color;
   // font-size: $font-size-base;
   // font-style: normal;
-  font-size: 1rem;
-  line-height: 1.5;
+  // font-size: 1rem;
+  // line-height: 1.5;
 
+  font: 1rem/1.77 Helvetica Neue, Helvetica, Arial, sans-serif;
   overflow-x: hidden;
   margin: 0 auto;
   letter-spacing: 0;
 }
 
+/* Links and li - ul
+/* ---------------------------------------------------------- */
+
 li a, figcaption a, p a {
   transition: color, border-color 0.2s linear;
-
   color: $primary-color;
   border-bottom: 1px solid transparent;
 }
 
+// stylelint-disable-next-line
 a,
 li a,
 p a {
   text-decoration: none;
-  outline: none
+  outline: none;
+  word-break: break-word;
 }
 
 li a:focus,
 li a:hover,
 p a:focus,
 p a:hover {
-  border-bottom-color: #00a562;
+  border-bottom-color: $primary-color;
 }
 
 ul, ol { margin: 0 }
 
-svg {
-  fill: currentColor;
-
-  &:not(:root) {
-    overflow: hidden;
-  }
-}
+/* Img - Figure - Figcaption
+/* ---------------------------------------------------------- */
 
 img {
   width: auto;
   max-width: 100%;
   height: auto;
-
   vertical-align: middle;
 
   &:not([src]) {
@@ -82,46 +81,106 @@ figcaption {
   color: $primary-color-gray;
 }
 
+/* Buttons
+/* ---------------------------------------------------------- */
+
 button, input { overflow: visible }
 
-// Buttons
 button, input, select, textarea {
   background-color: transparent;
   color: inherit;
   font-size: inherit;
   line-height: inherit;
+
+  &:focus {
+    outline: none;
+  }
 }
+
+/* 8. Input Textarean
+/* ---------------------------------------------------------- */
+
+// stylelint-disable-next-line
+textarea, input {
+  background: #fff;
+  border: 1px solid #ced4da;
+  color: #495057;
+  display: block;
+  font-size: 1rem;
+  margin: 0;
+  outline: none;
+  padding: 0 10px;
+  position: relative;
+  // transition: box-shadow .08s ease-in, color .08s ease-in;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  width: 100%;
+  // box-shadow: 0 0 0 1px rgba(50, 50, 93, .1), 0 2px 5px 0 rgba(50, 50, 93, .05), 0 1px 1px 0 rgba(0, 0, 0, .05);
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 1px 1px 0 rgba(0, 0, 0, .05), 0 0 0 4px rgba(0, 0, 0, .1);
+  }
+
+  // &:focus {
+  //   // box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 1px 1px 0 rgba(0, 0, 0, .05), 0 0 0 4px rgba(0, 0, 0, .1);
+  //   // color: #495057;
+  //   // background-color: #fff;
+  //   border-color: #80bdff;
+  //   outline: 0;
+  //   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  //   outline: none;
+  //   // box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+  // }
+}
+
+/* stylelint-disable-next-line */
+textarea {
+  min-height: 160px;
+  padding: 15px 10px;
+}
+
+/* stylelint-disable-next-line */
+input {
+  height: $input-height-large;
+  line-height: $input-height-large;
+}
+
+.input--md {
+  height: $input-height;
+  line-height: $input-height;
+}
+
+/* BLockquote - HR
+/* ---------------------------------------------------------- */
 
 blockquote {
-  border-left: 8px solid $primary-color;
-  color: #000;
-  font-size: 1.25rem;
-  // font-weight: 700;
-  line-height: 1.7;
-  margin: 2.5rem 0 0.9375rem 0 !important;
-  padding-bottom: 2px;
-  padding-left: 20px;
-  font-family: Georgia, serif;
-  p:first-of-type { margin-top: 0 }
-  // a { background-position: 0 1.07em !important } //stylelint-disable-line
+  border-radius: 10px;
+  margin: .8em 0 2em 0 !important;
+  background: 0 0;
+  border: none;
+  border: 2px solid #696969;
+  box-shadow: 6px 6px 0 0 #696969;
+  padding: 1.25em 1.5em;
+
+  //
+  // p:first-of-type { margin-top: 0 }
 }
 
-// hr
-// ==========================================================================
 hr {
-  margin: 40px auto 10px !important;
+  margin: 40px auto;
   height: 1px;
   background-color: #ddd;
   border: 0;
   max-width: 100%;
 }
 
+/* Table
+/* ---------------------------------------------------------- */
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
   display: block;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1rem;
   line-height: 1.5;
   margin: 35px 0 0;
   max-width: 100%;
@@ -151,91 +210,9 @@ table {
 // text
 .text--green { color: $primary-color }
 
-// icon
-.icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
+/* Video Responsive
+/* ---------------------------------------------------------- */
 
-  &--md {
-    height: 24px;
-    width: 24px;
-  }
-
-  &--gray { color: #ddd }
-  &--black { color: #000 }
-  &--white { color: #fff }
-  &--green { color: $primary-color }
-}
-
-.icon--play {
-  background-color: #fff;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
-
-// Instagram
-// ==========================================================================
-.instagram {
-  margin-top: 80px;
-
-  &-wrap {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 0 1 auto;
-  }
-
-  .icon {
-    height: 24px;
-    width: 24px;
-  }
-
-  &-col {
-    flex: 0 0 auto;
-    flex-basis: 16.66667%
-    // flex-basis: 50%;
-  }
-
-  &-hover {
-    background-color: rgba(0, 0, 0, .3);
-    // transition: opacity 1s ease-in-out;
-    opacity: 0;
-    color: #fff;
-  }
-
-  &-img {
-    height: 264px;
-    // height: 150px;
-
-    &:hover > .instagram-hover { opacity: 1 }
-  }
-
-  &-name {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-  }
-
-  &-btn {
-    background-color: #fff;
-    color: #000;
-    font-size: 18px;
-    font-weight: 600;
-    min-width: 200px;
-    padding: 8px 10px;
-    text-align: center;
-  }
-}
-
-// Video Responsive
-// ==========================================================================
 .video-responsive {
   display: block;
   height: 0;
@@ -265,6 +242,45 @@ table {
   }
 }
 
-// zindex for image zoom
+/* zindex for image zoom
+/* ---------------------------------------------------------- */
+
 .medium-zoom-overlay { z-index: 50 }
 .medium-zoom-image--opened { z-index: 51 }
+
+/* Subscribe Message and Overlay
+/* ---------------------------------------------------------- */
+
+.subscribe-success-message {
+  @extend %primary-font;
+
+  background: linear-gradient(286deg, $primary-gradient);
+  color: #fff;
+  font-size: 1rem;
+  left: 0;
+  padding: 1rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateY(-175%);
+  transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  z-index: 50;
+  justify-content: center;
+
+  .button {
+    height: 30px;
+    line-height: 26px;
+    margin-left: 20px;
+  }
+}
+
+.subscribe-success .subscribe-success-message {
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.subscribe-success-message.close {
+  visibility: hidden;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateY(-175%);
+}

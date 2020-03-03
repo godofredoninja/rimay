@@ -1,16 +1,64 @@
-.sticky {
-  position: sticky;
-  top: 30px;
-}
+/* Widget Subscribe
+/* ---------------------------------------------------------- */
 
-.sticky-bottom-wrap {
-  .sticky {
-    // position: sticky;
-    top: auto;
-    bottom: 30px;
+.witget-subscribe {
+  @extend %gradient-primary--border;
+
+  padding: 20px;
+
+  &--form {
+    .message-success { background: #acd053 }
+    .message-error { background: #ec694b; }
   }
 }
 
+/* Sidebar Widget Form .wsf (widget subscribe form)
+/* ---------------------------------------------------------- */
+
+.wsf {
+  &.error,
+  &.invalid,
+  &.success {
+    .message-error,
+    .message-success {
+      color: #fff;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  }
+
+  &.error,
+  &.invalid {
+    .message-error {
+      background: #ec694b;
+      display: block !important;
+    }
+  }
+
+  // success
+  &.success {
+    .message-success {
+      @extend %background-gradient--green;
+
+      display: block !important;
+    }
+
+    .form-group { display: none; }
+  }
+
+  // Animation Loafing
+  &.loading {
+    .button-text { display: none }
+
+    .icon--loader {
+      display: inline-block !important;
+      animation: spin .8s linear infinite;
+    }
+  }
+}
+
+/* Media Query
+/* ---------------------------------------------------------- */
 
 @media #{$md-and-up} {
   .sidebar {
@@ -19,5 +67,13 @@
     padding-top: 10px;
     position: relative;
     z-index: 10;
+  }
+}
+
+@media #{$md-and-down} {
+  .sidebar {
+    margin-top: 60px;
+    width: 90%;
+    margin-left: 5%;
   }
 }

@@ -1,7 +1,5 @@
- <ul class="mainMenu u-unstyled menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="menu">
-{{#foreach navigation}}
-    <li class="menu-item" itemprop="name" role="menuitem">
-        <a href="{{url absolute="true"}}" class="u-block {{#if current}}active{{/if}}" {{^is "amp"}}itemprop="url"{{/is}}>{{label}}</a>
-    </li>
-{{/foreach}}
+<ul class="mainMenu u-unstyled" role="menu">
+    {{#foreach navigation}}
+    <li class="menu-item" role="menuitem"><a href="{{url absolute="true"}}" class="{{link_class for=(url) class=(concat "nav-" slug)}}">{{label}}</a></li>
+    {{/foreach}}
 </ul>

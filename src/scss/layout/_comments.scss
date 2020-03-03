@@ -3,16 +3,26 @@
   width: 100%;
   overflow-y: auto;
   background: #fff;
-  border-left: 1px solid #f1f1f1;
+  border-left: 2px solid #ddd;
   transform: translateX(100%);
   transition: .4s;
 
+  &-body {
+    padding: 15px;
+
+    a { color: $primary-color; }
+  }
+
   &-header {
     padding: 1em 1.25em;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ddd;
   }
 }
 
-body.has-comments .comments {
-  transform: translateX(0)
+body.has-comments {
+  overflow: hidden;
+
+  .comments {
+    transform: translateX(0)
+  }
 }

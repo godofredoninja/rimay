@@ -18,9 +18,21 @@
       return
     }
 
-    // append Contents
+    const gradientText = loadMoreButton.querySelector('.gradient-text')
+
+    loadMoreButton.classList.add('active')
+    gradientText.classList.add('u-hide')
+
+    // Select Content for Append
     const postElements = this.response.querySelector('.story-feed-content')
-    storyFeedContent.appendChild(postElements)
+
+    setTimeout(() => {
+      loadMoreButton.classList.remove('active')
+      gradientText.classList.remove('u-hide')
+
+      // append Contents
+      storyFeedContent.appendChild(postElements)
+    }, 500)
 
     // set next link
     const resNextElement = this.response.querySelector('link[rel=next]')

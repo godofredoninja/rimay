@@ -8,7 +8,6 @@ into the {body} of the default.hbs template --}}
 {{#author}}
 
 <div class="rimay-wrap u-relative author {{#if cover_image}}has-cover{{/if}}">
-    {{!-- if have image --}}
     {{#if cover_image}}
       <span class="u-absolute0 pif-bg zindex2"></span>
       <img class="u-absolute u-image u-block zindex1"
@@ -25,7 +24,7 @@ into the {body} of the default.hbs template --}}
     <div class="rimay-content u-relative zindex3">
 
         <div class="author-wrap">
-            {{!-- Profile --}}
+            {{!-- Avatar --}}
             {{#if profile_image}}
             <figure class="u-marginBottom30">
                 <img class="author-avatar u-round" src="{{img_url profile_image size="s"}}" alt="{{t "Hi I'm"}} {{name}}"/>
@@ -33,23 +32,34 @@ into the {body} of the default.hbs template --}}
             {{/if}}
             {{!-- Name --}}
             <h1 class="author-name">{{name}}</h1>
-            {{!-- author biography --}}
+            {{!-- Biography --}}
             {{#if bio}}<div class="author-bio u-fontSizeLarge"><p>{{bio}}</p></div>{{/if}}
 
             <footer class="author-footer">
-                {{!-- Author (Location - website - RSS) --}}
+                {{!-- Author (Location - website) --}}
                 <div class="author-meta u-marginTop30 u-fontSizeBase">
-                    {{#if location}}<span class="author-location">📍 {{location}}</span>{{/if}}
-                    {{#if website}}<span class="author-page"><a href="{{website}}" target="_blank" rel="noopener noreferrer">🔗 {{website}}</a></span>{{/if}}
+                    {{#if location}}<span class="author-location"><svg class="icon icon--map"><use xlink:href="#icon-map"></use></svg> {{location}}</span>{{/if}}
+                    {{#if website}}<a href="{{website}}" class="author-page u-inlineBlock" target="_blank" rel="noopener noreferrer"><svg class="icon icon--link"><use xlink:href="#icon-link"></use></svg> {{website}}</a>{{/if}}
                 </div>
 
-                {{!-- Author Facebook and Twitter --}}
-                <div class="author-social u-marginTop30">
-                    {{#if facebook}}<a href="{{facebook_url}}" title="Facebook" class="button button--black button--secondary" target="_blank" rel="noopener noreferrer"><span class="icon icon--facebook">{{> "icons/facebook"}}</span> Facebook</a>{{/if}}
-                    {{#if twitter}}<a href="{{twitter_url}}" title="{{twitter}}" class="button button--black button--secondary" target="_blank" rel="noopener noreferrer"><span class="icon icon--twitter">{{> "icons/twitter"}}</span> Twitter</a>{{/if}}
-                    <a href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/" target="_blank" class="button button--black button--secondary" rel="noopener noreferrer">📰 {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}</a>
-                </div>
+                {{!-- Author ( Facebook - Twitter - RSS ) --}}
+                <div class="author-social u-marginTop30 buttonSet">
+                    {{#if facebook}}
+                        <a href="{{facebook_url}}" title="Facebook" class="button button--black" target="_blank" rel="noopener noreferrer">
+                            <svg class="icon icon--facebook"><use xlink:href="#icon-facebook"></use></svg> Facebook
+                        </a>
+                    {{/if}}
+                    {{#if twitter}}
+                        <a href="{{twitter_url}}" title="{{twitter}}" class="button button--black" target="_blank" rel="noopener noreferrer">
+                            <svg class="icon icon--twitter"><use xlink:href="#icon-twitter"></use></svg> Twitter
+                        </a>
+                    {{/if}}
 
+                    <a href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/" target="_blank" class="button button--black" rel="noopener noreferrer">
+                        <svg class="icon icon--rss"><use xlink:href="#icon-rss"></use></svg>
+                        {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+                    </a>
+                </div>
             </footer>
         </div>
 

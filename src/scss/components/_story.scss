@@ -1,31 +1,49 @@
-// Meta tags Global for story and post { author - tag - date }
-// ==========================================================================
+/* Meta tags Global for story and post {author - tag - date}
+/* ---------------------------------------------------------- */
+
 .u-meta {
   @extend %primary-font;
 
   margin: 10px 0;
-  color: #333;
+  color: #777;
 
-  a { padding: 2px 3px; display: inline-block }
+  a { padding: 2px 3px }
+
+  &-tag {
+    color: #333;
+    // line-height: 1.23;
+  }
 
   &-time {
     margin-right: .8em;
-    color: $primary-color-gray;
+    // color: $primary-color-gray;
   }
 }
 
-// Primary story Home page Top Left large
-// ==========================================================================
+/* Primary story Home page Top Left large
+/* ---------------------------------------------------------- */
+
 .primary-post {
   &:hover { opacity: .7; }
-  &-figure { height: 250px }
+  // &-figure { height: 250px }
+
+  &-excerpt { color: $secondary-text-color; }
+
+  &-img {
+    min-height: 250px;
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+  }
 }
 
-// Featured Post Home page right
-// ==========================================================================
+/* Featured Post Home page right
+/* ---------------------------------------------------------- */
+
 .mini-post {
   margin-bottom: 1em;
   border-bottom: 1px solid #ddd;
+  flex: 1;
 
   &:hover { opacity: .7 }
 
@@ -33,14 +51,25 @@
     margin-top: 0;
     margin-bottom: .25em;
     color: #000;
-    letter-spacing: -.02em;
+    letter-spacing: -.01em;
   }
 
-  &:last-child { border-bottom: none }
+  &-media {
+    margin-bottom: 10px;
+    margin-right: 1rem;
+    min-height: 95px;
+    width: 35%;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
 }
 
-// Story Global
-// ==========================================================================
+/* Story Global
+/* ---------------------------------------------------------- */
+
 .story {
   margin: 1em 0 1.5em;
   padding-top: 1.5em;
@@ -58,12 +87,11 @@
 
   // body
   &-body {
-    font-size: 1rem;
+    font-size: 17px;
     flex-basis: 67.5%;
     flex-shrink: 0;
     display: block;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-    line-height: 1.4;
+    line-height: 1.5;
     color: $primary-color-gray;
   }
 
@@ -93,13 +121,7 @@
 }
 
 @media #{$md-and-up} {
-  .primary-post-title { font-size: 2.5rem }
-
-  .icon--play {
-    padding: 18px;
-    width: 64px;
-    height: 64px;
-  }
+  .primary-post-title { font-size: 36px }
 
   // Story
   .story {
@@ -128,17 +150,14 @@
 
 @media #{$lg-and-up} {
   .mini-post-title {
-    font-size: 1.25rem;
     margin-bottom: .3em;
     line-height: 1.05;
-    // letter-spacing: -.5px;
   }
 }
 
 @media #{$xl-and-up} {
-  .mini-post-title { font-size: 28px }
-  .story-title { font-size: 2.3rem }
-  .story-body { font-size: 1.25rem }
+  .story-title { font-size: 34px }
+  .story-body { font-size: 20px }
   .story-media { padding-bottom: 60% }
-  .primary-post-figure { height: 340px }
+  .primary-post-title { font-size: 50px }
 }

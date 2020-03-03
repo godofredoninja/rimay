@@ -1,27 +1,38 @@
 <div class="rimay-paway-left">
     {{#foreach posts limit="1"}}
         <article class="primary-post u-relative">
-            <h1 class="primary-post-title u-marginBottom10 u-lineHeight1 u-fontSizeLarger u-fontWeightSemibold">
+            <h1 class="primary-post-title u-marginBottom10 u-fontSizeLarger u-fontWeightBold">
                 <a href="{{url}}" class="u-colorInherit">{{title}}</a>
             </h1>
-            {{!-- Meta {primary tag} partiasl/helper/meta-meta.hbs --}}
-            {{> "helper/helper-meta"}}
+
+            {{#if primary_tag}}{{#primary_tag}}
+            <div class="u-meta u-fontSizeBase u-fontWeightMedium">
+                <div class="u-meta-byline">
+                    <span class="u-meta-tag">
+                        <a class="u-colorHoverPrimary u-colorInherit u-relative zindex3" href="{{url}}" aria-label="{{name}}">{{name}}</a>
+                    </span>
+                </div>
+            </div>
+            {{/primary_tag}}{{/if}}
 
             {{!-- Image --}}
+            {{#if feature_image}}
             <figure class="primary-post-figure u-relative">
-                {{#if feature_image}}
-                    <img class="primary-post-img u-absolute0 u-image u-block"
+                <a href="{{url}}">
+                    <img class="primary-post-img u-block"
                         src="{{img_url feature_image size="m"}}"
-                        srcset="{{img_url feature_image size="s"}} 300w,{{img_url feature_image size="m"}} 600w"
+                        srcset="{{img_url feature_image size="s"}} 300w, {{img_url feature_image size="m"}} 600w, {{img_url feature_image size="l"}} 1000w"
                         sizes="(max-width: 1000px) 400px, 600px"
                         alt="{{title}}"
                     />
-                {{else}}
-                    <div class="u-absolute0 u-bgCover u-block" style="background-image:url({{asset "images/not-image.jpg"}})"></div>
-                {{/if}}
+                </a>
             </figure>
+            {{else}}
+                <p class="primary-post-excerpt u-fontSize20">{{excerpt}}</p>
+            {{/if}}
+
             {{!-- link --}}
-            <a href="{{url}}" aria-label="{{title}}" class="u-absolute0 zindex2"></a>
+            {{!-- <a href="{{url}}" aria-label="{{title}}" class="u-absolute0 zindex2"></a> --}}
         </article>
     {{/foreach}}
 </div>

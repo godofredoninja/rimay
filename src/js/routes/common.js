@@ -1,24 +1,30 @@
-/* global siteUrl searchKey */
+/* global followSocialMedia siteSearch */
 
-import * as rimay from '../app/app.variables'
 import { loadScript } from '../app/app.load-style-script'
+import socialMedia from '../app/app.social-media'
 
 export default {
   init () {
-    // Toggle Menu
-    // -----------------------------------------------------------------------------
-    rimay.qs('.js-toggle-menu').addEventListener('click', e => {
-      e.preventDefault()
-      rimay.body.classList.toggle('has-menu')
-    })
+    /* Social Media Links
+    /* ---------------------------------------------------------- */
+    if (typeof followSocialMedia === 'object' && followSocialMedia !== null) {
+      socialMedia(followSocialMedia)
+    }
   }, // End Init
 
   finalize () {
-    // Load Search
-    // -----------------------------------------------------------------------------
-    if (typeof searchKey !== 'undefined' || searchKey !== '') {
-      loadScript('https://unpkg.com/@tryghost/content-api@1.2.5/umd/content-api.min.js', () => {
-        loadScript(`${siteUrl}/assets/scripts/search.js`)
+    /* Toggle Menu
+    /* ---------------------------------------------------------- */
+    document.querySelector('.js-toggle-menu').addEventListener('click', e => {
+      e.preventDefault()
+      document.body.classList.toggle('has-menu')
+    })
+
+    /* Load Search
+    /* ---------------------------------------------------------- */
+    if (typeof searchSettings !== 'undefined' && typeof siteSearch !== 'undefined') {
+      loadScript('https://unpkg.com/@tryghost/content-api@1.3.7/umd/content-api.min.js', () => {
+        loadScript(siteSearch)
       })
     }
 

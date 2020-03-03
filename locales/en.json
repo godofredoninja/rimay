@@ -1,21 +1,8 @@
 {
-  "Back": "Back",
-  "Newer Posts": "Newer Posts",
-  "of": "of",
-  "Older Posts": "Older Posts",
-  "Page": "Page",
   "Subscribe": "Subscribe",
-  "Subscribe to": "Subscribe to",
-  "Subscribed!": "Subscribed!",
-  "with the email address": "with the email address",
-  "Your email address": "Your email address",
-  "You've successfully subscribed": "You've successfully subscribed",
-  "A collection of posts": "A collection of posts",
-  "A collection of 1 post": "A collection of 1 post",
-  "A collection of % posts": "A collection of % posts",
   "Get the best viral stories straight into your inbox!": "Get the best viral stories straight into your inbox!",
   "Comments": "Comments",
-  "View Comments": "View Comments";
+  "View Comments": "View Comments",
   "Search": "Search",
   "Navigate up/down": "Navigate up/down",
   "Go to article": "Go to article",
@@ -28,5 +15,10 @@
   "Hi I'm": "Hi I'm",
   "Load More": "Load More",
   "Share on": "Share on",
-  "Want more stuff like this?": "Want more stuff like this?"
+  "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox": "Bleibe aktuell! Bekomme neue Beiträge direkt direkt in deine Inbox",
+  "You've successfully subscribed to": "You've successfully subscribed to",
+  "youremail@example.com": "youremail@example.com",
+  "< 1 min read": "&lt; 1 Minute Lesezeit",
+  "1 min read": "1 Minute Lesezeit",
+  "% min read": "% Minuten Lesezeit"
 }

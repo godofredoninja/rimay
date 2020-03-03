@@ -1,16 +1,14 @@
-/* global searchKey */
+/* global searchSettings */
+
 import GhostSearch from './app/app.search'
-// import { loadScript } from './app/app.load-style-script'
 
 ((window, document) => {
-  // ApiKey Search
-  // if (typeof searchKey === 'undefined' || searchKey === '') return
-
   const qs = document.querySelector.bind(document)
   const qsa = document.querySelectorAll.bind(document)
 
-  const searchInput = document.getElementById('search-field')
-  const searchResults = qs('#searchResults')
+  const domBody = document.body
+  const searchInput = qs('#search-field')
+  const searchResults = qs('#search-results')
   const searchMessage = qs('.js-search-message')
 
   let searchResultsHeight = {
@@ -18,28 +16,33 @@ import GhostSearch from './app/app.search'
     scroll: 0
   }
 
-  // Load Ghost Api
-  // -----------------------------------------------------------------------------
-  // loadScript('https://unpkg.com/@tryghost/content-api@1.2.5/umd/content-api.min.js')
+  // SHow icon search in header
+  qs('.js-search-open').classList.remove('u-hide')
 
   // Variable for search
   // -----------------------------------------------------------------------------
   const mySearchSettings = {
-    url: window.location.origin,
-    // url: 'http://localhost:2368',
-    key: searchKey,
-    input: '#search-field',
-    results: '#searchResults',
     on: {
-      afterDisplay: () => {
+      afterDisplay: results => {
         searchResultActive()
+
         searchResultsHeight = {
           outer: searchResults.offsetHeight,
           scroll: searchResults.scrollHeight
         }
+
+        // Show message if dont have results
+        if (results.total === 0 && searchInput.value !== '') {
+          searchMessage.classList.remove('u-hide')
+        } else {
+          searchMessage.classList.add('u-hide')
+        }
       }
     }
   }
+
+  // join user settings
+  Object.assign(mySearchSettings, searchSettings)
 
   // when the Enter key is pressed
   // -----------------------------------------------------------------------------
@@ -57,21 +60,16 @@ import GhostSearch from './app/app.search'
     // Dont use key functions
     if (window.innerWidth < 768) return
 
-    const searchLInk = searchResults.querySelectorAll('a')
+    const allLink = searchResults.querySelectorAll('a')
 
-    if (!searchLInk.length) {
-      searchInput.value.length && searchMessage.classList.remove('u-hide')
-      return
-    }
+    if (!allLink.length) return
 
-    searchMessage.classList.add('u-hide')
+    const linkActive = searchResults.querySelector('a.search-result--active')
+    linkActive && linkActive.classList.remove('search-result--active')
 
-    const searchLinkActive = searchResults.querySelector('a.search-result--active')
-    searchLinkActive && searchLinkActive.classList.remove('search-result--active')
+    allLink[t].classList.add('search-result--active')
 
-    searchLInk[t].classList.add('search-result--active')
-
-    const n = searchLInk[t].offsetTop
+    const n = allLink[t].offsetTop
     let o = 0
 
     e === 'down' && n > searchResultsHeight.outer / 2 ? o = n - searchResultsHeight.outer / 2 : e === 'up' && (o = n < searchResultsHeight.scroll - searchResultsHeight.outer / 2 ? n - searchResultsHeight.outer / 2 : searchResultsHeight.scroll)
@@ -89,7 +87,7 @@ import GhostSearch from './app/app.search'
   // Search close with Key
   // -----------------------------------------------------------------------------
   function searchClose () {
-    document.body.classList.remove('has-search')
+    domBody.classList.remove('has-search')
     document.removeEventListener('keyup', mySearchKey)
   }
 
@@ -134,8 +132,8 @@ import GhostSearch from './app/app.search'
     const keyNumber = e.keyCode
 
     /**
-      * 38 => Top / Arriba
-      * 40 => down / abajo
+      * 38 => Top
+      * 40 => down
       * 27 => escape
       * 13 => enter
       * 191 => /
@@ -155,18 +153,18 @@ import GhostSearch from './app/app.search'
 
   // Open Search
   // -----------------------------------------------------------------------------
-  qsa('.js-open-search').forEach(item => item.addEventListener('click', e => {
+  qsa('.js-search-open').forEach(item => item.addEventListener('click', function (e) {
     e.preventDefault()
-    document.body.classList.add('has-search')
+    domBody.classList.add('has-search')
     searchInput.focus()
     window.innerWidth > 768 && document.addEventListener('keyup', mySearchKey)
   }))
 
   // Close Search
   // -----------------------------------------------------------------------------
-  qsa('.js-close-search').forEach(item => item.addEventListener('click', e => {
+  qsa('.js-search-close').forEach(item => item.addEventListener('click', function (e) {
     e.preventDefault()
-    document.body.classList.remove('has-search')
+    domBody.classList.remove('has-search')
     document.removeEventListener('keyup', mySearchKey)
   }))
 

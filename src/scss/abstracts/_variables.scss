@@ -1,37 +1,66 @@
-// -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
-// -----------------------------------------------------------------------------
+/* This file contains all application-wide Sass variables.
+/* ---------------------------------------------------------- */
 
 // color
-// $primary-color: #00a562;
-$primary-color: #00854F;
+// $primary-color: #00A562;
 $primary-color-gray: #757575;
 
-$color-share: #04a763 #20b66d #34c174 #1ec942 #08d013;
+// $primary-color: #2ECC71;
+// $primary-color-darken: #21A75A;
 
-// social colors
+// $accent-color: #102B7B;
+
+$primary-text-color:   #333;
+$secondary-text-color: #757575;
+$primary-text-color-title: #111;
+// $divider-color: #6C757D;
+$divider-color: #f1f1f1;
+
+$bg-secondary-color: $primary-text-color;
+
+/* Gradient Variable
+/* ---------------------------------------------------------- */
+
+// $primary-gradient: #00d301, #36c275 50%, #00a562;
+
+$primary-color: #f42;
+$primary-gradient: #c09, #f42 85%;
+
+$primary-color-complementary: #007db5;
+
+/* Social Media Color
+/* ---------------------------------------------------------- */
+
+// $color-share: #04a763 #20b66d #34c174 #1ec942 #08d013;
+// $color-share: #F42000 #f64126 #f7634d #fa9080 #fcbcb3;
+$color-share: #cf0492 #da1378 #e6235d #f13242 #f42 #f41;
+
+// $color-share: #F42000 #f64126 #f7634d #f49082 #ff5858;
+
 $social-colors: (
   facebook:   #3b5998,
   twitter:    #55acee,
+  linkedin:   #007bb6,
+  reddit:     #ff4500,
+  whatsapp:   #64d448,
   // google:     #dd4b39,
   // instagram:  #306088,
   // youtube:    #e52d27,
   // github:     #555,
-  linkedin:   #007bb6,
   // spotify:    #2ebd59,
   // codepen:    #222,
   // behance:    #131418,
   // dribbble:   #ea4c89,
   // flickr:     #0063dc,
-  reddit:     #ff4500,
   // pocket:     #f50057,
   // pinterest:  #bd081c,
-  whatsapp:   #64d448,
   // telegram:   #08c,
   // rss:          orange,
 );
 
-// fonts
+/* Fonts
+/* ---------------------------------------------------------- */
+
 $primary-font: 'Rubik', sans-serif;
 $secundary-font: Helvetica Neue, Helvetica, Arial, sans-serif;
 
@@ -55,23 +84,41 @@ $font-size-md-h6:    1.2rem;
 
 $headings-font-family:     $primary-font;
 $headings-font-weight:     700;
-$headings-line-height:     1.1;
+$headings-line-height:     1.2em;
 
-// Header
-// ==========================================================================
+$input-height: 37px;
+$input-height-large: 44px;
+
+$button-height: 44px;
+$button-color: #000;
+
+/* Header
+/* ---------------------------------------------------------- */
+
 $header-mobile-height: 50px;
 
-// Footer
-$footer-color: #6E6E6E;
+/* Footer
+/* ---------------------------------------------------------- */
 
-// Wrap
-// ==========================================================================
+$footer-color: #6E6E6E;
+$footer-bg-color: $divider-color;
+
+/* Bookmark
+/* ---------------------------------------------------------- */
+
+$bookmark-color: #82878c;
+$bookmark-border-color: #e5e5e5;
+
+/* Wrap
+/* ---------------------------------------------------------- */
+
 $container-gutter-width: 20px;
 
-// Media Query Ranges
-// ==========================================================================
+/* Media Query Ranges
+/* ---------------------------------------------------------- */
+
 $sm: 450px;
-$md: 800px;
+$md: 910px;
 $lg: 1100px;
 $xl: 1440px;
 

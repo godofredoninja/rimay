@@ -122,15 +122,18 @@ const archive = () => {
     .pipe(gulp.dest('.'))
 }
 
-const copyPrismJs = () => {
-  return gulp.src('node_modules/prismjs/components/*.min.js')
-    .pipe($.plumber())
-    .pipe(gulp.dest('assets/scripts/components'))
-}
+// const copyPrismJs = () => {
+//   return gulp.src('node_modules/prismjs/components/*.min.js')
+//     .pipe($.plumber())
+//     .pipe(gulp.dest('assets/scripts/components'))
+// }
 
 const copyMainStyle = () => {
   return gulp.src('assets/styles/main.css')
     .pipe($.plumber())
+    .pipe(replace('@charset "UTF-8";', ''))
+    .pipe(stripCssComments({ preserve: false }))
+    .pipe($.postcss([cssnano()]))
     .pipe(rename('styles.hbs'))
     .pipe(gulp.dest('partials'))
 }
@@ -163,7 +166,7 @@ const compile = gulp.parallel(style, script, image)
 
 const build = gulp.series(clean, compile)
 
-const release = gulp.series(build, copyMainStyle, copyAmpStyle, copyPrismJs, archive)
+const release = gulp.series(build, copyMainStyle, copyAmpStyle, archive)
 
 const develop = gulp.series(build, watch)
 

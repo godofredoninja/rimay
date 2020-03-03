@@ -2,36 +2,27 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{!-- Ads large in the header page--}}
-{{> "ads/ad-lg-header"}}
-
 <div class="rimay-wrap">
-    <div class="rimay-content">
-        <div class="rimay-paway">
-            {{!-- First Post Large in Home Page --}}
+    <div class="rimay-content rimay-paway">
+        <div class="rimay-paway-content">
+            {{!-- First Post Large - partials/home/home-primary-story.hbs --}}
             {{> "home/home-primary-story"}}
 
-            {{!-- Featured Post in Home Page --}}
-            {{> "home/home-featured-story"}}
+            {{!-- 3 Mini Post - partials/home/home-mini-story.hbs --}}
+            {{> "home/home-mini-story"}}
         </div>
     </div>
-
-    {{!-- Sidebar for home top--}}
-    {{> "sidebar/sidebar-home-top"}}
 </div>
 
 <div class="rimay-wrap">
     <div class="rimay-content">
-        {{!-- Ad home Medium --}}
-        {{> "ads/ad-home-medium"}}
-
         {{!-- Title For Home Page --}}
-        <h2 class="rimay-home--title u-fontSize22 u-marginTop15 u-marginBottom15 u-fontWeightMedium">{{t "The Latest"}}</h2>
+        {{!-- <h2 class="rimay-home--title u-fontSize22 u-marginTop15 u-marginBottom15 u-fontWeightMedium">{{t "The Latest"}}</h2> --}}
 
         <div class="story-feed">
             <div class="story-feed-content">
                 {{!-- story - partials/story/story.hbs --}}
-                {{#foreach posts from="2" to="12"}} {{> "story/story"}} {{/foreach}}
+                {{#foreach posts from="6" to="12"}} {{> "story/story"}} {{/foreach}}
             </div>
         </div>
 

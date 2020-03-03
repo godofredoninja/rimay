@@ -1,67 +1,74 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
+/* Logo
+/* ---------------------------------------------------------- */
 
-.nav {
-  background-color: #fff;
-  // overflow-y: auto;
-  overflow: hidden;
-  padding: 0 20px;
+.logo {
+  @extend %primary-font;
+
+  position: relative;
+  z-index: 10;
+
+  &-wrap {
+    width: 100px;
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+/* Styles fo the Header
+/* ---------------------------------------------------------- */
+
+.header {
+  &-wrap {
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 20px;
+    word-wrap: break-word;
+    z-index: 30;
+  }
+
+  // Header Top
+  &-top {
+    // height: $header-mobile-height;
+    justify-content: space-between;
+  }
+}
+
+/* Header nav
+/* ---------------------------------------------------------- */
+
+.mainMenu { padding: 0; }
+
+.header .mainMenu {
+  color: $secondary-text-color;
+  font-size: 20px;
+  font-weight: 400;
+  hyphens: auto;
+  line-height: 1.1;
+  margin: 15px 0;
+  padding: 0;
   word-wrap: break-word;
-  z-index: 30;
 
   a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+      border-bottom: 1px solid transparent;
+    }
   }
-}
-
-.logo { @extend %primary-font; }
-
-.logo-svg {
-  width: 100px;
-
-  svg {
-    height: 100%;
-    width: 100%;
-  }
-}
-
-// Header nav
-.nav-header {
-  background-color: #fff;
-  height: $header-mobile-height;
-  justify-content: space-between;
-
-  &--right > * {
-    padding: 10px;
-  }
-}
-
-// navigation
-.mainMenu {
-  font-size: 1.125rem;
-  line-height: 1.1;
-  word-wrap: break-word;
-  hyphens: auto;
-  color: #757575;
-  margin-bottom: 30px;
-  font-weight: 600;
-
-  a:hover { border-bottom-color: transparent; }
 
   .menu-item { padding: 0.3em 0 }
 }
 
-// Social Media
-.nav .social-media {
-  border-bottom: 1px solid hsla(0,0%,100%,.15);
-  margin: 0 -20px 2em;
-  padding: 0 20px 20px;
-}
+/* Toggle menu
+/* ---------------------------------------------------------- */
 
-// Menu - Toggle
-.nav-menu-toggle {
+.menu-toggle {
   height: 48px;
   margin-right: -20px;
   position: relative;
@@ -84,24 +91,45 @@
   }
 }
 
+/* Social Media
+/* ---------------------------------------------------------- */
 
-.social-media a {
-  display: inline-block;
-  padding: 4px;
-  margin-right: 10px;
+.social-media {
+  padding: 0;
+
+  li {
+    @extend %flex-align-items-center;
+
+    padding: 2px 0;
+    font-size: 15px;
+  }
+
+  &-link {
+    color: #000;
+    text-transform: capitalize;
+    border: none;
+
+    &:hover {
+      color: #6E6E6E;
+    }
+  }
 }
 
-// breakpoints lg down 1100
-// ==========================================================================
+// search
+.search-field { color: $primary-color; }
+
+/* breakpoints LG down 1100
+/* ---------------------------------------------------------- */
+
 @media #{$lg-and-down} {
   .header {
     position: sticky;
     top: 0;
     z-index: 20;
-    box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);
+    // box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
   }
 
-  .nav-body {
+  .header-body {
     width: 290px;
     transform: translateX(100%);
     transition: .4s;
@@ -117,9 +145,9 @@
   body.has-menu {
     overflow: hidden;
 
-    .nav-body { transform: translateX(0) }
+    .header-body { transform: translateX(0) }
 
-    .nav-menu-toggle {
+    .menu-toggle {
       border: 0;
       transform: rotate(90deg);
       z-index: 10;
@@ -131,66 +159,27 @@
   }
 }
 
-// breakpoints md up 700
-// ==========================================================================
-@media #{$md-and-up} {
-  .mainMenu {
-    font-weight: 400;
-    font-size: 20px;
+/* breakpoints md down 700
+/* ---------------------------------------------------------- */
 
-    a {
-      color: inherit;
-      text-decoration: none;
-      &:hover { color: $primary-color }
-    }
-
-    // .menu-item { padding: .2em 0 }
-  }
-}
-
-// breakpoints md down 700
-// ==========================================================================
 @media #{$md-and-down} {
-  .nav-body {
-    color: #fff;
+  .header-body {
     width: 100vw;
     height: 100vh;
     left: 0;
-    background: linear-gradient(331deg,#00d301,#36c275 50%,#00a562);
   }
 
-  .mainMenu {
-    color: #fff;
-    font-size: 1.25rem;
-  }
-
-  // nav
-  .nav-body-wrap {
-    overflow: auto;
-    border-top: 1px solid hsla(0,0%,100%,.15);
-    bottom: 0;
-    left: 0;
-    padding: 20px;
-    position: absolute;
-    right: 0;
-    top: 48px;
-  }
-
-  // Social Media
-  .nav .social-media .icon { color: #fff !important }
-
-  // page has menu
-  body.has-menu {
-    .nav-header { background-color: transparent }
-    .menu-topics { color: #fff }
-    .nav-menu-toggle span { background-color: #fff }
+  .header-wrap {
+    height: $header-mobile-height;
+    justify-content: center;
   }
 }
 
-// breakpoints lg UP 1100
-// ==========================================================================
+/* breakpoints lg UP 1100
+/* ---------------------------------------------------------- */
+
 @media #{$lg-and-up} {
-  .nav {
+  .header-wrap {
     padding-left: 30px;
     padding-top: 30px;
     background: 0 0;
@@ -205,13 +194,19 @@
     &-body { margin: 30px 0 0 0; overflow-y: auto }
   }
 
-  .logo-svg { width: 150px  }
+  .header-top {
+    display: block;
+    // flex-direction: column;
+    // align-items: flex-start;
+    // justify-content: flex-start;
+  }
+
+  // .nav-header--right { margin-top: 30px; }
+  .search-field { color: $secondary-text-color; margin-top: 20px; }
+
+  .logo-wrap { width: 150px }
 }
 
 @media #{$xl-and-up} {
-  .nav { width: 250px }
-}
-
-@media screen and (min-width:1100px) and (min-height:700px) {
-  .mainMenu { font-size: 2.57vh !important }
+  .header-wrap { width: 250px }
 }

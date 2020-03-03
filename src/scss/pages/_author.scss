@@ -1,10 +1,10 @@
 .author {
-    color: #333;
-    text-align: center;
+  color: $primary-text-color;
+  text-align: center;
 
   &-wrap { padding: 40px 0 }
 
-  a {
+  &-page {
     color: inherit;
     &:hover { color: $primary-color }
   }
@@ -19,38 +19,20 @@
 
   &-bio { margin: 40px 0 20px }
 
-  .button { padding: 10px 15px  }
-
-  // &-social a {
-  //   margin-right: 10px;
-  //   border: 1px solid #000;
-  //   padding: 10px;
-  //   color: #000;
-  //   display: inline-block;
-
-  //   &:hover { border-color: $primary-color }
-  // }
-
   &-meta > * {
     margin-right: 10px;
-    // font-style: italic;
   }
 
   &.has-cover {
-    color: #fff;
-    background-color: #777;
+    color: #fff !important;
+    background-color: $bg-secondary-color;
     min-height: 500px;
 
     .author-name { color: #fff }
 
     .button {
-      color: #f1f1f1;
-      border-color: #f1f1f1;
-
-      // &:hover {
-      //   color: $primary-color;
-      //   border-color: $primary-color;
-      // }
+      color: $divider-color;
+      border-color: $divider-color;
     }
   }
 }
@@ -59,12 +41,11 @@
   .author .rimay-content {
     width: 90%;
     max-width: 100%;
-    margin-right: 5%;
+    margin-left: 5%;
   }
 }
 
-
 @media #{$md-and-down} {
-  .author-avatar { max-width: 130px  }
+  .author-avatar { max-width: 130px }
   .author-name { font-size: 3rem; }
 }

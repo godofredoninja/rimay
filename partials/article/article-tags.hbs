@@ -1,0 +1,14 @@
+{{#if tags}}
+
+<div class="article-tags">
+    <h3 class="u-fontSizeLarge">{{t "Tags"}}</h3>
+    <ul class="article-tags-content menu u-fontWeightMedium u-textCapitalize u-marginTop20 u-marginBottom20 u-clear u-unstyled">
+        {{#foreach tags}}
+            <li class="article-tags-item">
+                <a href="{{url absolute="true"}}" title="{{name}}">{{name}}</a>
+            </li>
+        {{/foreach}}
+    </ul>
+</div>
+
+{{/if}}

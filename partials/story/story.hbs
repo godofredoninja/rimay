@@ -1,29 +1,48 @@
-<article class="story u-relative u-flex u-flexWrap {{#has tag="#video, #image"}}story--featured{{/has}}">
-    {{!-- Story Header --}}
+<article class="story u-relative u-flex u-flexWrap {{#if featured}}story--featured{{/if}}">
     <header class="story-header">
-        <h2 class="story-title u-fontWeightSemibold u-fontSize22"><a href="{{url}}" class="u-colorInherit">{{title}}</a></h2>
-        {{!-- Excerpt if story is video or image --}}
-        {{#has tag="#video, #image"}}<div class="story-body u-hide-before-md"><p>{{excerpt words="25"}}</p></div>{{/has}}
-        {{!-- meta helper/helper-meta-story.hbs  --}}
-        {{> "helper/helper-meta-story"}}
+        <h2 class="story-title u-fontWeightBold u-fontSize22"><a href="{{url}}" class="u-colorInherit">{{title}}</a></h2>
+
+        {{!-- Excerpt if story is featured --}}
+        {{#if featured}}<div class="story-body u-hide-before-md"><p>{{excerpt words="25"}}</p></div>{{/if}}
+
+        <div class="u-meta u-fontSizeSmall">
+            <div class="u-meta-byline">
+                {{!-- Primary Tag --}}
+                {{#if primary_tag}}{{#primary_tag}}
+                <span class="u-meta-tag u-fontWeightMedium u-fontSizeBase u-block">
+                    <a class="u-colorHoverPrimary u-textCapitalize u-colorInherit u-relative zindex3" href="{{url}}" aria-label="{{name}}">{{name}}</a>
+                </span>
+                {{/primary_tag}}{{/if}}
+
+                {{!-- Datetime --}}
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                <span class="bull">&bull; {{reading_time seconds=(t "< 1 min read") minute=(t "1 min read") minutes=(t "% min read")}}</span>
+            </div>
+        </div>
     </header>
-    {{!-- Story Body - excerpt is not video or image--}}
-    {{^has tag="#video, #image"}}<div class="story-body u-hide-before-md"><p>{{excerpt words="25"}}</p></div>{{/has}}
+
+    {{!-- Story Body - excerpt is not Featured--}}
+    {{#unless featured}}
+        <div class="story-body u-hide-before-md"><p>
+            {{#if custom_excerpt}}{{custom_excerpt}}{{else}}{{excerpt characters="180"}}...{{/if}}
+        </p></div>
+    {{/unless}}
+
     {{!-- Story Image --}}
     {{#if feature_image}}
         <footer class="story-footer">
             <figure class="story-media u-relative">
-                <img class="story-img u-absolute0 u-image u-block lazyload"
+                <img class="story-img u-absolute0 u-image lazyload"
                     src="{{img_url feature_image size="m"}}"
                     srcset="{{img_url feature_image size="xxs"}}"
                     data-srcset="{{img_url feature_image size="s"}} 300w,{{img_url feature_image size="m"}} 600w"
                     data-sizes="(max-width: 1000px) 400px, 600px"
                     alt="{{title}}"
                 />
-                {{#has tag="#video"}}<span class="icon icon--play icon--green">{{> "icons/play"}}</span>{{/has}}
             </figure>
         </footer>
     {{/if}}
+
     {{!-- link --}}
     <a href="{{url}}" aria-label="{{title}}" class="u-absolute0 zindex2"></a>
 </article>

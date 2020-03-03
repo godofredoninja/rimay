@@ -1,0 +1,123 @@
+html[data-theme="dark"] {
+  body,
+  .comments {
+    background-color: #111;
+    color: #acacac;
+  }
+
+  textarea,
+  input:not(.shortlink-input) {
+    background-color: rgba(97, 97, 97, 0.25);
+    color: #fff;
+    border-color: #444;
+  }
+
+  table th, table td { border-color: rgba(255, 255, 255, 0.2) }
+
+  hr { background: #2e2e2e }
+
+  :not(pre) > code {
+    background: #4c4b59;
+    color: #ddd;
+  }
+
+  .search-field,
+  .header .mainMenu { color: #aaa; }
+
+  .article-inner a:not(.kg-bookmark-container) {
+    color: $primary-color;
+    border-color: #3a3838;
+  }
+
+  .primary-post-title,
+  .mini-post-title,
+  .article-title,
+  .article-body h1,
+  .article-body h2,
+  .article-body h3,
+  .article-body h4,
+  .article-body h5,
+  .article-body h6,
+  .article-body strong,
+  .article-byline-author,
+  .rimay-home--title,
+  .rimay--title,
+  .topic-title,
+  .kg-bookmark-title,
+  .footer .mainMenu a,
+  .author-name,
+  .story-title {
+    color: hsla(0, 0%, 100%, .9);
+  }
+
+  .story-body,
+  .author,
+  .article-inner {
+    color: #acacac;
+  }
+
+  .story,
+  .load-more {
+    border-top-color: #2e2e2e;
+  }
+
+  .story:hover { opacity: .8; }
+
+  .article-footer,
+  .mini-post {
+    border-bottom-color: #2e2e2e;
+  }
+
+  .article-byline-author:hover { color: $primary-color; }
+
+  .kg-bookmark-container {
+    border-color: #2e2e2e;
+  }
+
+  .load-more:hover { background-color: #111; }
+
+  /* stylelint-disable-next-line */
+  .search-results a:hover, .search-results a.search-result--active {
+    background: #2b2b2b;
+    color: #fff;
+  }
+
+  /* stylelint-disable-next-line */
+  .search-results a { color: #fff; }
+
+  .search-shader { background: rgba(84, 102, 109, .6); }
+
+  .social-media-link {
+    color: #888;
+    &:hover { color: #acacac; }
+  }
+
+  .u-meta,
+  .u-meta-tag,
+  figcaption {
+    color: #888;
+  }
+
+  .search-wrap,
+  .kg-bookmark-container,
+  table tr:nth-child(2n),
+  .topic-item {
+    background-color: #181818;
+  }
+
+  .shortlink-indicator { background-color: #514f4f; }
+
+  .medium-zoom-overlay { background: rgba(0, 0, 0, 0.5) !important }
+
+  .article-shadow::before { background-image: linear-gradient(0deg, #181818, #111) }
+
+  // Footer
+  .footer {
+    background-color: #181818;
+  }
+
+  @media #{$lg-and-down} {
+    .header-wrap,
+    .header-body { background: #000; }
+  }
+}

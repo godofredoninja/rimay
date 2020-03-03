@@ -1,4 +1,13 @@
-%primary-font { font-family: $primary-font }
+/* Fonts
+/* ---------------------------------------------------------- */
+
+%primary-font {
+  font-family: $primary-font;
+}
+
+// %secondary-font {
+//   font-family: $secondary-font;
+// }
 
 %u-absolute0 {
   bottom: 0;
@@ -8,13 +17,59 @@
   top: 0;
 }
 
+%u-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* Gradients
+/* ---------------------------------------------------------- */
+
+%gradient-text--primary {
+  background: $primary-color;
+  background: linear-gradient(79deg, $primary-gradient);
+}
+
+%gradient-text {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+%gradient-primary--border {
+  border: 2px solid transparent;
+  border-color: $primary-color;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(79deg, $primary-gradient);
+}
+
+%background-gradient--green {
+  background: $primary-color;
+  background: linear-gradient(286deg, $primary-gradient);
+  color: #fff;
+}
+
 // flexbox
-%flex { display: flex }
-%flex-align-items-center { align-items: center }
-%flex-direction-column { flex-direction: column }
+%flex-direction-column-justify-content-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 %flex-direction-row { flex-direction: row }
+
+%flex-align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+%flex { display: flex }
+%flex--1 { flex: 1 }
 %flex-direction-wrap { flex-direction: wrap }
 %flex-justify-content-center { justify-content: center }
+%justify-content-flex-end { justify-content: flex-end; }
 
 // modal
 %modal {
@@ -31,4 +86,22 @@
   transform: scale(.6);
   transition: transform .3s cubic-bezier(.06, .47, .38, .99), opacity .3s cubic-bezier(.06, .47, .38, .99);
   overflow: hidden;
+}
+
+/* Shadow
+/* ---------------------------------------------------------- */
+%box-shadow-card {
+  background: #fff;
+  border: 1px solid $bookmark-border-color;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  overflow: hidden;
+}
+
+// LineClamp
+%lineClamp {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
