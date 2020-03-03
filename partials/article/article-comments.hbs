@@ -1,4 +1,4 @@
-<aside class="comments u-fixed u-absolute0 u-fontSizeSmall">
+<aside class="comments u-fixed u-absolute0 u-fontSizeSmall article-comments-show u-hide">
     <div class="comments-wrap">
         <div class="comments-header u-flex">
             <svg class="js-comments-toggle icon icon--md icon--close icon--green u-pointer"><use xlink:href="#icon-close"></use></svg>
@@ -21,7 +21,7 @@
             this.page.identifier = 'ghost-{{comment_id}}';
         };
 
-        var commentShow = d.querySelectorAll('.post-comments-show');
+        var commentShow = d.querySelectorAll('.article-comments-show');
         commentShow.forEach(function(item){item.classList.remove('u-hide')});
 
         // Disqus Comments Count
