@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-<html lang="{{@site.lang}}">
+<!--
+    Design by:
+    ——————————
+        GODO FREDO
+        ✉ https://godofredo.ninja
+        ✎ @GodoFredoNinja
+        ✈ Lima - Perú
+-->
+<html lang="{{@site.lang}}" data-theme="dark">
 <head>
     {{!-- Document Settings --}}
     <meta charset="UTF-8">
@@ -11,10 +19,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{!-- Styles --}}
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700,900&display=swap" rel="stylesheet">
-
-    {{!-- <link rel="stylesheet" type="text/css" href="{{asset "styles/main.css"}}"/> --}}
-    <style>{{> "styles"}}</style>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset "styles/main.css"}}"/>
+    {{!-- <style>{{> "styles"}}</style> --}}
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -27,35 +34,69 @@
         <div class="rimay-main-content"> {{{body}}} </div>
 
         {{!-- Footer --}}
-        {{!-- {{> "footer"}} --}}
-        {{> "footer-two"}}
+        {{> "footer"}}
+        {{!-- {{> "footer-two"}} --}}
     </div>
 
     {{!-- Search - partials/widget/search.hbs --}}
     {{> "widget/search"}}
 
-    {{!-- Site Url --}}
-    <script> var siteUrl = '{{@site.url}}'; </script>
+    {{!-- Icons --}}
+    {{> "icons/all-icon"}}
+
+    {{!-- notification Subscribe --}}
+    {{#if @labs.members}}
+    <div class="subscribe-success-message u-flexCenter">
+        <span class="u-fontSize22" style="margin-right:10px">🎉</span> {{t "You've successfully subscribed to"}} {{@site.title}}!
+        <div class="notification-close button button--black">OK</div>
+    </div>
+    {{/if}}
+
+    {{!-- Variables --}}
+    <script>
+        var siteUrl = '{{@site.url}}';
+        var siteSearch = '{{asset "scripts/search.js"}}';
+        var prismJs = '{{asset "scripts/prismjs.js"}}';
+        var prismJsComponents = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/';
+    </script>
 
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
 
     {{!-- The main JavaScript --}}
-    <script src="{{asset "scripts/main.js"}}" defer></script>
+    <script src="{{asset "scripts/main.js"}}" async defer></script>
+
+    {{#if @labs.members}}
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+
+        function ready() {
+            if (action == 'subscribe') { document.body.classList.add('subscribe-success'); }
+
+            document.querySelector('.notification-close').addEventListener('click', function() {
+                this.parentNode.classList.add('close');
+            });
+        }
+        window.addEventListener('load', ready, false);
+    </script>
+    {{/if}}
 
     {{!-- Pagination --}}
-    {{#if pagination.pages}}<script src="{{asset "scripts/pagination.js"}}" defer></script>{{/if}}
+    {{#if pagination.pages}}<script src="{{asset "scripts/pagination.js"}}" async defer></script>{{/if}}
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
-
-    {{#is "post"}}
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-3462564966072994",
-            enable_page_level_ads: true
-        });
-    </script>
-    {{/is}}
 </body>
 </html>

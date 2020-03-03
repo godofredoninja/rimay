@@ -1,18 +1,5 @@
 {
-  "Back": "Volver",
-  "Newer Posts": "Artículos Siguientes",
-  "of": "de",
-  "Older Posts": "Artículos Anteriores",
-  "Page": "Página",
   "Subscribe": "Suscríbete",
-  "Subscribe to": "Suscríbete a",
-  "Subscribed!": "¡Suscrito!",
-  "with the email address": "con el correo electrónico",
-  "Your email address": "Tu correo electrónico",
-  "You've successfully subscribed": "Te has suscrito con éxito",
-  "A collection of posts": "Una colección de artículos",
-  "A collection of 1 post": "Una colección de 1 artículo",
-  "A collection of % posts": "Una colección de % artículos",
   "Get the best viral stories straight into your inbox!": "Suscríbete a mi Newsletter y recibe todos los últimos y mejores artículos directamente en tu Correo",
   "Comments": "Comentarios",
   "View Comments": "Ver los comentarios",
@@ -28,5 +15,10 @@
   "Hi I'm": "Hola, yo soy",
   "Load More": "Cargar Más",
   "Share on": "Compartir en",
-  "Want more stuff like this?": "¿Quieres más cosas como esto?"
+  "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox": "¡Mantente al día! Recibe todos los últimos y mejores artículos directamente en tu buzón",
+  "You've successfully subscribed to": "Te has suscrito con éxito a",
+  "youremail@example.com": "tucorreo@ejemplo.com",
+  "< 1 min read": "&lt; 1 min de lectura",
+  "1 min read": "1 min de lectura",
+  "% min read": "% min de lectura"
 }

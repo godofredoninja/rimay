@@ -1,12 +1,16 @@
 <footer class="footer">
     <div class="footer-wrap">
-        {{!-- Widget Social Media - partials/widget/social-media.hbs --}}
-        {{> "widget/social-media"}}
+        {{!-- Footer Menu --}}
+        {{#if @site.secondary_navigation}}
+            <nav class="footer-menu">
+                {{navigation type="secondary"}}
+            </nav>
+        {{/if}}
 
         {{!-- copy --}}
         <p class="footer-copy">
             &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a>
-            Design with <3 by <a href="https://godofredo.ninja" title="Developer FullStack.">@GodoFredoNinja</a>
+            Design with <svg class="icon icon--heart icon--red" style="height:15px;width:15px"><use xlink:href="#icon-heart"></use></svg> by <a href="https://godofredo.ninja" title="Developer">GodoFredo</a>
         </p>
     </div>
 </footer>

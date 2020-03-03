@@ -1,20 +1,22 @@
 <div class="search u-fixed u-flexColumnTop u-flexCenter u-fixed u-absolute0">
-    <div class="js-close-search search-shader u-absolute0 zindex1"></div>
-    <div class="js-close-search search-close zindex3 u-hide-after-lg">
-        <span class="icon icon--close icon--green">{{> "icons/close"}}</span>
+    <div class="js-search-close search-shader u-absolute0 zindex1"></div>
+    <div class="js-search-close search-close button button--black zindex3 u-hide-after-lg">
+        {{!-- <span class="icon icon--close icon--green">{{> "icons/close"}}</span> --}}
+        <svg class="icon icon--close"><use xlink:href="#icon-close"></use></svg>
     </div>
 
     <div class="search-inner u-relative u-marginAuto zindex2">
         <div class="search-wrap">
             {{!-- search form --}}
             <form class="search-form u-sizeFullWidth u-flex u-flexCenter u-fontSizeBase">
-                <span class="icon icon--search icon--md icon--gray">{{> "icons/search"}}</span>
+                {{!-- <span class="icon icon--search icon--md icon--gray">{{> "icons/search"}}</span> --}}
+                <svg class="icon icon--search icon--md icon--gray"><use xlink:href="#icon-search"></use></svg>
                 <input id="search-field" class="u-sizeFullWidth" type="text" placeholder="{{t "Search"}}..." aria-label="Search box"/>
             </form>
             {{!-- show a message to the user if there is no post --}}
             <span class="js-search-message search-message u-block u-hide">{{t "No results found"}}</span>
             {{!-- Search results --}}
-            <div id="searchResults" class="search-results u-marginAuto u-sizeFullWidth"></div>
+            <div id="search-results" class="search-results u-marginAuto u-sizeFullWidth"></div>
         </div>
         {{!-- showing the function keys --}}
         <div class="search-nav-hints u-flex u-flexEnd u-hide-before-lg">

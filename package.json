@@ -3,10 +3,10 @@
   "description": "Rimay awesome theme for Ghost",
   "demo": "https://godofredo.ninja",
   "homepage": "https://github.com/godofredoninja/rimay#readme",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
-    "ghost": ">=2.0.0",
-    "ghost-api": "v2"
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3"
   },
   "license": "GPLv3",
   "author": {
@@ -37,7 +37,7 @@
   },
   "bugs": "https://github.com/godofredoninja/rimay/issues",
   "config": {
-    "posts_per_page": 12,
+    "posts_per_page": 18,
     "image_sizes": {
       "xxs": {
         "width": 30

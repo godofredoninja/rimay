@@ -1,0 +1,61 @@
+<footer class="article-footer">
+       <div class="social-share u-relative">
+            <div class="social-share-content u-flex js-social-share share--fixed share-open">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="u-flexCenter icon--facebook"
+                    title="{{t "Share on"}} Facebook"
+                    aria-label="{{t "Share on"}} Facebook"
+                    onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+                    <svg class="icon icon--white"><use xlink:href="#icon-facebook"></use></svg>
+                </a>
+                <a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="u-flexCenter icon--twitter"
+                    title="{{t "Share on"}} Twitter"
+                    aria-label="{{t "Share on"}} Twitter"
+                    onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+                    <svg class="icon icon--white"><use xlink:href="#icon-twitter"></use></svg>
+                </a>
+                <a href="https://www.reddit.com/submit?url={{url absolute="true"}}&amp;title={{encode title}}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="u-flexCenter icon--reddit"
+                    title="{{t "Share on"}} Reddit"
+                    aria-label="{{t "Share on"}} Reddit"
+                    onclick="window.open(this.href, 'share-reddit', 'width=600,height=480');return false;">
+                    <svg class="icon icon--white"><use xlink:href="#icon-reddit"></use></svg>
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="u-flexCenter icon--linkedin"
+                    title="{{t "Share on"}} Linkedin"
+                    aria-label="{{t "Share on"}} Linkedin"
+                    onclick="window.open(this.href, 'share-linkedin', 'width=600,height=480');return false;">
+                    <svg class="icon icon--white"><use xlink:href="#icon-linkedin"></use></svg>
+                </a>
+                <a href="#shortlink"
+                    class="js-short-link u-flexCenter icon--share zindex1 u-hide-before-md "
+                    title="{{t "Copy Share Link"}}"
+                    aria-label="{{t "Copy Share Link"}}">
+                    <svg class="icon icon--white"><use xlink:href="#icon-share"></use></svg>
+                </a>
+                <a href="whatsapp://send?text={{url absolute="true"}}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="u-flexCenter icon--whatsapp u-hide-after-md"
+                    title="{{t "Share on"}} WhatsApp"
+                    aria-label="{{t "Share on"}} WhatsApp">
+                    <svg class="icon icon--white"><use xlink:href="#icon-whatsapp"></use></svg>
+                </a>
+            </div>
+       </div>
+
+       <div id="shortlink" class="shortlink js-short-link u-relative u-hide-before-md u-flexColumnCenter">
+           <input id="shortlink-input" class="shortlink-input" readonly="" title="{{t "Article Shortlink"}}" type="text" value="{{url absolute="true"}}">
+           <span class="shortlink-indicator">{{t "copy"}}</span>
+       </div>
+</footer>

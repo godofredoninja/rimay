@@ -3,13 +3,8 @@
 {{!-- Class for <body> --}}
 {{#contentFor "special_body_class"}}is-article is-image{{/contentFor}}
 
-{{!-- Ads large in the header page--}}
-{{> "ads/ad-lg-header"}}
-
-{{!-- Header for my Big Image .pif(post image format) --}}
 {{#post}}
 <div class="pif rimay-wrap u-relative">
-    {{!-- Image --}}
     {{#if feature_image}}
     <img class="u-block u-marginAuto u-absolute0 u-image lazyload"
         src="{{img_url feature_image size="xl"}}"
@@ -27,58 +22,46 @@
 
     <div class="rimay-content u-relative zindex2">
         <div class="article u-flex">
-            {{!-- Article Header --}}
             <header class="article-header u-flex">
-                <div>
+                <div class="u-marginTop30">
                     <h1 class="article-title">{{title}}</h1>
                     {{#if custom_excerpt}}<h2 class="article-excerpt u-fontSize20 u-lineHeightTight u-fontWeightNormal u-marginTop30">{{custom_excerpt}}</h2>{{/if}}
                 </div>
-                {{!-- Article Meta (author - read time - comments) - partials/article/article-meta.hbs --}}
+                {{!-- Author (Name - Twitter) - Read time - partials/article/article-meta.hbs --}}
                 {{> "article/article-meta"}}
             </header>
         </div>
     </div>
-
 </div>
-{{!-- ./ end for big Image --}}
 
 <div class="rimay-wrap">
     <div class="rimay-content">
     <article class="article article-shadow">
+        {{!-- Article Body --}}
         <div class="article-body u-relative">
-            {{!-- Article Inner --}}
-            <div class="article-inner">
-                {{content}}
-                {{!-- ad --}}
-                {{> "ads/ad-article-footer"}}
-            </div>
-
-            {{!-- Article Comments - partials/article/comment-count.hbs --}}
-            {{> "article/comment-count"}}
+            <div class="article-inner">{{content}}</div>
         </div>
 
-        {{!-- Newsletter - partials/widget/newsletter.hbs --}}
-        {{> "widget/newsletter"}}
+        <hr>
+        {{!-- Disqus Comments Count - partials/article/comment-count.hbs --}}
+        {{> "article/comment-count"}}
 
-        {{!-- Article Footer - parials/article/footer.hbs --}}
-        {{> "article/footer"}}
+        {{!-- [Social Share - Copy link ] - parials/article/articlefooter.hbs --}}
+        {{> "article/article-footer"}}
 
-        {{!-- Article topics - parials/article/topics.hbs --}}
-        {{> "article/topics"}}
+        {{!-- Tags Cloud - parials/article/article-tags.hbs --}}
+        {{> "article/article-tags"}}
 
         {{!-- Article Comments - parials/article/comments.hbs --}}
-        {{> "article/comments"}}
+        {{> "article/article-comments"}}
     </article>
     </div>
 
-    {{!-- sidebar - partials/sidebar/sidebar.hbs --}}
+    {{!-- Box for the Newsletter - partials/sidebar/sidebar.hbs --}}
     {{> "sidebar/sidebar"}}
 </div>
 
 {{/post}}
 
-{{!-- Article Related - partials/article/related.hbs --}}
-{{#if post.tags}}{{> "article/related"}}{{/if}}
-
-{{!-- Article Related - partials/widget/intagram-feed.hbs --}}
-{{> "widget/instagram-feed"}}
+{{!-- 6 Related Aricles - partials/article/related.hbs --}}
+{{#if post.tags}}{{> "article/article-related"}}{{/if}}
