@@ -3,7 +3,7 @@
   "description": "Rimay awesome theme for Ghost",
   "demo": "https://godofredo.ninja",
   "homepage": "https://github.com/godofredoninja/rimay#readme",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "ghost": ">=3.0.0",
     "ghost-api": "v3"

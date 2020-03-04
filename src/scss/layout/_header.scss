@@ -164,9 +164,9 @@
 
 @media #{$md-and-down} {
   .header-body {
-    width: 100vw;
+    width: 100vw !important;
     height: 100vh;
-    left: 0;
+    // left: 0;
   }
 
   .header-wrap {
